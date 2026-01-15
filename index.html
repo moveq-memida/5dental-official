@@ -1,0 +1,414 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <title>5DENTAL TOKYO GINZA</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500&family=Pinyon+Script&family=Zen+Old+Mincho:wght@900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="site-header__top">
+        <div class="site-header__brand">
+          <a class="brand-logo" href="#">
+            <img src="assets/images/logo.webp" alt="5DENTAL TOKYO GINZA" />
+          </a>
+          <div class="brand-access">
+            <div class="access-row">
+              <img src="assets/icons/map.svg" alt="" class="access-icon" />
+              <span>〒104-0061 東京都中央区銀座5-1 GINZA5 2F</span>
+            </div>
+            <div class="access-row">
+              <img src="assets/icons/train.svg" alt="" class="access-icon" />
+              <span>東京メトロ銀座駅 C-1出口直結、有楽町駅 銀座口より徒歩3分</span>
+            </div>
+          </div>
+        </div>
+        <div class="site-header__cta">
+          <div class="cta-tel">
+            <span class="cta-tel__label">お電話ででのご予約</span>
+            <a class="cta-tel__number" href="tel:0352202511">
+              <img src="assets/icons/tel.svg" alt="" />
+              03-5220-2511
+            </a>
+          </div>
+          <a class="cta-web" href="#">
+            <span class="cta-web__label">
+              <img src="assets/icons/calendar.svg" alt="" />
+              Web予約
+            </span>
+            <img class="cta-web__icon" src="assets/icons/arw-circle-line.svg" alt="" />
+          </a>
+        </div>
+      </div>
+      <div class="site-header__bottom">
+        <nav class="site-nav" aria-label="グローバルナビゲーション">
+          <a class="site-nav__item is-muted" href="#">HOME</a>
+          <a class="site-nav__item is-active" href="#">
+            診療メニュー
+            <span class="menu-arrow" aria-hidden="true"></span>
+          </a>
+          <a class="site-nav__item is-active" href="#">
+            当院について
+            <span class="menu-arrow" aria-hidden="true"></span>
+          </a>
+          <a class="site-nav__item is-muted" href="#">スタッフ紹介</a>
+          <a class="site-nav__item is-muted" href="#">料金表</a>
+          <a class="site-nav__item is-muted" href="#">アクセス</a>
+          <a class="site-nav__item is-muted" href="#">お知らせ</a>
+          <a class="site-nav__item is-muted" href="#">コラム</a>
+        </nav>
+      </div>
+    </header>
+    <main>
+      <section class="hero-slider" aria-label="メインビジュアル">
+        <div class="hero-slider__viewport">
+          <figure class="hero-slide">
+              <img
+                src="assets/images/hero/fv1.webp"
+                alt="削らないラミネートベニアのメインビジュアル"
+                loading="eager"
+                fetchpriority="high"
+              />
+            </figure>
+            <figure class="hero-slide">
+              <img
+                src="assets/images/hero/fv2.webp"
+                alt="アクセスしやすい立地を訴求したメインビジュアル"
+                loading="lazy"
+              />
+            </figure>
+            <figure class="hero-slide">
+              <img
+                src="assets/images/hero/fv3.webp"
+                alt="施術症例を訴求したメインビジュアル"
+                loading="lazy"
+              />
+            </figure>
+        </div>
+        <div class="hero-slider__dots">
+          <button class="hero-dot is-active" type="button" aria-label="スライド1"></button>
+          <button class="hero-dot" type="button" aria-label="スライド2"></button>
+          <button class="hero-dot" type="button" aria-label="スライド3"></button>
+        </div>
+      </section>
+      <section class="popular-menu" aria-labelledby="popular-menu-title">
+        <div class="popular-menu__title">
+          <p class="popular-menu__eyebrow">Pick up</p>
+          <h2 class="popular-menu__heading" id="popular-menu-title">
+            当院の人気施術
+          </h2>
+        </div>
+        <div class="popular-menu__grid">
+          <article class="popular-card">
+            <a class="popular-card__banner" href="#">
+              <img
+                src="assets/images/popular/menu-banner1.webp"
+                alt="削らないラミネートベニア"
+              />
+            </a>
+            <p class="popular-card__text">
+              歯の表面に薄いセラミックを貼り付け形や色を整える審美治療です。当院では850件以上・10,000本超の実績があり、天然歯を極力削らず健康的に美しい歯を実現します。
+            </p>
+          </article>
+          <article class="popular-card">
+            <a class="popular-card__banner" href="#">
+              <img
+                src="assets/images/popular/menu-banner2.webp"
+                alt="オールセラミック治療とジルコニア"
+              />
+            </a>
+            <p class="popular-card__text">
+              審美的に気なる部分に素材をかぶせて自然な美しさへと導く治療です。当院では強度が高く、衛生的で生体親和性(人体との調和)が良い素材を厳選しています。
+            </p>
+          </article>
+          <article class="popular-card">
+            <a class="popular-card__banner" href="#">
+              <img
+                src="assets/images/popular/menu-banner3.webp"
+                alt="矯正歯科"
+              />
+            </a>
+            <p class="popular-card__text">
+              最新の高性能3Dデジタルスキャナーを用いて口腔内を撮影し、治療します。当院ではインビザライン・クリアコレクト等のマウスピースを用いた治療を行っています。
+            </p>
+          </article>
+          <article class="popular-card">
+            <a class="popular-card__banner" href="#">
+              <img
+                src="assets/images/popular/menu-banner4.webp"
+                alt="ガミースマイル改善"
+              />
+            </a>
+            <p class="popular-card__text">
+              笑った時の歯ぐきの見え方や歯の形や大きさを調整し、美しい笑顔へと導きます。削らないラミネートべニアや歯肉成型などを組み合わせて治療していきます。
+            </p>
+          </article>
+        </div>
+      </section>
+    </main>
+    <script>
+      const heroViewport = document.querySelector(".hero-slider__viewport");
+      if (heroViewport) {
+        const heroDots = Array.from(
+          document.querySelectorAll(".hero-slider__dots .hero-dot")
+        );
+        const originalSlides = Array.from(
+          heroViewport.querySelectorAll(".hero-slide")
+        );
+        const slideCount = originalSlides.length;
+        const hasClones = heroViewport.querySelector('[data-clone="true"]');
+
+        const cloneSlide = (slide) => {
+          const clone = slide.cloneNode(true);
+          clone.setAttribute("data-clone", "true");
+          clone.setAttribute("aria-hidden", "true");
+          return clone;
+        };
+
+        if (slideCount > 1 && !hasClones) {
+          heroViewport.insertBefore(
+            cloneSlide(originalSlides[slideCount - 1]),
+            originalSlides[0]
+          );
+          heroViewport.appendChild(cloneSlide(originalSlides[0]));
+        }
+
+        const getSlideWidth = () => Math.round(heroViewport.clientWidth);
+        const jumpToIndex = (index) => {
+          const slideWidth = getSlideWidth();
+          if (!slideWidth) {
+            return;
+          }
+          const previousBehavior = heroViewport.style.scrollBehavior;
+          const previousSnap = heroViewport.style.scrollSnapType;
+          heroViewport.style.scrollBehavior = "auto";
+          heroViewport.style.scrollSnapType = "none";
+          heroViewport.scrollLeft = index * slideWidth;
+          window.requestAnimationFrame(() => {
+            heroViewport.style.scrollBehavior = previousBehavior;
+            heroViewport.style.scrollSnapType = previousSnap;
+          });
+        };
+
+        const setInitialPosition = () => {
+          if (slideCount > 1) {
+            jumpToIndex(1);
+          }
+        };
+
+        const scrollToSlide = (dotIndex) => {
+          if (slideCount <= 1) {
+            return;
+          }
+          const slideWidth = getSlideWidth();
+          if (!slideWidth) {
+            return;
+          }
+          heroViewport.scrollTo({
+            left: (dotIndex + 1) * slideWidth,
+            behavior: "smooth",
+          });
+        };
+
+        const snapToIndex = (index) => {
+          if (slideCount <= 1) {
+            return;
+          }
+          const slideWidth = getSlideWidth();
+          if (!slideWidth) {
+            return;
+          }
+          heroViewport.scrollTo({
+            left: index * slideWidth,
+            behavior: "smooth",
+          });
+        };
+
+        let isDragging = false;
+        let startX = 0;
+        let startScrollLeft = 0;
+        let dragStartIndex = 0;
+        let dragStartTime = 0;
+
+        const startDrag = (clientX) => {
+          isDragging = true;
+          startX = clientX;
+          startScrollLeft = heroViewport.scrollLeft;
+          dragStartTime = window.performance.now();
+          const slideWidth = getSlideWidth();
+          dragStartIndex = slideWidth
+            ? Math.round(startScrollLeft / slideWidth)
+            : 0;
+          heroViewport.classList.add("is-dragging");
+          heroViewport.style.scrollSnapType = "none";
+        };
+
+        const stopDrag = () => {
+          if (!isDragging) {
+            return;
+          }
+          isDragging = false;
+          heroViewport.classList.remove("is-dragging");
+          heroViewport.style.scrollSnapType = "";
+          window.requestAnimationFrame(() => {
+            const slideWidth = getSlideWidth();
+            const threshold = Math.min(40, Math.round(slideWidth * 0.08));
+            const delta = heroViewport.scrollLeft - startScrollLeft;
+            const deltaTime = Math.max(
+              1,
+              window.performance.now() - dragStartTime
+            );
+            const velocity = Math.abs(delta) / deltaTime;
+            const velocityThreshold = 0.35;
+            let targetIndex = dragStartIndex;
+
+            if (Math.abs(delta) >= threshold || velocity >= velocityThreshold) {
+              targetIndex = dragStartIndex + (delta > 0 ? 1 : -1);
+            }
+
+            snapToIndex(targetIndex);
+            scheduleNormalize();
+          });
+        };
+
+        heroViewport.addEventListener("mousedown", (event) => {
+          event.preventDefault();
+          startDrag(event.clientX);
+        });
+
+        window.addEventListener("mousemove", (event) => {
+          if (!isDragging) {
+            return;
+          }
+          event.preventDefault();
+          const deltaX = event.clientX - startX;
+          heroViewport.scrollLeft = startScrollLeft - deltaX;
+          wrapWhileDragging();
+        });
+
+        window.addEventListener("mouseup", stopDrag);
+
+        heroViewport.addEventListener("dragstart", (event) => {
+          event.preventDefault();
+        });
+
+        heroDots.forEach((dot, dotIndex) => {
+          dot.addEventListener("click", (event) => {
+            event.preventDefault();
+            scrollToSlide(dotIndex);
+          });
+        });
+
+
+        let scrollTicking = false;
+        let scrollEndTimer = null;
+
+        const scheduleNormalize = () => {
+          if (scrollEndTimer) {
+            window.clearTimeout(scrollEndTimer);
+          }
+          scrollEndTimer = window.setTimeout(() => {
+            if (isDragging) {
+              return;
+            }
+            normalizeLoop();
+            updateDots();
+          }, 120);
+        };
+
+        const wrapWhileDragging = () => {
+          if (slideCount <= 1) {
+            return;
+          }
+          const slideWidth = getSlideWidth();
+          if (!slideWidth) {
+            return;
+          }
+          const totalWidth = slideWidth * slideCount;
+          const maxScroll = slideWidth * (slideCount + 1);
+          if (heroViewport.scrollLeft <= 0) {
+            heroViewport.scrollLeft += totalWidth;
+            startScrollLeft += totalWidth;
+          } else if (heroViewport.scrollLeft >= maxScroll) {
+            heroViewport.scrollLeft -= totalWidth;
+            startScrollLeft -= totalWidth;
+          }
+        };
+
+        const normalizeLoop = () => {
+          if (slideCount <= 1) {
+            return;
+          }
+          const slideWidth = getSlideWidth();
+          if (!slideWidth) {
+            return;
+          }
+          const maxIndex = slideCount + 1;
+          const currentIndex = heroViewport.scrollLeft / slideWidth;
+          if (currentIndex <= 0.5) {
+            jumpToIndex(slideCount);
+          } else if (currentIndex >= maxIndex - 0.5) {
+            jumpToIndex(1);
+          }
+        };
+
+        const updateDots = () => {
+          if (!heroDots.length) {
+            return;
+          }
+          const slideWidth = getSlideWidth();
+          if (!slideWidth) {
+            return;
+          }
+          if (!slideCount) {
+            return;
+          }
+          let index = Math.round(heroViewport.scrollLeft / slideWidth) - 1;
+          if (index < 0) {
+            index = slideCount - 1;
+          }
+          if (index >= slideCount) {
+            index = 0;
+          }
+          heroDots.forEach((dot, dotIndex) => {
+            dot.classList.toggle("is-active", dotIndex === index);
+          });
+        };
+
+        heroViewport.addEventListener(
+          "scroll",
+          () => {
+            if (scrollTicking) {
+              return;
+            }
+            scrollTicking = true;
+            window.requestAnimationFrame(() => {
+              updateDots();
+              scrollTicking = false;
+            });
+            scheduleNormalize();
+          },
+          { passive: true }
+        );
+
+        window.addEventListener("resize", () => {
+          setInitialPosition();
+          updateDots();
+        });
+        window.addEventListener("load", setInitialPosition);
+        setInitialPosition();
+        updateDots();
+      }
+    </script>
+  </body>
+</html>
