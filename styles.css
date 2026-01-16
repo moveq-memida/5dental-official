@@ -1479,6 +1479,7 @@ body.is-overlay-open {
 .column {
   background: var(--color-white);
   padding: 104px 0 120px;
+  overflow-x: hidden;
 }
 
 .column__inner {
