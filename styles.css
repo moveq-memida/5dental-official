@@ -191,7 +191,7 @@ button.site-nav__item {
   cursor: pointer;
 }
 
-body.is-megamenu-open {
+body.is-overlay-open {
   overflow: hidden;
   padding-right: var(--scrollbar-width, 0px);
 }
@@ -318,6 +318,78 @@ body.is-megamenu-open {
 
 .mega-menu__menu .footer-menu__title img {
   opacity: 0;
+}
+
+.about-menu {
+  position: fixed;
+  top: var(--header-height, 150px);
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(120, 123, 131, 0.5);
+  backdrop-filter: blur(7.5px);
+  -webkit-backdrop-filter: blur(7.5px);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(-8px);
+  transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s ease;
+  z-index: 140;
+  overflow-y: auto;
+}
+
+.about-menu.is-open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.about-menu__panel {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 56px 56px 64px;
+  background: var(--color-white);
+}
+
+.about-menu__heading {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
+.about-menu__heading p {
+  margin: 0;
+  font-family: "Zen Old Mincho", serif;
+  font-size: 20px;
+  letter-spacing: 0.05em;
+  color: #595a5d;
+}
+
+.about-menu__heading::after {
+  content: "";
+  flex: 1;
+  height: 1.5px;
+  background: #cfd2d8;
+}
+
+.about-menu__grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 24px 32px;
+}
+
+.about-menu__item {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.about-menu__link {
+  flex: 1;
+  color: inherit;
+  line-height: 1.35;
 }
 
 .hero-slider {
@@ -2370,6 +2442,14 @@ body.is-megamenu-open {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
+  .about-menu__panel {
+    padding: 48px 32px 56px;
+  }
+
+  .about-menu__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   .popular-card {
     margin: 0 auto;
   }
@@ -2518,6 +2598,14 @@ body.is-megamenu-open {
   }
 
   .mega-menu__menus {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .about-menu__panel {
+    padding: 32px 20px 40px;
+  }
+
+  .about-menu__grid {
     grid-template-columns: minmax(0, 1fr);
   }
   .site-header__top {

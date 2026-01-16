@@ -63,10 +63,16 @@
             診療メニュー
             <span class="menu-arrow" aria-hidden="true"></span>
           </button>
-          <a class="site-nav__item is-active" href="#">
+          <button
+            class="site-nav__item site-nav__item--about is-active"
+            type="button"
+            aria-expanded="false"
+            aria-controls="about-menu"
+            data-about-trigger
+          >
             当院について
             <span class="menu-arrow" aria-hidden="true"></span>
-          </a>
+          </button>
           <a class="site-nav__item is-muted" href="#">スタッフ紹介</a>
           <a class="site-nav__item is-muted" href="#">料金表</a>
           <a class="site-nav__item is-muted" href="#">アクセス</a>
@@ -263,6 +269,80 @@
                 </ul>
               </div>
             </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="about-menu" id="about-menu" aria-hidden="true">
+      <div class="about-menu__panel">
+        <div class="about-menu__heading">
+          <p>当院について</p>
+        </div>
+        <div class="about-menu__grid">
+          <div class="about-menu__item">
+            <div class="footer-menu__title">
+              <a class="about-menu__link" href="#">当院の特徴・コンセプト</a>
+              <img src="assets/icons/footer/footer-parent-arrow.svg" alt="" />
+            </div>
+            <span class="footer-menu__line" aria-hidden="true">
+              <img src="assets/icons/footer/footer-parent-line.svg" alt="" />
+            </span>
+          </div>
+          <div class="about-menu__item">
+            <div class="footer-menu__title">
+              <a class="about-menu__link" href="#">院長紹介</a>
+              <img src="assets/icons/footer/footer-parent-arrow.svg" alt="" />
+            </div>
+            <span class="footer-menu__line" aria-hidden="true">
+              <img src="assets/icons/footer/footer-parent-line.svg" alt="" />
+            </span>
+          </div>
+          <div class="about-menu__item">
+            <div class="footer-menu__title">
+              <a class="about-menu__link" href="#">初診の流れ</a>
+              <img src="assets/icons/footer/footer-parent-arrow.svg" alt="" />
+            </div>
+            <span class="footer-menu__line" aria-hidden="true">
+              <img src="assets/icons/footer/footer-parent-line.svg" alt="" />
+            </span>
+          </div>
+          <div class="about-menu__item">
+            <div class="footer-menu__title">
+              <a class="about-menu__link" href="#">院内ツアー</a>
+              <img src="assets/icons/footer/footer-parent-arrow.svg" alt="" />
+            </div>
+            <span class="footer-menu__line" aria-hidden="true">
+              <img src="assets/icons/footer/footer-parent-line.svg" alt="" />
+            </span>
+          </div>
+          <div class="about-menu__item">
+            <div class="footer-menu__title">
+              <a class="about-menu__link" href="#">痛みに配慮した治療</a>
+              <img src="assets/icons/footer/footer-parent-arrow.svg" alt="" />
+            </div>
+            <span class="footer-menu__line" aria-hidden="true">
+              <img src="assets/icons/footer/footer-parent-line.svg" alt="" />
+            </span>
+          </div>
+          <div class="about-menu__item">
+            <div class="footer-menu__title">
+              <a class="about-menu__link" href="#">
+                EPIOS殺菌水システムのご紹介
+              </a>
+              <img src="assets/icons/footer/footer-parent-arrow.svg" alt="" />
+            </div>
+            <span class="footer-menu__line" aria-hidden="true">
+              <img src="assets/icons/footer/footer-parent-line.svg" alt="" />
+            </span>
+          </div>
+          <div class="about-menu__item">
+            <div class="footer-menu__title">
+              <a class="about-menu__link" href="#">メディア掲載</a>
+              <img src="assets/icons/footer/footer-parent-arrow.svg" alt="" />
+            </div>
+            <span class="footer-menu__line" aria-hidden="true">
+              <img src="assets/icons/footer/footer-parent-line.svg" alt="" />
+            </span>
           </div>
         </div>
       </div>
@@ -1850,7 +1930,9 @@
     </footer>
     <script>
       const megaTrigger = document.querySelector("[data-mega-trigger]");
+      const aboutTrigger = document.querySelector("[data-about-trigger]");
       const megaMenu = document.querySelector("#mega-menu");
+      const aboutMenu = document.querySelector("#about-menu");
       const siteHeader = document.querySelector(".site-header");
 
       const setHeaderHeight = () => {
@@ -1872,15 +1954,30 @@
         );
       };
 
+      const updateOverlayState = () => {
+        const isOpen =
+          (megaMenu && megaMenu.classList.contains("is-open")) ||
+          (aboutMenu && aboutMenu.classList.contains("is-open"));
+        if (isOpen) {
+          setScrollbarWidth();
+          document.body.classList.add("is-overlay-open");
+          return;
+        }
+        document.body.classList.remove("is-overlay-open");
+        document.documentElement.style.setProperty("--scrollbar-width", "0px");
+      };
+
       const openMegaMenu = () => {
         if (!megaMenu || !megaTrigger) {
           return;
         }
-        setScrollbarWidth();
+        if (aboutMenu) {
+          closeAboutMenu();
+        }
         megaMenu.classList.add("is-open");
         megaMenu.setAttribute("aria-hidden", "false");
         megaTrigger.setAttribute("aria-expanded", "true");
-        document.body.classList.add("is-megamenu-open");
+        updateOverlayState();
       };
 
       const closeMegaMenu = () => {
@@ -1890,53 +1987,110 @@
         megaMenu.classList.remove("is-open");
         megaMenu.setAttribute("aria-hidden", "true");
         megaTrigger.setAttribute("aria-expanded", "false");
-        document.body.classList.remove("is-megamenu-open");
-        document.documentElement.style.setProperty("--scrollbar-width", "0px");
+        updateOverlayState();
       };
 
-      if (megaMenu && megaTrigger && siteHeader) {
+      const openAboutMenu = () => {
+        if (!aboutMenu || !aboutTrigger) {
+          return;
+        }
+        if (megaMenu) {
+          closeMegaMenu();
+        }
+        aboutMenu.classList.add("is-open");
+        aboutMenu.setAttribute("aria-hidden", "false");
+        aboutTrigger.setAttribute("aria-expanded", "true");
+        updateOverlayState();
+      };
+
+      const closeAboutMenu = () => {
+        if (!aboutMenu || !aboutTrigger) {
+          return;
+        }
+        aboutMenu.classList.remove("is-open");
+        aboutMenu.setAttribute("aria-hidden", "true");
+        aboutTrigger.setAttribute("aria-expanded", "false");
+        updateOverlayState();
+      };
+
+      if ((megaMenu && megaTrigger) || (aboutMenu && aboutTrigger)) {
         setHeaderHeight();
         window.addEventListener("resize", () => {
           setHeaderHeight();
-          if (megaMenu.classList.contains("is-open")) {
-            setScrollbarWidth();
-          }
+          updateOverlayState();
         });
 
-        megaTrigger.addEventListener("click", (event) => {
-          event.preventDefault();
-          setHeaderHeight();
-          const isOpen = megaMenu.classList.contains("is-open");
-          if (isOpen) {
-            closeMegaMenu();
-          } else {
-            openMegaMenu();
-          }
-        });
+        if (megaTrigger) {
+          megaTrigger.addEventListener("click", (event) => {
+            event.preventDefault();
+            setHeaderHeight();
+            const isOpen = megaMenu && megaMenu.classList.contains("is-open");
+            if (isOpen) {
+              closeMegaMenu();
+            } else {
+              openMegaMenu();
+            }
+          });
+        }
 
-        megaMenu.addEventListener("click", (event) => {
-          const link = event.target.closest("a");
-          if (link) {
-            closeMegaMenu();
-          }
-        });
+        if (aboutTrigger) {
+          aboutTrigger.addEventListener("click", (event) => {
+            event.preventDefault();
+            setHeaderHeight();
+            const isOpen = aboutMenu && aboutMenu.classList.contains("is-open");
+            if (isOpen) {
+              closeAboutMenu();
+            } else {
+              openAboutMenu();
+            }
+          });
+        }
+
+        if (megaMenu) {
+          megaMenu.addEventListener("click", (event) => {
+            const link = event.target.closest("a");
+            if (link) {
+              closeMegaMenu();
+            }
+          });
+        }
+
+        if (aboutMenu) {
+          aboutMenu.addEventListener("click", (event) => {
+            const link = event.target.closest("a");
+            if (link) {
+              closeAboutMenu();
+            }
+          });
+        }
 
         document.addEventListener("click", (event) => {
-          if (!megaMenu.classList.contains("is-open")) {
+          const target = event.target;
+          const megaOpen = megaMenu && megaMenu.classList.contains("is-open");
+          const aboutOpen = aboutMenu && aboutMenu.classList.contains("is-open");
+          if (!megaOpen && !aboutOpen) {
             return;
           }
           if (
-            megaMenu.contains(event.target) ||
-            megaTrigger.contains(event.target)
+            (megaMenu && megaMenu.contains(target)) ||
+            (aboutMenu && aboutMenu.contains(target)) ||
+            (megaTrigger && megaTrigger.contains(target)) ||
+            (aboutTrigger && aboutTrigger.contains(target))
           ) {
             return;
           }
-          closeMegaMenu();
+          if (megaOpen) {
+            closeMegaMenu();
+          }
+          if (aboutOpen) {
+            closeAboutMenu();
+          }
         });
 
         document.addEventListener("keydown", (event) => {
           if (event.key === "Escape") {
             closeMegaMenu();
+            closeAboutMenu();
           }
         });
 
