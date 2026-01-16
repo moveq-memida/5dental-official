@@ -53,10 +53,16 @@
       <div class="site-header__bottom">
         <nav class="site-nav" aria-label="グローバルナビゲーション">
           <a class="site-nav__item is-muted" href="#">HOME</a>
-          <a class="site-nav__item is-active" href="#">
+          <button
+            class="site-nav__item site-nav__item--mega is-active"
+            type="button"
+            aria-expanded="false"
+            aria-controls="mega-menu"
+            data-mega-trigger
+          >
             診療メニュー
             <span class="menu-arrow" aria-hidden="true"></span>
-          </a>
+          </button>
           <a class="site-nav__item is-active" href="#">
             当院について
             <span class="menu-arrow" aria-hidden="true"></span>
@@ -69,6 +75,198 @@
         </nav>
       </div>
     </header>
+    <div class="mega-menu" id="mega-menu" aria-hidden="true">
+      <div class="mega-menu__scroll">
+        <div class="mega-menu__inner">
+          <div class="mega-menu__pickup">
+            <p class="mega-menu__label">当院の人気施術</p>
+            <div class="mega-menu__banners">
+              <a class="mega-banner" href="#">
+                <span class="mega-banner__image">
+                  <img
+                    src="assets/images/megamenu/banner-megamenu1.jpg"
+                    alt="削らないラミネートべニア"
+                  />
+                </span>
+              </a>
+              <a class="mega-banner" href="#">
+                <span class="mega-banner__image">
+                  <img
+                    src="assets/images/megamenu/banner-megamenu2.jpg"
+                    alt="オールセラミック治療とジルコニア"
+                  />
+                </span>
+              </a>
+              <a class="mega-banner" href="#">
+                <span class="mega-banner__image">
+                  <img
+                    src="assets/images/megamenu/banner-megamenu3.jpg"
+                    alt="矯正歯科"
+                  />
+                </span>
+              </a>
+              <a class="mega-banner" href="#">
+                <span class="mega-banner__image">
+                  <img
+                    src="assets/images/megamenu/banner-megamenu4.jpg"
+                    alt="ガミースマイル改善"
+                  />
+                </span>
+              </a>
+            </div>
+          </div>
+          <div class="mega-menu__lists">
+            <p class="mega-menu__title">診療メニュー一覧</p>
+            <div class="mega-menu__menus footer-menus">
+              <div class="footer-menu">
+                <div class="footer-menu__title">
+                  <p>削らないラミネートべニア</p>
+                  <img src="assets/icons/footer/footer-parent-arrow.svg" alt="" />
+                </div>
+                <span class="footer-menu__line" aria-hidden="true">
+                  <img src="assets/icons/footer/footer-parent-line.svg" alt="" />
+                </span>
+                <ul class="footer-menu__list">
+                  <li>
+                    <span class="footer-menu__dot"></span>
+                    <a href="#">削らないラミネートべニア</a>
+                  </li>
+                  <li>
+                    <span class="footer-menu__dot"></span>
+                    <a href="#">施術症例紹介</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="footer-menu">
+                <div class="footer-menu__title">
+                  <p>審美歯科</p>
+                  <img src="assets/icons/footer/footer-parent-arrow.svg" alt="" />
+                </div>
+                <span class="footer-menu__line" aria-hidden="true">
+                  <img src="assets/icons/footer/footer-parent-line.svg" alt="" />
+                </span>
+                <ul class="footer-menu__list">
+                  <li>
+                    <span class="footer-menu__dot"></span>
+                    <a href="#">3Dデジタルマウスピース矯正(審美矯正)</a>
+                  </li>
+                  <li>
+                    <span class="footer-menu__dot"></span>
+                    <a href="#">オールセラミック治療とジルコニア</a>
+                  </li>
+                  <li>
+                    <span class="footer-menu__dot"></span>
+                    <a href="#">ホワイトニング</a>
+                  </li>
+                  <li>
+                    <span class="footer-menu__dot"></span>
+                    <a href="#">歯肉整形/ガミースマイル改善</a>
+                  </li>
+                  <li>
+                    <span class="footer-menu__dot"></span>
+                    <a href="#">歯のマニキュア</a>
+                  </li>
+                  <li>
+                    <span class="footer-menu__dot"></span>
+                    <a href="#">ダイレクトボンディング</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="footer-menu">
+                <div class="footer-menu__title">
+                  <p>その他の診療メニュー</p>
+                  <img src="assets/icons/footer/footer-parent-arrow.svg" alt="" />
+                </div>
+                <span class="footer-menu__line" aria-hidden="true">
+                  <img src="assets/icons/footer/footer-parent-line.svg" alt="" />
+                </span>
+                <ul class="footer-menu__list">
+                  <li>
+                    <span class="footer-menu__dot"></span>
+                    <a href="#">インプラント</a>
+                  </li>
+                  <li>
+                    <span class="footer-menu__dot"></span>
+                    <a href="#">入れ歯/ブリッジ</a>
+                  </li>
+                  <li>
+                    <span class="footer-menu__dot"></span>
+                    <a href="#">リップアートメイク@DENTAL</a>
+                  </li>
+                  <li>
+                    <span class="footer-menu__dot"></span>
+                    <a href="#">ローマピンク</a>
+                  </li>
+                  <li>
+                    <span class="footer-menu__dot"></span>
+                    <a href="#">虫歯治療</a>
+                  </li>
+                  <li>
+                    <span class="footer-menu__dot"></span>
+                    <a href="#">歯周病治療</a>
+                  </li>
+                  <li>
+                    <span class="footer-menu__dot"></span>
+                    <a href="#">予防歯科/クリーニング</a>
+                  </li>
+                  <li>
+                    <span class="footer-menu__dot"></span>
+                    <a href="#">噛み合わせ・顎関節症</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="footer-menu mega-menu__menu">
+                <div class="footer-menu__title">
+                  <p>お悩みから治療症例を探す</p>
+                  <img src="assets/icons/footer/footer-parent-arrow.svg" alt="" />
+                </div>
+                <span class="footer-menu__line" aria-hidden="true">
+                  <img src="assets/icons/footer/footer-parent-line.svg" alt="" />
+                </span>
+                <ul class="footer-menu__list">
+                  <li>
+                    <span class="footer-menu__dot"></span>
+                    <a href="#">テトラサイクリン歯</a>
+                  </li>
+                  <li>
+                    <span class="footer-menu__dot"></span>
+                    <a href="#">すきっ歯/矮小歯</a>
+                  </li>
+                  <li>
+                    <span class="footer-menu__dot"></span>
+                    <a href="#">失活歯/変色歯</a>
+                  </li>
+                  <li>
+                    <span class="footer-menu__dot"></span>
+                    <a href="#">歯を真っ白にする</a>
+                  </li>
+                  <li>
+                    <span class="footer-menu__dot"></span>
+                    <a href="#">詰め物の変色</a>
+                  </li>
+                  <li>
+                    <span class="footer-menu__dot"></span>
+                    <a href="#">差し歯の色</a>
+                  </li>
+                  <li>
+                    <span class="footer-menu__dot"></span>
+                    <a href="#">歯並びが気になる</a>
+                  </li>
+                  <li>
+                    <span class="footer-menu__dot"></span>
+                    <a href="#">出っ歯/八重歯</a>
+                  </li>
+                  <li>
+                    <span class="footer-menu__dot"></span>
+                    <a href="#">歯を大きくしたい</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
     <main>
       <section class="hero-slider" aria-label="メインビジュアル">
         <div class="hero-slider__viewport">
@@ -1651,6 +1849,100 @@
       <div class="footer-bottom">© 5DENTAL TOKYO GINZA</div>
     </footer>
     <script>
+      const megaTrigger = document.querySelector("[data-mega-trigger]");
+      const megaMenu = document.querySelector("#mega-menu");
+      const siteHeader = document.querySelector(".site-header");
+
+      const setHeaderHeight = () => {
+        if (!siteHeader) {
+          return;
+        }
+        const height = Math.round(siteHeader.getBoundingClientRect().height);
+        document.documentElement.style.setProperty(
+          "--header-height",
+          `${height}px`
+        );
+      };
+
+      const setScrollbarWidth = () => {
+        const width = window.innerWidth - document.documentElement.clientWidth;
+        document.documentElement.style.setProperty(
+          "--scrollbar-width",
+          `${width}px`
+        );
+      };
+
+      const openMegaMenu = () => {
+        if (!megaMenu || !megaTrigger) {
+          return;
+        }
+        setScrollbarWidth();
+        megaMenu.classList.add("is-open");
+        megaMenu.setAttribute("aria-hidden", "false");
+        megaTrigger.setAttribute("aria-expanded", "true");
+        document.body.classList.add("is-megamenu-open");
+      };
+
+      const closeMegaMenu = () => {
+        if (!megaMenu || !megaTrigger) {
+          return;
+        }
+        megaMenu.classList.remove("is-open");
+        megaMenu.setAttribute("aria-hidden", "true");
+        megaTrigger.setAttribute("aria-expanded", "false");
+        document.body.classList.remove("is-megamenu-open");
+        document.documentElement.style.setProperty("--scrollbar-width", "0px");
+      };
+
+      if (megaMenu && megaTrigger && siteHeader) {
+        setHeaderHeight();
+        window.addEventListener("resize", () => {
+          setHeaderHeight();
+          if (megaMenu.classList.contains("is-open")) {
+            setScrollbarWidth();
+          }
+        });
+
+        megaTrigger.addEventListener("click", (event) => {
+          event.preventDefault();
+          setHeaderHeight();
+          const isOpen = megaMenu.classList.contains("is-open");
+          if (isOpen) {
+            closeMegaMenu();
+          } else {
+            openMegaMenu();
+          }
+        });
+
+        megaMenu.addEventListener("click", (event) => {
+          const link = event.target.closest("a");
+          if (link) {
+            closeMegaMenu();
+          }
+        });
+
+        document.addEventListener("click", (event) => {
+          if (!megaMenu.classList.contains("is-open")) {
+            return;
+          }
+          if (
+            megaMenu.contains(event.target) ||
+            megaTrigger.contains(event.target)
+          ) {
+            return;
+          }
+          closeMegaMenu();
+        });
+
+        document.addEventListener("keydown", (event) => {
+          if (event.key === "Escape") {
+            closeMegaMenu();
+          }
+        });
+
+        window.addEventListener("load", setHeaderHeight);
+      }
+
       const heroViewport = document.querySelector(".hero-slider__viewport");
       if (heroViewport) {
         const heroDots = Array.from(
@@ -1879,6 +2171,31 @@
           });
         };
 
+        const autoDelay = 5000;
+        let autoTimer = null;
+
+        const startAuto = () => {
+          if (slideCount <= 1 || autoTimer) {
+            return;
+          }
+          autoTimer = window.setInterval(() => {
+            const slideWidth = getSlideWidth();
+            if (!slideWidth) {
+              return;
+            }
+            const index = Math.round(heroViewport.scrollLeft / slideWidth);
+            snapToIndex(index + 1);
+          }, autoDelay);
+        };
+
+        const stopAuto = () => {
+          if (!autoTimer) {
+            return;
+          }
+          window.clearInterval(autoTimer);
+          autoTimer = null;
+        };
+
         heroViewport.addEventListener(
           "scroll",
           () => {
@@ -1899,9 +2216,16 @@
           setInitialPosition();
           updateDots();
         });
+        heroViewport.addEventListener("pointerdown", stopAuto);
+        heroViewport.addEventListener("pointerup", startAuto);
+        heroViewport.addEventListener("pointercancel", startAuto);
+        heroViewport.addEventListener("pointerleave", startAuto);
+        window.addEventListener("blur", stopAuto);
+        window.addEventListener("focus", startAuto);
         window.addEventListener("load", setInitialPosition);
         setInitialPosition();
         updateDots();
+        startAuto();
       }
 
       const casesTrack = document.querySelector(".cases__track");

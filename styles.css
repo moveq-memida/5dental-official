@@ -34,6 +34,8 @@ a {
 .site-header {
   background: var(--color-white);
   box-shadow: var(--shadow-header);
+  position: relative;
+  z-index: 200;
 }
 
 .site-header__top {
@@ -179,6 +181,143 @@ a {
   border-right: 3px solid transparent;
   border-top: 4px solid var(--color-secondary);
   transform: translateY(1px);
+}
+
+button.site-nav__item {
+  background: none;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+}
+
+body.is-megamenu-open {
+  overflow: hidden;
+  padding-right: var(--scrollbar-width, 0px);
+}
+
+.mega-menu {
+  position: fixed;
+  top: var(--header-height, 150px);
+  left: 0;
+  right: 0;
+  height: calc(100vh - var(--header-height, 150px));
+  background: var(--color-white);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(-8px);
+  transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s ease;
+  z-index: 150;
+  overflow: hidden;
+}
+
+.mega-menu.is-open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.mega-menu::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 56px;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0) 0%,
+    #fff 91.35%
+  );
+  pointer-events: none;
+  z-index: 2;
+}
+
+.mega-menu__scroll {
+  height: 100%;
+  overflow-y: auto;
+}
+
+.mega-menu__inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 68px 24px 64px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.mega-menu__label {
+  margin: 0 0 16px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-family: "Zen Old Mincho", serif;
+  font-size: 16px;
+  letter-spacing: 0.05em;
+  color: #595a5d;
+}
+
+.mega-menu__label::after {
+  content: "";
+  flex: 1;
+  height: 1.5px;
+  background: #cfd2d8;
+  min-width: 120px;
+}
+
+.mega-menu__banners {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.mega-banner {
+  display: flex;
+  height: 100px;
+  text-decoration: none;
+  overflow: hidden;
+}
+
+.mega-banner__image {
+  width: 100%;
+}
+
+.mega-banner__image img {
+  width: 100%;
+  height: 100%;
+}
+
+
+.mega-menu__lists {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.mega-menu__title {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-family: "Zen Old Mincho", serif;
+  font-size: 16px;
+  letter-spacing: 0.05em;
+  color: #595a5d;
+}
+
+.mega-menu__title::after {
+  content: "";
+  flex: 1;
+  height: 1.5px;
+  background: #cfd2d8;
+  min-width: 120px;
+}
+
+.mega-menu__menu .footer-menu__title img {
+  opacity: 0;
 }
 
 .hero-slider {
@@ -2219,6 +2358,18 @@ a {
     grid-template-columns: minmax(0, 548px);
   }
 
+  .mega-menu__inner {
+    padding: 24px 24px 48px;
+  }
+
+  .mega-menu__banners {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .mega-menu__menus {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   .popular-card {
     margin: 0 auto;
   }
@@ -2358,6 +2509,17 @@ a {
 }
 
 @media (max-width: 768px) {
+  .mega-menu__inner {
+    padding: 24px 16px 40px;
+  }
+
+  .mega-menu__banners {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .mega-menu__menus {
+    grid-template-columns: minmax(0, 1fr);
+  }
   .site-header__top {
     padding: 12px 16px;
   }
