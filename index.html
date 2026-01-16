@@ -2123,17 +2123,25 @@
           heroViewport.appendChild(cloneSlide(originalSlides[0]));
         }
 
-        const getSlideWidth = () => Math.round(heroViewport.clientWidth);
+        const getSlideStep = () => {
+          const slide = heroViewport.querySelector(".hero-slide");
+          if (!slide) {
+            return 0;
+          }
+          const slideWidth = slide.getBoundingClientRect().width;
+          const gap = parseFloat(getComputedStyle(heroViewport).gap) || 0;
+          return Math.round(slideWidth + gap);
+        };
         const jumpToIndex = (index) => {
-          const slideWidth = getSlideWidth();
-          if (!slideWidth) {
+          const slideStep = getSlideStep();
+          if (!slideStep) {
             return;
           }
           const previousBehavior = heroViewport.style.scrollBehavior;
           const previousSnap = heroViewport.style.scrollSnapType;
           heroViewport.style.scrollBehavior = "auto";
           heroViewport.style.scrollSnapType = "none";
-          heroViewport.scrollLeft = index * slideWidth;
+          heroViewport.scrollLeft = index * slideStep;
           window.requestAnimationFrame(() => {
             heroViewport.style.scrollBehavior = previousBehavior;
             heroViewport.style.scrollSnapType = previousSnap;
@@ -2150,12 +2158,12 @@
           if (slideCount <= 1) {
             return;
           }
-          const slideWidth = getSlideWidth();
-          if (!slideWidth) {
+          const slideStep = getSlideStep();
+          if (!slideStep) {
             return;
           }
           heroViewport.scrollTo({
-            left: (dotIndex + 1) * slideWidth,
+            left: (dotIndex + 1) * slideStep,
             behavior: "smooth",
           });
         };
@@ -2164,12 +2172,12 @@
           if (slideCount <= 1) {
             return;
           }
-          const slideWidth = getSlideWidth();
-          if (!slideWidth) {
+          const slideStep = getSlideStep();
+          if (!slideStep) {
             return;
           }
           heroViewport.scrollTo({
-            left: index * slideWidth,
+            left: index * slideStep,
             behavior: "smooth",
           });
         };
@@ -2185,9 +2193,9 @@
           startX = clientX;
           startScrollLeft = heroViewport.scrollLeft;
           dragStartTime = window.performance.now();
-          const slideWidth = getSlideWidth();
-          dragStartIndex = slideWidth
-            ? Math.round(startScrollLeft / slideWidth)
+          const slideStep = getSlideStep();
+          dragStartIndex = slideStep
+            ? Math.round(startScrollLeft / slideStep)
             : 0;
           heroViewport.classList.add("is-dragging");
           heroViewport.style.scrollSnapType = "none";
@@ -2201,8 +2209,8 @@
           heroViewport.classList.remove("is-dragging");
           heroViewport.style.scrollSnapType = "";
           window.requestAnimationFrame(() => {
-            const slideWidth = getSlideWidth();
-            const threshold = Math.min(40, Math.round(slideWidth * 0.08));
+            const slideStep = getSlideStep();
+            const threshold = Math.min(40, Math.round(slideStep * 0.08));
             const delta = heroViewport.scrollLeft - startScrollLeft;
             const deltaTime = Math.max(
               1,
@@ -2270,12 +2278,12 @@
           if (slideCount <= 1) {
             return;
           }
-          const slideWidth = getSlideWidth();
-          if (!slideWidth) {
+          const slideStep = getSlideStep();
+          if (!slideStep) {
             return;
           }
-          const totalWidth = slideWidth * slideCount;
-          const maxScroll = slideWidth * (slideCount + 1);
+          const totalWidth = slideStep * slideCount;
+          const maxScroll = slideStep * (slideCount + 1);
           if (heroViewport.scrollLeft <= 0) {
             heroViewport.scrollLeft += totalWidth;
             startScrollLeft += totalWidth;
@@ -2289,12 +2297,12 @@
           if (slideCount <= 1) {
             return;
           }
-          const slideWidth = getSlideWidth();
-          if (!slideWidth) {
+          const slideStep = getSlideStep();
+          if (!slideStep) {
             return;
           }
           const maxIndex = slideCount + 1;
-          const currentIndex = heroViewport.scrollLeft / slideWidth;
+          const currentIndex = heroViewport.scrollLeft / slideStep;
           if (currentIndex <= 0.5) {
             jumpToIndex(slideCount);
           } else if (currentIndex >= maxIndex - 0.5) {
@@ -2306,14 +2314,14 @@
           if (!heroDots.length) {
             return;
           }
-          const slideWidth = getSlideWidth();
-          if (!slideWidth) {
+          const slideStep = getSlideStep();
+          if (!slideStep) {
             return;
           }
           if (!slideCount) {
             return;
           }
-          let index = Math.round(heroViewport.scrollLeft / slideWidth) - 1;
+          let index = Math.round(heroViewport.scrollLeft / slideStep) - 1;
           if (index < 0) {
             index = slideCount - 1;
           }
@@ -2333,11 +2341,11 @@
             return;
           }
           autoTimer = window.setInterval(() => {
-            const slideWidth = getSlideWidth();
-            if (!slideWidth) {
+            const slideStep = getSlideStep();
+            if (!slideStep) {
               return;
             }
-            const index = Math.round(heroViewport.scrollLeft / slideWidth);
+            const index = Math.round(heroViewport.scrollLeft / slideStep);
             snapToIndex(index + 1);
           }, autoDelay);
         };

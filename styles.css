@@ -424,6 +424,14 @@ body.is-overlay-open {
   scroll-snap-align: start;
 }
 
+@media (min-width: 769px) {
+  .hero-slider__viewport {
+    padding: 0 32px;
+    scroll-padding: 0 32px;
+    gap: 32px;
+  }
+}
+
 .hero-slide img {
   width: 100%;
   height: auto;
