@@ -2455,8 +2455,11 @@
         casesTrack.addEventListener("pointerleave", stopDragging);
       }
 
-      const columnTrack = document.querySelector(".column__track");
-      if (columnTrack) {
+      const columnSlider = document.querySelector(".column__slider");
+      const columnTrack = columnSlider
+        ? columnSlider.querySelector(".column__track")
+        : null;
+      if (columnSlider && columnTrack) {
         const prevButton = document.querySelector(".column-nav__button--prev");
         const nextButton = document.querySelector(".column-nav__button--next");
         let isDragging = false;
@@ -2477,7 +2480,7 @@
           if (!step) {
             return;
           }
-          columnTrack.scrollBy({
+          columnSlider.scrollBy({
             left: step * direction,
             behavior: "smooth",
           });
@@ -2496,7 +2499,7 @@
           if (!cards.length) {
             return;
           }
-          const currentLeft = columnTrack.scrollLeft;
+          const currentLeft = columnSlider.scrollLeft;
           let closest = cards[0];
           let closestDistance = Infinity;
           cards.forEach((card) => {
@@ -2506,26 +2509,26 @@
               closest = card;
             }
           });
-          columnTrack.scrollTo({
+          columnSlider.scrollTo({
             left: closest.offsetLeft,
             behavior: "smooth",
           });
         };
 
-        columnTrack.addEventListener("pointerdown", (event) => {
+        columnSlider.addEventListener("pointerdown", (event) => {
           isDragging = true;
           columnTrack.classList.add("is-dragging");
           startX = event.clientX;
-          startScrollLeft = columnTrack.scrollLeft;
-          columnTrack.setPointerCapture(event.pointerId);
+          startScrollLeft = columnSlider.scrollLeft;
+          columnSlider.setPointerCapture(event.pointerId);
         });
 
-        columnTrack.addEventListener("pointermove", (event) => {
+        columnSlider.addEventListener("pointermove", (event) => {
           if (!isDragging) {
             return;
           }
           const deltaX = event.clientX - startX;
-          columnTrack.scrollLeft = startScrollLeft - deltaX;
+          columnSlider.scrollLeft = startScrollLeft - deltaX;
         });
 
         const stopDragging = (event) => {
@@ -2535,14 +2538,14 @@
           isDragging = false;
           columnTrack.classList.remove("is-dragging");
           if (event) {
-            columnTrack.releasePointerCapture(event.pointerId);
+            columnSlider.releasePointerCapture(event.pointerId);
           }
           snapToNearest();
         };
 
-        columnTrack.addEventListener("pointerup", stopDragging);
-        columnTrack.addEventListener("pointercancel", stopDragging);
-        columnTrack.addEventListener("pointerleave", stopDragging);
+        columnSlider.addEventListener("pointerup", stopDragging);
+        columnSlider.addEventListener("pointercancel", stopDragging);
+        columnSlider.addEventListener("pointerleave", stopDragging);
       }
 
       const noticeList = document.querySelector(".notice__list");
