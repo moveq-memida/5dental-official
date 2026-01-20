@@ -55,6 +55,12 @@
             <img class="cta-web__icon" src="assets/icons/arw-circle-line.svg" alt="" />
           </a>
         </div>
+        <div class="site-header__hamburger">
+          <button class="hamburger-button" type="button" aria-label="メニューを開く">
+            <span class="hamburger-button__icon" aria-hidden="true"></span>
+            <span class="hamburger-button__label">menu</span>
+          </button>
+        </div>
       </div>
       <div class="site-header__bottom">
         <nav class="site-nav" aria-label="グローバルナビゲーション">
@@ -357,32 +363,41 @@
       <section class="hero-slider" aria-label="メインビジュアル">
         <div class="hero-slider__viewport">
           <figure class="hero-slide">
+            <picture>
+              <source media="(max-width: 768px)" srcset="fv1-sp.webp" />
               <img
                 src="assets/images/hero/fv1.webp"
-                alt="削らなぁE��ミネート�Eニアのメインビジュアル"
+                alt="削らないラミネートべニアのメインビジュアル"
                 loading="eager"
                 fetchpriority="high"
               />
-            </figure>
-            <figure class="hero-slide">
+            </picture>
+          </figure>
+          <figure class="hero-slide">
+            <picture>
+              <source media="(max-width: 768px)" srcset="fv2-sp.webp" />
               <img
                 src="assets/images/hero/fv2.webp"
                 alt="アクセスしやすい立地を訴求したメインビジュアル"
                 loading="lazy"
               />
-            </figure>
-            <figure class="hero-slide">
+            </picture>
+          </figure>
+          <figure class="hero-slide">
+            <picture>
+              <source media="(max-width: 768px)" srcset="fv3-sp.webp" />
               <img
                 src="assets/images/hero/fv3.webp"
                 alt="施術症例を訴求したメインビジュアル"
                 loading="lazy"
               />
-            </figure>
+            </picture>
+          </figure>
         </div>
         <div class="hero-slider__dots">
-          <button class="hero-dot is-active" type="button" aria-label="スライチE"></button>
-          <button class="hero-dot" type="button" aria-label="スライチE"></button>
-          <button class="hero-dot" type="button" aria-label="スライチE"></button>
+          <button class="hero-dot is-active" type="button" aria-label="スライド1"></button>
+          <button class="hero-dot" type="button" aria-label="スライド2"></button>
+          <button class="hero-dot" type="button" aria-label="スライド3"></button>
         </div>
       </section>
       <section class="popular-menu" aria-labelledby="popular-menu-title">
@@ -2651,3 +2666,6 @@
     </script>
   </body>
 </html>
+
+
+

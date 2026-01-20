@@ -14,6 +14,9 @@
   -ms-overflow-style: none;
   cursor: grab;
   user-select: none;
+  padding: 0 64px;
+  scroll-padding: 0 64px;
+  gap: 32px;
 }
 
 .hero-slider__viewport::-webkit-scrollbar {
@@ -30,12 +33,9 @@
   scroll-snap-align: start;
 }
 
-@media (min-width: 769px) {
-  .hero-slider__viewport {
-    padding: 0 64px;
-    scroll-padding: 0 64px;
-    gap: 32px;
-  }
+.hero-slide picture {
+  display: block;
+  width: 100%;
 }
 
 .hero-slide img {
@@ -90,4 +90,3 @@
 .hero-dot.is-active::after {
   opacity: 1;
 }
-
