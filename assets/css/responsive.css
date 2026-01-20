@@ -73,68 +73,132 @@
   }
 
   .popular-menu {
-    margin-top: 56px;
-    padding-bottom: 64px;
+    max-width: 400px;
+    margin: 56px auto 0;
+    padding: 0 24px 72px;
   }
 
   .popular-menu__grid {
-    grid-template-columns: minmax(0, 548px);
+    grid-template-columns: minmax(0, 1fr);
+    gap: 16px;
   }
 
   .popular-card {
+    width: 100%;
+    max-width: 352px;
     margin: 0 auto;
   }
 
+  .popular-menu__title {
+    height: 44px;
+  }
+
   .popular-menu__eyebrow {
-    font-size: 72px;
+    font-size: 88px;
   }
 
   .popular-menu__heading {
+    margin-top: 4px;
     font-size: 28px;
   }
 
   .aesthetic-intro {
-    padding: 56px 16px 72px;
+    padding: 64px 24px 72px;
   }
 
   .aesthetic-intro__content {
+    max-width: 352px;
     grid-template-columns: minmax(0, 1fr);
+    gap: 24px;
   }
 
   .aesthetic-intro__heading {
-    font-size: 20px;
-    text-align: center;
+    font-size: 18px;
+    text-align: left;
   }
 
   .aesthetic-intro__body {
-    max-width: 680px;
-    margin: 0 auto;
-    font-size: 15px;
+    font-size: 14px;
+  }
+
+  .aesthetic-intro__emblems {
+    max-width: 352px;
+    margin-top: 32px;
+    flex-direction: column;
+    gap: 24px;
   }
 
   .aesthetic-intro__emblem {
-    height: 140px;
-  }
-
-  .aesthetic-intro__emblem--laurel {
     height: 160px;
   }
 
+  .aesthetic-intro__emblem--laurel {
+    height: 180px;
+  }
+
+  .aesthetic-intro__emblem--access {
+    height: 140px;
+  }
+
   .troubles {
-    margin-top: 48px;
-    padding: 56px 24px;
+    width: min(368px, 100%);
+    margin: 56px auto 0;
+    padding: 64px 8px 72px;
+  }
+
+  .troubles__title {
+    height: 88px;
   }
 
   .troubles__grid {
-    grid-template-columns: minmax(0, 476px);
+    grid-template-columns: repeat(2, minmax(0, 164px));
+    gap: 8px;
   }
 
   .troubles__eyebrow {
-    font-size: 72px;
+    font-size: 88px;
+    top: 30px;
   }
 
   .troubles__heading {
+    max-width: 220px;
+    margin: 0 auto;
     font-size: 28px;
+    line-height: 1.35;
+  }
+
+  .trouble-card {
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    padding: 16px 8px 12px;
+    min-height: 188px;
+    text-align: center;
+  }
+
+  .trouble-card__icon {
+    width: 72px;
+    height: 72px;
+  }
+
+  .trouble-card__icon img {
+    width: 56px;
+  }
+
+  .trouble-card__body {
+    align-items: center;
+  }
+
+  .trouble-card__title {
+    font-size: 15px;
+  }
+
+  .trouble-card__text {
+    display: none;
+  }
+
+  .trouble-card__arrow {
+    margin: auto 0 0;
   }
 
   .cases {
@@ -179,28 +243,6 @@
   }
 
   .case-card__more {
-    font-size: 14px;
-  }
-
-  .trouble-card {
-    padding: 14px 16px;
-    gap: 12px;
-  }
-
-  .trouble-card__icon {
-    width: 64px;
-    height: 64px;
-  }
-
-  .trouble-card__icon img {
-    width: 56px;
-  }
-
-  .trouble-card__title {
-    font-size: 18px;
-  }
-
-  .trouble-card__text {
     font-size: 14px;
   }
 
