@@ -1,0 +1,33 @@
+:root {
+  color-scheme: light;
+  --color-white: #ffffff;
+  --color-primary: #595a5d;
+  --color-primary-strong: #4d4e50;
+  --color-secondary: #787b83;
+  --color-accent: #b5a27c;
+  --shadow-header: 0 8px 8px rgba(116, 109, 96, 0.1);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Noto Sans JP", sans-serif;
+  color: var(--color-primary);
+  background: #f7f6f3;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
