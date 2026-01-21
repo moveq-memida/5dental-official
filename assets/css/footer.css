@@ -277,6 +277,24 @@
   max-width: 268px;
 }
 
+details.footer-menu--accordion > summary {
+  list-style: none;
+  cursor: default;
+  pointer-events: none;
+}
+
+details.footer-menu--accordion > summary::-webkit-details-marker {
+  display: none;
+}
+
+details.footer-menu--accordion > .footer-menu__line {
+  display: block;
+}
+
+details.footer-menu--accordion > .footer-menu__list {
+  display: flex;
+}
+
 .footer-menu__title {
   display: flex;
   align-items: center;
@@ -311,7 +329,7 @@
 .footer-menu__list {
   list-style: none;
   margin: 0;
-  padding: 0;
+  padding: 24px 0 0;
   display: flex;
   flex-direction: column;
   gap: 16px;
@@ -402,4 +420,3 @@
   letter-spacing: 0.05em;
   padding: 10px 0;
 }
-

@@ -1777,15 +1777,15 @@
             </div>
           </div>
           <div class="footer-menus">
-            <div class="footer-menu">
-              <div class="footer-menu__title">
+            <details class="footer-menu footer-menu--accordion" open>
+              <summary class="footer-menu__title">
                 <p>削らないラミネートべニア</p>
                 <img
                   src="assets/icons/footer/footer-parent-arrow.svg"
                   alt=""
                   aria-hidden="true"
                 />
-              </div>
+              </summary>
               <span class="footer-menu__line" aria-hidden="true">
                 <img src="assets/icons/footer/footer-parent-line.svg" alt="" />
               </span>
@@ -1799,16 +1799,16 @@
                   <a href="#">施術症例紹介</a>
                 </li>
               </ul>
-            </div>
-            <div class="footer-menu">
-              <div class="footer-menu__title">
+            </details>
+            <details class="footer-menu footer-menu--accordion" open>
+              <summary class="footer-menu__title">
                 <p>審美歯科</p>
                 <img
                   src="assets/icons/footer/footer-parent-arrow.svg"
                   alt=""
                   aria-hidden="true"
                 />
-              </div>
+              </summary>
               <span class="footer-menu__line" aria-hidden="true">
                 <img src="assets/icons/footer/footer-parent-line.svg" alt="" />
               </span>
@@ -1841,16 +1841,16 @@
                   <a href="#">ダイレクトボンディング</a>
                 </li>
               </ul>
-            </div>
-            <div class="footer-menu">
-              <div class="footer-menu__title">
+            </details>
+            <details class="footer-menu footer-menu--accordion" open>
+              <summary class="footer-menu__title">
                 <p>その他の診療メニュー</p>
                 <img
                   src="assets/icons/footer/footer-parent-arrow.svg"
                   alt=""
                   aria-hidden="true"
                 />
-              </div>
+              </summary>
               <span class="footer-menu__line" aria-hidden="true">
                 <img src="assets/icons/footer/footer-parent-line.svg" alt="" />
               </span>
@@ -1888,16 +1888,16 @@
                   <a href="#">噛み合わせ・顎関節症</a>
                 </li>
               </ul>
-            </div>
-            <div class="footer-menu">
-              <div class="footer-menu__title">
+            </details>
+            <details class="footer-menu footer-menu--accordion" open>
+              <summary class="footer-menu__title">
                 <p>お悩みから治療症例を探す</p>
                 <img
                   src="assets/icons/footer/footer-parent-arrow.svg"
                   alt=""
                   aria-hidden="true"
                 />
-              </div>
+              </summary>
               <span class="footer-menu__line" aria-hidden="true">
                 <img src="assets/icons/footer/footer-parent-line.svg" alt="" />
               </span>
@@ -1939,7 +1939,7 @@
                   <a href="#">歯を大きくしたい</a>
                 </li>
               </ul>
-            </div>
+            </details>
           </div>
         </div>
       </div>
@@ -2140,6 +2140,25 @@
         });
 
         window.addEventListener("load", setHeaderHeight);
+      }
+
+      const footerAccordions = Array.from(
+        document.querySelectorAll(".footer-menu--accordion")
+      );
+      const syncFooterAccordions = () => {
+        const isMobile = window.innerWidth <= 768;
+        footerAccordions.forEach((accordion) => {
+          if (isMobile) {
+            accordion.removeAttribute("open");
+          } else {
+            accordion.setAttribute("open", "");
+          }
+        });
+      };
+
+      if (footerAccordions.length) {
+        syncFooterAccordions();
+        window.addEventListener("resize", syncFooterAccordions);
       }
 
       const heroViewport = document.querySelector(".hero-slider__viewport");
