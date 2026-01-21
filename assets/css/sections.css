@@ -312,6 +312,7 @@
   font-size: 36px;
   letter-spacing: 0.1em;
   color: var(--color-primary);
+  position: relative;
 }
 
 .cases__viewport {
@@ -355,6 +356,7 @@
   font-size: 22px;
   letter-spacing: 0.05em;
   color: #af935e;
+  margin-bottom: 0;
 }
 
 .case-card__labels {
@@ -432,6 +434,11 @@
   letter-spacing: 0.02em;
   color: var(--color-primary);
   padding-right: 12px;
+  scrollbar-width: none;
+}
+
+.case-card__text::-webkit-scrollbar {
+  display: none;
 }
 
 .case-card__text p {
@@ -839,18 +846,18 @@
   z-index: 2;
 }
 
-.doctor__layout {
-  position: relative;
-  display: grid;
-  grid-template-columns: minmax(0, 600px) minmax(0, 1fr);
-  gap: 0;
-  align-items: start;
-  z-index: 1;
-  max-width: 1120px;
-  margin-left: 160px;
-  margin-right: 0;
-  padding: 0 16px;
-}
+  .doctor__layout {
+    position: relative;
+    display: grid;
+    grid-template-columns: minmax(0, 600px) minmax(0, 1fr);
+    gap: 0;
+    align-items: start;
+    z-index: 1;
+    max-width: 1120px;
+    margin-left: 160px;
+    margin-right: 0;
+    padding: 0 16px;
+  }
 
 .doctor__media {
   position: relative;
@@ -906,15 +913,15 @@
   color: transparent;
 }
 
-.doctor__content {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  margin-left: -48px;
-  max-width: 420px;
-  margin-top: 64px;
-  z-index: 2;
-}
+  .doctor__content {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-left: clamp(-200px, calc(100vw - 1180px), -48px);
+    max-width: 420px;
+    margin-top: 64px;
+    z-index: 2;
+  }
 
 .doctor__title {
   position: relative;
@@ -927,7 +934,7 @@
   left: 0;
   margin: 0;
   font-family: "Pinyon Script", cursive;
-  font-size: 104px;
+  font-size: clamp(64px, 8vw, 104px);
   line-height: 0.5;
   opacity: 0.2;
   color: #7e7f82;
@@ -1414,7 +1421,7 @@
 .information {
   position: relative;
   background: var(--color-white);
-  padding: 120px 0 140px;
+  padding: 120px 16px 140px;
 }
 
 .information__eyebrow {
@@ -1441,7 +1448,7 @@
   padding: 80px;
   min-height: 450px;
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 480px;
+  grid-template-columns: minmax(0, 1fr) minmax(0, clamp(320px, 42vw, 480px));
   gap: 64px;
   align-items: start;
   color: var(--color-white);
@@ -1454,6 +1461,7 @@
   flex-direction: column;
   gap: 20px;
   font-family: "Zen Old Mincho", serif;
+  min-width: 0;
 }
 
 .information__org {
@@ -1492,11 +1500,14 @@
   flex-direction: column;
   gap: 16px;
   align-items: flex-end;
+  min-width: 0;
 }
 
 .information__map {
-  width: 480px;
-  height: 250px;
+  width: 100%;
+  max-width: 480px;
+  height: auto;
+  aspect-ratio: 480 / 250;
   background: rgba(120, 123, 131, 0.5);
   padding: 16px;
   box-shadow: 10px 10px 10px rgba(122, 134, 158, 0.03);

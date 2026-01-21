@@ -7,6 +7,7 @@
       content="width=device-width, initial-scale=1, viewport-fit=cover"
     />
     <title>5DENTAL TOKYO GINZA</title>
+    <link rel="icon" href="favicon.png" type="image/png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -21,7 +22,7 @@
     <link rel="stylesheet" href="assets/css/footer.css" />
     <link rel="stylesheet" href="assets/css/responsive.css" />
   </head>
-  <body
+  <body>
     <header class="site-header">
       <div class="site-header__top">
         <div class="site-header__brand">
@@ -2547,6 +2548,89 @@
         casesTrack.addEventListener("pointercancel", stopDragging);
         casesTrack.addEventListener("pointerleave", stopDragging);
       }
+
+      const initCaseCardScrollbars = () => {
+        const caseCards = document.querySelectorAll(".case-card");
+        caseCards.forEach((card) => {
+          const text = card.querySelector(".case-card__text");
+          const scrollbar = card.querySelector(".case-card__scrollbar");
+          const thumb = scrollbar ? scrollbar.querySelector("span") : null;
+          if (!text || !scrollbar || !thumb) {
+            return;
+          }
+
+          const updateThumb = () => {
+            const maxScroll = text.scrollHeight - text.clientHeight;
+            const barHeight = scrollbar.clientHeight;
+            if (maxScroll <= 0 || barHeight <= 0) {
+              thumb.style.height = `${barHeight}px`;
+              thumb.style.top = "0px";
+              return;
+            }
+            const thumbHeight = Math.max(
+              24,
+              Math.round((text.clientHeight / text.scrollHeight) * barHeight)
+            );
+            const maxTop = barHeight - thumbHeight;
+            const ratio = text.scrollTop / maxScroll;
+            thumb.style.height = `${thumbHeight}px`;
+            thumb.style.top = `${Math.round(maxTop * ratio)}px`;
+          };
+
+          updateThumb();
+          text.addEventListener("scroll", updateThumb);
+          window.addEventListener("resize", updateThumb);
+
+          let isDraggingThumb = false;
+          let startY = 0;
+          let startTop = 0;
+
+          const onPointerMove = (event) => {
+            if (!isDraggingThumb) {
+              return;
+            }
+            const barHeight = scrollbar.clientHeight;
+            const thumbHeight = thumb.clientHeight;
+            const maxTop = barHeight - thumbHeight;
+            const delta = event.clientY - startY;
+            const nextTop = Math.min(Math.max(startTop + delta, 0), maxTop);
+            thumb.style.top = `${nextTop}px`;
+            const maxScroll = text.scrollHeight - text.clientHeight;
+            text.scrollTop = maxTop ? (nextTop / maxTop) * maxScroll : 0;
+          };
+
+          const stopThumbDrag = () => {
+            if (!isDraggingThumb) {
+              return;
+            }
+            isDraggingThumb = false;
+            document.removeEventListener("pointermove", onPointerMove);
+            document.removeEventListener("pointerup", stopThumbDrag);
+          };
+
+          scrollbar.addEventListener("pointerdown", (event) => {
+            if (event.button !== 0) {
+              return;
+            }
+            const barRect = scrollbar.getBoundingClientRect();
+            const thumbHeight = thumb.clientHeight;
+            const maxTop = scrollbar.clientHeight - thumbHeight;
+            const clickOffset = event.clientY - barRect.top - thumbHeight / 2;
+            const nextTop = Math.min(Math.max(clickOffset, 0), maxTop);
+            thumb.style.top = `${nextTop}px`;
+            const maxScroll = text.scrollHeight - text.clientHeight;
+            text.scrollTop = maxTop ? (nextTop / maxTop) * maxScroll : 0;
+
+            isDraggingThumb = true;
+            startY = event.clientY;
+            startTop = nextTop;
+            document.addEventListener("pointermove", onPointerMove);
+            document.addEventListener("pointerup", stopThumbDrag);
+          });
+        });
+      };
+
+      initCaseCardScrollbars();
 
       const columnSlider = document.querySelector(".column__slider");
       const columnTrack = columnSlider
