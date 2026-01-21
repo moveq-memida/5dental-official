@@ -180,7 +180,7 @@
   margin: 64px auto 0;
   padding: 96px 80px;
   background: var(--color-white);
-  box-shadow: 10px 10px 10px rgba(122, 134, 158, 0.06);
+  box-shadow: none;
 }
 
 .troubles__title {
@@ -326,6 +326,52 @@
 
 .cases__viewport::-webkit-scrollbar {
   display: none;
+}
+
+.cases__dots {
+  margin-top: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+}
+
+.cases__arrow {
+  width: 18px;
+  height: 32px;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.cases__arrow::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 14px;
+  height: 14px;
+  border-right: 3px solid #ad8d43;
+  border-bottom: 3px solid #ad8d43;
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.cases__arrow--prev::before {
+  transform: translate(-50%, -50%) rotate(135deg);
+}
+
+.case-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #ffffff;
+  cursor: pointer;
+}
+
+.case-dot.is-active {
+  background: #787b83;
 }
 
 .cases__track {

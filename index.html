@@ -974,6 +974,17 @@
             </article>
           </div>
         </div>
+        <div class="cases__dots" aria-hidden="true">
+          <span class="cases__arrow cases__arrow--prev"></span>
+          <span class="case-dot"></span>
+          <span class="case-dot"></span>
+          <span class="case-dot is-active"></span>
+          <span class="case-dot"></span>
+          <span class="case-dot"></span>
+          <span class="case-dot"></span>
+          <span class="case-dot"></span>
+          <span class="cases__arrow cases__arrow--next"></span>
+        </div>
       </section>
       <section class="service-menu" aria-labelledby="service-menu-title">
         <div class="service-menu__inner">
@@ -2484,22 +2495,79 @@
         startAuto();
       }
 
-      const casesTrack = document.querySelector(".cases__track");
-      if (casesTrack) {
+      const casesViewport = document.querySelector(".cases__viewport");
+      const casesTrack = casesViewport
+        ? casesViewport.querySelector(".cases__track")
+        : null;
+      const casesDots = Array.from(
+        document.querySelectorAll(".cases__dots .case-dot")
+      );
+      const casesPrev = document.querySelector(".cases__arrow--prev");
+      const casesNext = document.querySelector(".cases__arrow--next");
+
+      if (casesViewport && casesTrack) {
         let isDragging = false;
         let startX = 0;
         let startScrollLeft = 0;
+        let rafId = 0;
+        const cards = Array.from(casesTrack.querySelectorAll(".case-card"));
 
-        const getCards = () =>
-          Array.from(casesTrack.querySelectorAll(".case-card"));
+        const getStep = () => {
+          const card = casesTrack.querySelector(".case-card");
+          if (!card) {
+            return 0;
+          }
+          const gap = parseFloat(getComputedStyle(casesTrack).gap) || 0;
+          return card.offsetWidth + gap;
+        };
+
+        const updateActiveDot = () => {
+          if (!casesDots.length) {
+            return;
+          }
+          const maxIndex = casesDots.length - 1;
+          let index = 0;
+          if (casesDots.length === cards.length) {
+            const trackWidth = casesViewport.clientWidth;
+            const currentCenter = casesViewport.scrollLeft + trackWidth / 2;
+            let closestIndex = 0;
+            let closestDistance = Infinity;
+            cards.forEach((card, cardIndex) => {
+              const cardCenter = card.offsetLeft + card.offsetWidth / 2;
+              const distance = Math.abs(currentCenter - cardCenter);
+              if (distance < closestDistance) {
+                closestDistance = distance;
+                closestIndex = cardIndex;
+              }
+            });
+            index = closestIndex;
+          } else {
+            const maxScroll = casesViewport.scrollWidth - casesViewport.clientWidth;
+            index = maxScroll
+              ? Math.round((casesViewport.scrollLeft / maxScroll) * maxIndex)
+              : 0;
+          }
+          casesDots.forEach((dot, dotIndex) => {
+            dot.classList.toggle("is-active", dotIndex === index);
+          });
+        };
+
+        const scheduleUpdate = () => {
+          if (rafId) {
+            return;
+          }
+          rafId = window.requestAnimationFrame(() => {
+            rafId = 0;
+            updateActiveDot();
+          });
+        };
 
         const snapToNearest = () => {
-          const cards = getCards();
           if (!cards.length) {
             return;
           }
-          const trackWidth = casesTrack.clientWidth;
-          const currentCenter = casesTrack.scrollLeft + trackWidth / 2;
+          const trackWidth = casesViewport.clientWidth;
+          const currentCenter = casesViewport.scrollLeft + trackWidth / 2;
           let closest = cards[0];
           let closestDistance = Infinity;
           cards.forEach((card) => {
@@ -2510,26 +2578,75 @@
               closest = card;
             }
           });
-          casesTrack.scrollTo({
+          casesViewport.scrollTo({
             left: closest.offsetLeft + closest.offsetWidth / 2 - trackWidth / 2,
             behavior: "smooth",
           });
         };
 
-        casesTrack.addEventListener("pointerdown", (event) => {
+        const scrollToDot = (index) => {
+          if (!casesDots.length) {
+            return;
+          }
+          const maxIndex = casesDots.length - 1;
+          if (casesDots.length === cards.length) {
+            const card = cards[index];
+            if (!card) {
+              return;
+            }
+            casesViewport.scrollTo({
+              left: card.offsetLeft + card.offsetWidth / 2 - casesViewport.clientWidth / 2,
+              behavior: "smooth",
+            });
+            return;
+          }
+          const maxScroll = casesViewport.scrollWidth - casesViewport.clientWidth;
+          casesViewport.scrollTo({
+            left: maxIndex ? (maxScroll * index) / maxIndex : 0,
+            behavior: "smooth",
+          });
+        };
+
+        casesDots.forEach((dot, dotIndex) => {
+          dot.addEventListener("click", () => scrollToDot(dotIndex));
+        });
+
+        if (casesPrev) {
+          casesPrev.addEventListener("click", () => {
+            const step = getStep();
+            if (!step) {
+              return;
+            }
+            casesViewport.scrollBy({ left: -step, behavior: "smooth" });
+          });
+        }
+
+        if (casesNext) {
+          casesNext.addEventListener("click", () => {
+            const step = getStep();
+            if (!step) {
+              return;
+            }
+            casesViewport.scrollBy({ left: step, behavior: "smooth" });
+          });
+        }
+
+        casesViewport.addEventListener("scroll", scheduleUpdate);
+
+        casesViewport.addEventListener("pointerdown", (event) => {
           isDragging = true;
           casesTrack.classList.add("is-dragging");
           startX = event.clientX;
-          startScrollLeft = casesTrack.scrollLeft;
-          casesTrack.setPointerCapture(event.pointerId);
+          startScrollLeft = casesViewport.scrollLeft;
+          casesViewport.setPointerCapture(event.pointerId);
         });
 
-        casesTrack.addEventListener("pointermove", (event) => {
+        casesViewport.addEventListener("pointermove", (event) => {
           if (!isDragging) {
             return;
           }
           const deltaX = event.clientX - startX;
-          casesTrack.scrollLeft = startScrollLeft - deltaX;
+          casesViewport.scrollLeft = startScrollLeft - deltaX;
         });
 
         const stopDragging = (event) => {
@@ -2539,14 +2656,16 @@
           isDragging = false;
           casesTrack.classList.remove("is-dragging");
           if (event) {
-            casesTrack.releasePointerCapture(event.pointerId);
+            casesViewport.releasePointerCapture(event.pointerId);
           }
           snapToNearest();
         };
 
-        casesTrack.addEventListener("pointerup", stopDragging);
-        casesTrack.addEventListener("pointercancel", stopDragging);
-        casesTrack.addEventListener("pointerleave", stopDragging);
+        casesViewport.addEventListener("pointerup", stopDragging);
+        casesViewport.addEventListener("pointercancel", stopDragging);
+        casesViewport.addEventListener("pointerleave", stopDragging);
+        window.addEventListener("resize", updateActiveDot);
+        updateActiveDot();
       }
 
       const initCaseCardScrollbars = () => {
