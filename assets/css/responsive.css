@@ -141,9 +141,9 @@
   }
 
   .troubles {
-    width: min(368px, 100%);
+    width: 100%;
     margin: 56px auto 0;
-    padding: 64px 8px 72px;
+    padding: 64px 0 72px;
   }
 
   .troubles__title {
@@ -151,7 +151,7 @@
   }
 
   .troubles__grid {
-    grid-template-columns: repeat(2, minmax(0, 164px));
+    grid-template-columns: repeat(2, minmax(0, 100%));
     gap: 8px;
   }
 
@@ -171,8 +171,8 @@
     flex-direction: column;
     align-items: center;
     gap: 8px;
-    padding: 16px 8px 12px;
-    min-height: 188px;
+    padding: 16px 8px;
+    min-height: 160px;
     text-align: center;
   }
 
@@ -286,7 +286,7 @@
   }
 
   .features__inner {
-    max-width: 352px;
+    max-width: 100%;
     margin: 0 auto;
     padding: 0;
     gap: 32px;
@@ -605,7 +605,7 @@
   .notice__inner {
     grid-template-columns: minmax(0, 1fr);
     gap: 32px;
-    max-width: 352px;
+    max-width: 100%;
     margin: 0 auto;
     padding: 0;
   }

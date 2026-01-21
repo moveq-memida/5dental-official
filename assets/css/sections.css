@@ -602,8 +602,8 @@
 }
 
 .service-button__arrow {
-  width: 9px;
-  height: 9px;
+  width: 24px;
+  height: 24px;
   margin-left: auto;
   position: relative;
   flex-shrink: 0;
@@ -612,13 +612,9 @@
 .service-button__arrow::before {
   content: "";
   position: absolute;
-  top: 1px;
-  right: 1px;
-  width: 6px;
-  height: 6px;
-  border-top: 2px solid #ffffff;
-  border-right: 2px solid #ffffff;
-  transform: rotate(45deg);
+  inset: 0;
+  background: url("../icons/notice/notice-arrow-circle.svg") center / contain
+    no-repeat;
 }
 
 .service-feature {
