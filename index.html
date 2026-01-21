@@ -21,7 +21,7 @@
     <link rel="stylesheet" href="assets/css/footer.css" />
     <link rel="stylesheet" href="assets/css/responsive.css" />
   </head>
-  <body>
+  <body
     <header class="site-header">
       <div class="site-header__top">
         <div class="site-header__brand">
@@ -1209,27 +1209,42 @@
             <p class="column__eyebrow">Column</p>
             <h2 class="column__heading" id="column-title">コラム</h2>
           </div>
-          <div class="column__controls">
-            <div class="column__categories" aria-label="コラムカテゴリ">
-              <button class="column-category is-active" type="button">すべて</button>
-              <button class="column-category" type="button">ラミネートベニア</button>
-              <button class="column-category" type="button">審美歯科</button>
-              <button class="column-category" type="button">インプラント</button>
-              <button class="column-category" type="button">ホワイトニング</button>
-              <button class="column-category column-category--more" type="button">
-                <span>その他のカテゴリー</span>
-                <img
-                  src="assets/icons/column/column-category-more.svg"
-                  alt=""
-                  aria-hidden="true"
-                />
-              </button>
-            </div>
-            <div class="column__nav" aria-label="スライド操作">
-              <button
-                class="column-nav__button column-nav__button--prev"
-                type="button"
-                aria-label="前のコラム"
+            <div class="column__controls">
+              <div class="column__categories" aria-label="コラムカテゴリ">
+                <button class="column-category is-active" type="button">すべて</button>
+                <button class="column-category" type="button">ラミネートベニア</button>
+                <button class="column-category" type="button">審美歯科</button>
+                <button class="column-category" type="button">インプラント</button>
+                <button class="column-category" type="button">ホワイトニング</button>
+                <button class="column-category column-category--more" type="button">
+                  <span>その他のカテゴリー</span>
+                  <img
+                    src="assets/icons/column/column-category-more.svg"
+                    alt=""
+                    aria-hidden="true"
+                  />
+                </button>
+              </div>
+              <div class="column__select">
+                <select class="column__select-input" aria-label="カテゴリーを選択">
+                  <option>すべて</option>
+                  <option>ラミネートベニア</option>
+                  <option>審美歯科</option>
+                  <option>インプラント</option>
+                  <option>ホワイトニング</option>
+                  <option>予防</option>
+                  <option>口臭</option>
+                  <option>歯のマニキュア(ホワイトコート)</option>
+                  <option>歯科矯正</option>
+                  <option>歯科設備・材料</option>
+                  <option>その他</option>
+                </select>
+              </div>
+              <div class="column__nav" aria-label="スライド操作">
+                <button
+                  class="column-nav__button column-nav__button--prev"
+                  type="button"
+                  aria-label="前のコラム"
               >
                 <img
                   class="column-nav__circle"

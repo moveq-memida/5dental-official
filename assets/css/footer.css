@@ -374,7 +374,6 @@ details.footer-menu--accordion > .footer-menu__list {
 
 .footer-links__row {
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
   gap: 32px;
 }

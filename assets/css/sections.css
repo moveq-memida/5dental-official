@@ -1048,6 +1048,10 @@
   flex-wrap: wrap;
 }
 
+.column__select {
+  display: none;
+}
+
 .column-category {
   border: none;
   background: rgba(120, 123, 131, 0.15);
@@ -1524,4 +1528,3 @@
   width: 24px;
   height: 24px;
 }
-
