@@ -1,7 +1,8 @@
 .site-header {
   background: var(--color-white);
   box-shadow: var(--shadow-header);
-  position: relative;
+  position: sticky;
+  top: 0;
   z-index: 200;
 }
 
@@ -188,6 +189,35 @@ button.site-nav__item {
   background: #ffffff;
   transform: translateX(-50%);
   box-shadow: 0 6px 0 #ffffff, 0 12px 0 #ffffff;
+}
+
+.hamburger-button__icon::before,
+.hamburger-button__icon::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 20px;
+  height: 1.5px;
+  background: #ffffff;
+  opacity: 0;
+  transform: translateY(-50%);
+}
+
+.hamburger-button.is-open .hamburger-button__icon {
+  top: 20px;
+  background: transparent;
+  box-shadow: none;
+}
+
+.hamburger-button.is-open .hamburger-button__icon::before {
+  opacity: 1;
+  transform: translateY(-50%) rotate(45deg);
+}
+
+.hamburger-button.is-open .hamburger-button__icon::after {
+  opacity: 1;
+  transform: translateY(-50%) rotate(-45deg);
 }
 
 .hamburger-button__label {

@@ -1461,14 +1461,6 @@
                 <button class="column-category" type="button">審美歯科</button>
                 <button class="column-category" type="button">インプラント</button>
                 <button class="column-category" type="button">ホワイトニング</button>
-                <button class="column-category column-category--more" type="button">
-                  <span>その他のカテゴリー</span>
-                  <img
-                    src="assets/icons/column/column-category-more.svg"
-                    alt=""
-                    aria-hidden="true"
-                  />
-                </button>
               </div>
               <div class="column__select">
                 <select class="column__select-input" aria-label="カテゴリーを選択">
@@ -2237,6 +2229,9 @@
       const megaTrigger = document.querySelector("[data-mega-trigger]");
       const aboutTrigger = document.querySelector("[data-about-trigger]");
       const mobileTrigger = document.querySelector("[data-mobile-trigger]");
+      const mobileLabel = mobileTrigger
+        ? mobileTrigger.querySelector(".hamburger-button__label")
+        : null;
       const megaMenu = document.querySelector("#mega-menu");
       const aboutMenu = document.querySelector("#about-menu");
       const mobileMenu = document.querySelector("#mobile-menu");
@@ -2313,6 +2308,9 @@
         mobileTrigger.setAttribute("aria-expanded", "true");
         mobileTrigger.setAttribute("aria-label", "メニューを閉じる");
         mobileTrigger.classList.add("is-open");
+        if (mobileLabel) {
+          mobileLabel.textContent = "close";
+        }
         updateOverlayState();
       };
 
@@ -2325,6 +2323,9 @@
         mobileTrigger.setAttribute("aria-expanded", "false");
         mobileTrigger.setAttribute("aria-label", "メニューを開く");
         mobileTrigger.classList.remove("is-open");
+        if (mobileLabel) {
+          mobileLabel.textContent = "menu";
+        }
         updateOverlayState();
       };
 
