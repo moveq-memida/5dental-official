@@ -370,6 +370,7 @@ details.footer-menu--accordion > .footer-menu__list {
   flex-direction: column;
   gap: 24px;
   align-items: center;
+  font-weight: 500;
 }
 
 .footer-links__row {
