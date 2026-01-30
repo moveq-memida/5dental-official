@@ -1613,6 +1613,248 @@ body {
 }
 
 /* ==========================================================================
+   Doctor Page - 院長紹介
+   ========================================================================== */
+.doctor-intro {
+  padding: 104px 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 56px;
+  max-width: var(--container-xl);
+  margin: 0 auto;
+}
+
+.doctor-awards {
+  padding: 56px 80px 104px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 56px;
+  max-width: var(--container-xl);
+  margin: 0 auto;
+}
+
+/* Doctor Block */
+.doctor-block {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  width: 100%;
+  max-width: var(--container-lg);
+}
+
+.doctor-block__heading {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 6px 16px;
+  margin: 0;
+  background: var(--color-gold-light);
+  font-family: "Zen Old Mincho", serif;
+  font-weight: 700;
+  font-size: 26px;
+  line-height: 1.35;
+  letter-spacing: 1.3px;
+  color: #fff;
+}
+
+/* Doctor Profile (2-column) */
+.doctor-profile {
+  display: flex;
+  gap: 32px;
+  align-items: flex-start;
+}
+
+.doctor-profile__image {
+  flex-shrink: 0;
+  width: 48%;
+  max-width: 500px;
+  aspect-ratio: 500 / 333;
+  overflow: hidden;
+}
+
+.doctor-profile__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.doctor-profile__body {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex: 1;
+}
+
+.doctor-profile__body p {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.6;
+  letter-spacing: 0.32px;
+  color: var(--color-text);
+}
+
+/* Doctor Section */
+.doctor-section {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.doctor-section__subheading {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.doctor-section__bar {
+  display: block;
+  width: 2px;
+  align-self: stretch;
+  background: var(--color-gold);
+}
+
+.doctor-section__title {
+  margin: 0;
+  font-family: "Zen Old Mincho", serif;
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 1.35;
+  letter-spacing: 1.1px;
+  color: var(--color-gold);
+}
+
+/* Doctor History */
+.doctor-history {
+  width: 100%;
+  padding: 40px;
+  background: #fff;
+}
+
+.doctor-history--gray {
+  background: var(--color-bg-gray);
+}
+
+.doctor-history__list {
+  margin: 0;
+  padding-left: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.doctor-history__list li {
+  font-size: 16px;
+  line-height: 1.6;
+  letter-spacing: 0.32px;
+  color: var(--color-text);
+}
+
+.doctor-history__list--mixed li strong {
+  font-weight: 700;
+}
+
+.doctor-history__list .marker {
+  background: linear-gradient(transparent 60%, #ebe8d9 60%);
+}
+
+/* Doctor Overseas (2-column with smaller image) */
+.doctor-overseas {
+  display: flex;
+  gap: 32px;
+  align-items: flex-start;
+}
+
+.doctor-overseas__image {
+  flex-shrink: 0;
+  width: 300px;
+  height: 200px;
+  overflow: hidden;
+}
+
+.doctor-overseas__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.doctor-overseas__body {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex: 1;
+}
+
+.doctor-overseas__body p {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.6;
+  letter-spacing: 0.32px;
+  color: var(--color-text);
+}
+
+.doctor-overseas__body strong {
+  font-weight: 700;
+}
+
+.doctor-overseas__body .marker {
+  background: linear-gradient(transparent 60%, #ebe8d9 60%);
+}
+
+/* Doctor Table */
+.doctor-table {
+  width: 100%;
+  border: 1px solid #cdc6ba;
+  background: #fff;
+}
+
+.doctor-table__row {
+  display: flex;
+  align-items: stretch;
+  border-bottom: 1px solid #cdc6ba;
+}
+
+.doctor-table__row:last-child {
+  border-bottom: none;
+}
+
+.doctor-table__year {
+  flex-shrink: 0;
+  width: 200px;
+  padding: 12px 16px;
+  background: #f2ede4;
+  border-right: 1px solid #cdc6ba;
+  font-family: "Noto Sans JP", sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.35;
+  letter-spacing: 0.32px;
+  text-align: center;
+  color: var(--color-gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.doctor-table__content {
+  flex: 1;
+  padding: 12px 16px;
+}
+
+.doctor-table__content p {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.35;
+  letter-spacing: 0.32px;
+  color: var(--color-text);
+}
+
+.doctor-table__content strong {
+  font-weight: 700;
+}
+
+/* ==========================================================================
    Staff Page - スタッフ紹介
    ========================================================================== */
 .staff-intro {
@@ -1893,6 +2135,84 @@ body {
 }
 
 .tour-block__body p {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.6;
+  letter-spacing: 0.32px;
+  color: var(--color-text);
+}
+
+/* ==========================================================================
+   Media Page - メディア掲載
+   ========================================================================== */
+.media-intro {
+  padding: 104px 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 56px;
+  width: 100%;
+  background: var(--color-bg-gray);
+}
+
+/* Media Block */
+.media-block {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  width: 100%;
+  max-width: var(--container-lg);
+}
+
+.media-block__heading {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 6px 16px;
+  margin: 0;
+  background: var(--color-gold-light);
+  font-family: "Zen Old Mincho", serif;
+  font-weight: 700;
+  font-size: 26px;
+  line-height: 1.35;
+  letter-spacing: 1.3px;
+  color: #fff;
+}
+
+/* Media Content (2-column) */
+.media-content {
+  display: flex;
+  gap: 32px;
+  align-items: flex-start;
+}
+
+.media-content__image {
+  flex-shrink: 0;
+  width: 48%;
+  max-width: 500px;
+  display: block;
+  overflow: hidden;
+  transition: opacity 0.2s;
+}
+
+.media-content__image:hover {
+  opacity: 0.85;
+}
+
+.media-content__image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.media-content__body {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  flex: 1;
+}
+
+.media-content__text {
   margin: 0;
   font-size: 16px;
   line-height: 1.6;
@@ -2506,6 +2826,80 @@ body {
   }
 
   /* --------------------------------------------------------------------------
+     Doctor Page (SP)
+     -------------------------------------------------------------------------- */
+  .doctor-intro {
+    padding: 80px 24px;
+    gap: 40px;
+  }
+
+  .doctor-awards {
+    padding: 40px 24px 80px;
+    gap: 40px;
+  }
+
+  .doctor-block {
+    gap: 24px;
+  }
+
+  .doctor-block__heading {
+    font-size: 24px;
+    letter-spacing: 1.2px;
+  }
+
+  .doctor-profile {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .doctor-profile__image {
+    width: 100%;
+    max-width: none;
+    aspect-ratio: 352 / 234;
+  }
+
+  .doctor-profile__body {
+    gap: 12px;
+  }
+
+  .doctor-section {
+    gap: 24px;
+  }
+
+  .doctor-history {
+    padding: 24px;
+  }
+
+  .doctor-overseas {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .doctor-overseas__image {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 352 / 234;
+  }
+
+  .doctor-overseas__body {
+    gap: 12px;
+  }
+
+  .doctor-table__row {
+    flex-direction: column;
+  }
+
+  .doctor-table__year {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid #cdc6ba;
+  }
+
+  .doctor-table__content {
+    padding: 12px 16px;
+  }
+
+  /* --------------------------------------------------------------------------
      Staff Page (SP)
      -------------------------------------------------------------------------- */
   .staff-intro {
@@ -2553,6 +2947,37 @@ body {
 
   .staff-history {
     padding: 24px;
+  }
+
+  /* --------------------------------------------------------------------------
+     Media Section (SP)
+     -------------------------------------------------------------------------- */
+  .media-intro {
+    padding: 80px 24px;
+    gap: 40px;
+  }
+
+  .media-block {
+    gap: 24px;
+  }
+
+  .media-block__heading {
+    font-size: 24px;
+    letter-spacing: 1.2px;
+  }
+
+  .media-content {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .media-content__image {
+    width: 100%;
+    max-width: none;
+  }
+
+  .media-content__body {
+    gap: 24px;
   }
 }
 
