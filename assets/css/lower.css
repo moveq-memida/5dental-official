@@ -1080,6 +1080,113 @@ body {
 }
 
 /* ==========================================================================
+   Painless Page - 痛みに配慮した治療
+   ========================================================================== */
+.painless-intro {
+  padding: 104px 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 56px;
+  max-width: var(--container-xl);
+  margin: 0 auto;
+}
+
+.painless-intro__text {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+  max-width: var(--container-lg);
+}
+
+.painless-intro__text p {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.6;
+  letter-spacing: 0.32px;
+  color: var(--color-text);
+}
+
+.painless-intro__text strong {
+  font-weight: 700;
+}
+
+.painless-intro__text .marker {
+  background: linear-gradient(transparent 60%, #ebe8d9 60%);
+}
+
+/* Painless Block */
+.painless-block {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  width: 100%;
+  max-width: var(--container-lg);
+}
+
+.painless-block__heading {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 6px 16px;
+  margin: 0;
+  background: var(--color-gold-light);
+  font-family: "Zen Old Mincho", serif;
+  font-weight: 700;
+  font-size: 26px;
+  line-height: 1.35;
+  letter-spacing: 1.3px;
+  color: #fff;
+}
+
+.painless-block__content {
+  display: flex;
+  gap: 32px;
+  align-items: flex-start;
+}
+
+.painless-block__image {
+  flex-shrink: 0;
+  width: 300px;
+  height: 200px;
+  overflow: hidden;
+}
+
+.painless-block__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.painless-block__body {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex: 1;
+}
+
+.painless-block__body--full {
+  max-width: var(--container-lg);
+}
+
+.painless-block__body p {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.6;
+  letter-spacing: 0.32px;
+  color: var(--color-text);
+}
+
+.painless-block__body strong {
+  font-weight: 700;
+}
+
+.painless-block__body .marker {
+  background: linear-gradient(transparent 60%, #ebe8d9 60%);
+}
+
+/* ==========================================================================
    SP版 (768px以下) - Figmaデザイン準拠
    ========================================================================== */
 @media (max-width: 768px) {
@@ -1469,6 +1576,42 @@ body {
 
   .clinic-block__buttons {
     flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  /* --------------------------------------------------------------------------
+     Painless Page (SP)
+     -------------------------------------------------------------------------- */
+  .painless-intro {
+    padding: 80px 24px;
+    gap: 40px;
+  }
+
+  .painless-intro__text {
+    gap: 12px;
+  }
+
+  .painless-block {
+    gap: 24px;
+  }
+
+  .painless-block__heading {
+    font-size: 26px;
+    letter-spacing: 1.3px;
+  }
+
+  .painless-block__content {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .painless-block__image {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 352 / 234;
+  }
+
+  .painless-block__body {
     gap: 12px;
   }
 }
