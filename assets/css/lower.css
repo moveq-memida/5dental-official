@@ -1,0 +1,558 @@
+/* ==========================================================================
+   Lower Page Styles
+   ========================================================================== */
+
+body {
+  background: #fff;
+}
+
+/* --------------------------------------------------------------------------
+   Lower Main Visual
+   -------------------------------------------------------------------------- */
+.lower-mv {
+  position: relative;
+  width: 100%;
+  height: 330px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.lower-mv__bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.lower-mv__bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.lower-mv__fade {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 250px;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.lower-mv__fade--left {
+  left: 0;
+  background: linear-gradient(to right, #fff, rgba(255, 255, 255, 0));
+}
+
+.lower-mv__fade--right {
+  right: 0;
+  background: linear-gradient(to left, #fff, rgba(255, 255, 255, 0));
+}
+
+.lower-mv__content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  text-align: center;
+}
+
+.lower-mv__title {
+  margin: 0;
+  font-family: "Zen Old Mincho", serif;
+  font-weight: 900;
+  font-size: 48px;
+  line-height: 1.35;
+  letter-spacing: 0.1em;
+  color: var(--color-primary);
+  text-shadow: 0 0 5px #fff;
+}
+
+.lower-mv__subtitle {
+  margin: 0;
+  font-family: "Zen Old Mincho", serif;
+  font-weight: 900;
+  font-size: 28px;
+  line-height: 1.35;
+  letter-spacing: 0.1em;
+  color: #9a7d4a;
+  text-shadow: 0 0 5px #fff;
+}
+
+/* --------------------------------------------------------------------------
+   Breadcrumb
+   -------------------------------------------------------------------------- */
+.breadcrumb {
+  padding: 0 80px;
+  margin-top: 24px;
+}
+
+.breadcrumb__list {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  margin: 0;
+  padding: 6px 12px;
+  list-style: none;
+  background: #f4f3ef;
+  border-radius: 3px;
+}
+
+.breadcrumb__item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.breadcrumb__link,
+.breadcrumb__current {
+  font-family: "Zen Old Mincho", serif;
+  font-weight: 900;
+  font-size: 14px;
+  line-height: 1.35;
+  letter-spacing: 0.05em;
+  color: var(--color-primary);
+  transition: opacity 0.2s;
+}
+
+.breadcrumb__link:hover {
+  opacity: 0.7;
+}
+
+.breadcrumb__separator {
+  display: block;
+  width: 14px;
+  height: 11px;
+}
+
+.breadcrumb__separator img {
+  width: 100%;
+  height: 100%;
+}
+
+/* --------------------------------------------------------------------------
+   Section Title
+   -------------------------------------------------------------------------- */
+.section-title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+}
+
+.section-title__text {
+  margin: 0;
+  font-family: "Zen Old Mincho", serif;
+  font-weight: 900;
+  font-size: 32px;
+  line-height: 1.35;
+  letter-spacing: 0.05em;
+  text-align: center;
+  color: #9a7d4a;
+}
+
+.section-title__line {
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent 0%,
+    #b5a27c 15%,
+    #b5a27c 85%,
+    transparent 100%
+  );
+}
+
+/* --------------------------------------------------------------------------
+   Orthodontics Intro
+   -------------------------------------------------------------------------- */
+.ortho-intro {
+  padding: 104px 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 56px;
+}
+
+.ortho-hero {
+  position: relative;
+  display: grid;
+  width: 100%;
+  max-width: 960px;
+  height: 400px;
+}
+
+.ortho-hero__bg {
+  position: absolute;
+  inset: 0;
+  display: flex;
+}
+
+.ortho-hero__bg-left {
+  flex: 1;
+  background: linear-gradient(to bottom, #ebefee, #e8eced);
+}
+
+.ortho-hero__bg-right {
+  flex: 1;
+  background: linear-gradient(to bottom, #e4e8e8, #dddfde);
+}
+
+.ortho-hero__image {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  clip-path: polygon(8% 0, 100% 0, 100% 100%, 0 100%);
+}
+
+.ortho-hero__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* --------------------------------------------------------------------------
+   Content Block with Heading
+   -------------------------------------------------------------------------- */
+.content-block {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  width: 100%;
+  max-width: 1040px;
+}
+
+.content-block__heading {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 6px 16px;
+  margin: 0;
+  background: #b5a27c;
+  font-family: "Zen Old Mincho", serif;
+  font-weight: 700;
+  font-size: 26px;
+  line-height: 1.35;
+  letter-spacing: 0.05em;
+  color: #fff;
+}
+
+.content-block__body {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.content-block__text {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.6;
+  letter-spacing: 0.02em;
+  color: var(--color-primary);
+}
+
+.content-block__text strong {
+  font-weight: 700;
+}
+
+.content-block__text .marker {
+  background: linear-gradient(transparent 60%, #ebe8d9 60%);
+}
+
+/* --------------------------------------------------------------------------
+   Treatment Section
+   -------------------------------------------------------------------------- */
+.treatment-section {
+  padding: 56px 80px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 56px;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.treatment-section--top-lg {
+  padding-top: 104px;
+  padding-bottom: 104px;
+}
+
+.treatment-block {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.treatment-block__subheading {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.treatment-block__subheading::before {
+  content: "";
+  display: block;
+  width: 2px;
+  align-self: stretch;
+  background: #9a7d4a;
+}
+
+.treatment-block__subheading-text {
+  margin: 0;
+  font-family: "Zen Old Mincho", serif;
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 1.35;
+  letter-spacing: 0.05em;
+  color: #9a7d4a;
+}
+
+.treatment-content {
+  display: flex;
+  gap: 32px;
+  align-items: flex-start;
+}
+
+.treatment-content__image {
+  flex-shrink: 0;
+  width: min(500px, 38.5vw);
+  aspect-ratio: 500 / 333;
+}
+
+.treatment-content__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.treatment-content__body {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  flex: 1;
+}
+
+.treatment-content__text {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.6;
+  letter-spacing: 0.02em;
+  color: var(--color-primary);
+}
+
+/* Detail Link Button */
+.detail-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 24px;
+  padding: 12px 24px;
+  background: #fff;
+  border-radius: 100px;
+  font-family: "Zen Old Mincho", serif;
+  font-weight: 900;
+  font-size: 18px;
+  line-height: 1.35;
+  letter-spacing: 0.05em;
+  color: #7d6c4f;
+  transition: opacity 0.2s;
+  width: fit-content;
+}
+
+.detail-link:hover {
+  opacity: 0.7;
+}
+
+.detail-link__arrow {
+  width: 9px;
+  height: 9px;
+  flex-shrink: 0;
+}
+
+.detail-link--gray {
+  background: #f4f3ef;
+}
+
+/* --------------------------------------------------------------------------
+   Gray Background Section
+   -------------------------------------------------------------------------- */
+.treatment-section--gray {
+  background: #f4f3ef;
+  padding: 104px 120px;
+  max-width: none;
+}
+
+.treatment-section--gray .section-title {
+  max-width: 1040px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.treatment-section--gray .treatment-block {
+  width: 100%;
+  max-width: 1040px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* --------------------------------------------------------------------------
+   Step Image
+   -------------------------------------------------------------------------- */
+.step-image {
+  width: 100%;
+  max-width: 960px;
+}
+
+.step-image img {
+  width: 100%;
+  height: auto;
+}
+
+/* --------------------------------------------------------------------------
+   YouTube Embed
+   -------------------------------------------------------------------------- */
+.youtube-embed {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  align-items: center;
+  width: 100%;
+}
+
+.youtube-embed__item {
+  width: min(800px, 100%);
+  aspect-ratio: 16 / 9;
+  background: #dedfe3;
+}
+
+.youtube-embed__item iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* --------------------------------------------------------------------------
+   Responsive
+   -------------------------------------------------------------------------- */
+@media (max-width: 768px) {
+  .lower-mv {
+    height: 200px;
+  }
+
+  .lower-mv__fade {
+    width: 80px;
+  }
+
+  .lower-mv__title {
+    font-size: 28px;
+  }
+
+  .lower-mv__subtitle {
+    font-size: 18px;
+  }
+
+  .breadcrumb {
+    padding: 0 16px;
+    margin-top: 16px;
+  }
+
+  .breadcrumb__list {
+    gap: 8px;
+    padding: 6px 10px;
+  }
+
+  .breadcrumb__item {
+    gap: 8px;
+  }
+
+  .breadcrumb__link,
+  .breadcrumb__current {
+    font-size: 12px;
+  }
+
+  .breadcrumb__separator {
+    width: 10px;
+    height: 8px;
+  }
+
+  .section-title__text {
+    font-size: 22px;
+  }
+
+  .ortho-intro {
+    padding: 40px 16px;
+    gap: 40px;
+  }
+
+  .ortho-hero {
+    height: 250px;
+  }
+
+  .ortho-hero__image {
+    clip-path: polygon(5% 0, 100% 0, 100% 100%, 0 100%);
+  }
+
+  .content-block {
+    gap: 24px;
+  }
+
+  .content-block__heading {
+    font-size: 18px;
+    padding: 8px 12px;
+  }
+
+  .content-block__text {
+    font-size: 14px;
+  }
+
+  .treatment-section {
+    padding: 40px 16px;
+    gap: 40px;
+  }
+
+  .treatment-block {
+    gap: 24px;
+  }
+
+  .treatment-block__subheading-text {
+    font-size: 18px;
+  }
+
+  .treatment-content {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .treatment-content__image {
+    width: 100%;
+    aspect-ratio: 500 / 333;
+  }
+
+  .treatment-content__text {
+    font-size: 14px;
+  }
+
+  .detail-link {
+    font-size: 16px;
+    padding: 10px 20px;
+    gap: 16px;
+  }
+
+  .treatment-section--gray {
+    padding: 40px 16px;
+  }
+
+  .step-image {
+    max-width: 100%;
+  }
+
+  .youtube-embed__item {
+    width: 100%;
+  }
+}
