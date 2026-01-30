@@ -1,6 +1,53 @@
 /* ==========================================================================
-   Lower Page Styles
+   Lower Page Styles - Modern CSS (2026)
+
+   Features:
+   - CSS Custom Properties (Design Tokens)
+   - clamp() for fluid typography & spacing
+   - Container Queries for component-based responsive
+   - CSS Nesting (native)
+   - Logical Properties
    ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   Design Tokens
+   -------------------------------------------------------------------------- */
+:root {
+  /* Spacing Scale (8px base) */
+  --space-xs: clamp(0.5rem, 1vw, 0.75rem);      /* 8-12px */
+  --space-sm: clamp(0.75rem, 1.5vw, 1rem);      /* 12-16px */
+  --space-md: clamp(1rem, 2vw, 1.5rem);         /* 16-24px */
+  --space-lg: clamp(1.5rem, 3vw, 2rem);         /* 24-32px */
+  --space-xl: clamp(2rem, 4vw, 3.5rem);         /* 32-56px */
+  --space-2xl: clamp(2.5rem, 6vw, 6.5rem);      /* 40-104px */
+
+  /* Container Widths */
+  --container-sm: 800px;
+  --container-md: 960px;
+  --container-lg: 1040px;
+  --container-xl: 1200px;
+
+  /* Fluid Typography */
+  --text-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);   /* 12-14px */
+  --text-sm: clamp(0.875rem, 0.8rem + 0.35vw, 1rem);      /* 14-16px */
+  --text-base: clamp(0.875rem, 0.8rem + 0.4vw, 1rem);     /* 14-16px */
+  --text-lg: clamp(1rem, 0.9rem + 0.5vw, 1.125rem);       /* 16-18px */
+  --text-xl: clamp(1.125rem, 1rem + 0.6vw, 1.375rem);     /* 18-22px */
+  --text-2xl: clamp(1.25rem, 1rem + 1vw, 1.625rem);       /* 20-26px */
+  --text-3xl: clamp(1.375rem, 1rem + 1.5vw, 2rem);        /* 22-32px */
+  --text-4xl: clamp(1.75rem, 1.2rem + 2.5vw, 3rem);       /* 28-48px */
+
+  /* Section Padding */
+  --section-padding-inline: clamp(1rem, 5vw, 7.5rem);     /* 16-120px */
+  --section-padding-block: clamp(2.5rem, 6vw, 6.5rem);    /* 40-104px */
+
+  /* Colors (inherit from base.css, add lower-specific) */
+  --color-gold: #9a7d4a;
+  --color-gold-light: #b5a27c;
+  --color-gold-dark: #7d6c4f;
+  --color-bg-gray: #f4f3ef;
+  --color-bg-dark: #dedfe3;
+}
 
 body {
   background: #fff;
@@ -12,126 +59,129 @@ body {
 .lower-mv {
   position: relative;
   width: 100%;
-  height: 330px;
+  height: clamp(200px, 25vw, 330px);
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
-}
+  container-type: inline-size;
 
-.lower-mv__bg {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-}
+  & .lower-mv__bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
 
-.lower-mv__bg img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-}
+    & img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+  }
 
-.lower-mv__fade {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  width: 250px;
-  z-index: 1;
-  pointer-events: none;
-}
+  & .lower-mv__fade {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: clamp(80px, 15vw, 250px);
+    z-index: 1;
+    pointer-events: none;
 
-.lower-mv__fade--left {
-  left: 0;
-  background: linear-gradient(to right, #fff, rgba(255, 255, 255, 0));
-}
+    &--left {
+      left: 0;
+      background: linear-gradient(to right, #fff, transparent);
+    }
 
-.lower-mv__fade--right {
-  right: 0;
-  background: linear-gradient(to left, #fff, rgba(255, 255, 255, 0));
-}
+    &--right {
+      right: 0;
+      background: linear-gradient(to left, #fff, transparent);
+    }
+  }
 
-.lower-mv__content {
-  position: relative;
-  z-index: 2;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 8px;
-  text-align: center;
-}
+  & .lower-mv__content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-xs);
+    text-align: center;
+    padding-inline: var(--space-md);
+  }
 
-.lower-mv__title {
-  margin: 0;
-  font-family: "Zen Old Mincho", serif;
-  font-weight: 900;
-  font-size: 48px;
-  line-height: 1.35;
-  letter-spacing: 0.1em;
-  color: var(--color-primary);
-  text-shadow: 0 0 5px #fff;
-}
+  & .lower-mv__title {
+    margin: 0;
+    font-family: "Zen Old Mincho", serif;
+    font-weight: 900;
+    font-size: var(--text-4xl);
+    line-height: 1.35;
+    letter-spacing: 0.1em;
+    color: var(--color-primary);
+    text-shadow: 0 0 5px #fff;
+  }
 
-.lower-mv__subtitle {
-  margin: 0;
-  font-family: "Zen Old Mincho", serif;
-  font-weight: 900;
-  font-size: 28px;
-  line-height: 1.35;
-  letter-spacing: 0.1em;
-  color: #9a7d4a;
-  text-shadow: 0 0 5px #fff;
+  & .lower-mv__subtitle {
+    margin: 0;
+    font-family: "Zen Old Mincho", serif;
+    font-weight: 900;
+    font-size: var(--text-xl);
+    line-height: 1.35;
+    letter-spacing: 0.1em;
+    color: var(--color-gold);
+    text-shadow: 0 0 5px #fff;
+  }
 }
 
 /* --------------------------------------------------------------------------
    Breadcrumb
    -------------------------------------------------------------------------- */
 .breadcrumb {
-  padding: 0 80px;
-  margin-top: 24px;
-}
+  padding-inline: var(--section-padding-inline);
+  margin-block-start: var(--space-md);
 
-.breadcrumb__list {
-  display: inline-flex;
-  align-items: center;
-  gap: 12px;
-  margin: 0;
-  padding: 6px 12px;
-  list-style: none;
-  background: #f4f3ef;
-  border-radius: 3px;
-}
+  & .breadcrumb__list {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-xs);
+    margin: 0;
+    padding: 6px var(--space-sm);
+    list-style: none;
+    background: var(--color-bg-gray);
+    border-radius: 3px;
+  }
 
-.breadcrumb__item {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
+  & .breadcrumb__item {
+    display: flex;
+    align-items: center;
+    gap: var(--space-xs);
+  }
 
-.breadcrumb__link,
-.breadcrumb__current {
-  font-family: "Zen Old Mincho", serif;
-  font-weight: 900;
-  font-size: 14px;
-  line-height: 1.35;
-  letter-spacing: 0.05em;
-  color: var(--color-primary);
-  transition: opacity 0.2s;
-}
+  & .breadcrumb__link,
+  & .breadcrumb__current {
+    font-family: "Zen Old Mincho", serif;
+    font-weight: 900;
+    font-size: var(--text-xs);
+    line-height: 1.35;
+    letter-spacing: 0.05em;
+    color: var(--color-primary);
+    transition: opacity 0.2s;
 
-.breadcrumb__link:hover {
-  opacity: 0.7;
-}
+    &:hover {
+      opacity: 0.7;
+    }
+  }
 
-.breadcrumb__separator {
-  display: block;
-  width: 14px;
-  height: 11px;
-}
+  & .breadcrumb__separator {
+    display: block;
+    width: clamp(10px, 1.2vw, 14px);
+    height: clamp(8px, 1vw, 11px);
+    flex-shrink: 0;
 
-.breadcrumb__separator img {
-  width: 100%;
-  height: 100%;
+    & img {
+      width: 100%;
+      height: 100%;
+    }
+  }
 }
 
 /* --------------------------------------------------------------------------
@@ -141,7 +191,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 16px;
+  gap: var(--space-md);
   width: 100%;
 }
 
@@ -149,11 +199,11 @@ body {
   margin: 0;
   font-family: "Zen Old Mincho", serif;
   font-weight: 900;
-  font-size: 32px;
+  font-size: var(--text-3xl);
   line-height: 1.35;
   letter-spacing: 0.05em;
   text-align: center;
-  color: #9a7d4a;
+  color: var(--color-gold);
 }
 
 .section-title__line {
@@ -162,8 +212,8 @@ body {
   background: linear-gradient(
     to right,
     transparent 0%,
-    #b5a27c 15%,
-    #b5a27c 85%,
+    var(--color-gold-light) 15%,
+    var(--color-gold-light) 85%,
     transparent 100%
   );
 }
@@ -172,50 +222,52 @@ body {
    Orthodontics Intro
    -------------------------------------------------------------------------- */
 .ortho-intro {
-  padding: 104px 80px;
+  padding-block: var(--space-2xl);
+  padding-inline: var(--section-padding-inline);
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 56px;
+  gap: var(--space-xl);
+  container-type: inline-size;
 }
 
 .ortho-hero {
   position: relative;
   display: grid;
   width: 100%;
-  max-width: 960px;
-  height: 400px;
-}
+  max-width: var(--container-md);
+  height: clamp(200px, 30vw, 400px);
 
-.ortho-hero__bg {
-  position: absolute;
-  inset: 0;
-  display: flex;
-}
+  & .ortho-hero__bg {
+    position: absolute;
+    inset: 0;
+    display: flex;
+  }
 
-.ortho-hero__bg-left {
-  flex: 1;
-  background: linear-gradient(to bottom, #ebefee, #e8eced);
-}
+  & .ortho-hero__bg-left {
+    flex: 1;
+    background: linear-gradient(to bottom, #ebefee, #e8eced);
+  }
 
-.ortho-hero__bg-right {
-  flex: 1;
-  background: linear-gradient(to bottom, #e4e8e8, #dddfde);
-}
+  & .ortho-hero__bg-right {
+    flex: 1;
+    background: linear-gradient(to bottom, #e4e8e8, #dddfde);
+  }
 
-.ortho-hero__image {
-  position: relative;
-  z-index: 1;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  clip-path: polygon(8% 0, 100% 0, 100% 100%, 0 100%);
-}
+  & .ortho-hero__image {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    clip-path: polygon(clamp(3%, 5vw, 8%) 0, 100% 0, 100% 100%, 0 100%);
 
-.ortho-hero__image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+    & img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
 }
 
 /* --------------------------------------------------------------------------
@@ -224,181 +276,194 @@ body {
 .content-block {
   display: flex;
   flex-direction: column;
-  gap: 32px;
+  gap: var(--space-lg);
   width: 100%;
-  max-width: 1040px;
+  max-width: var(--container-lg);
 }
 
+/* Standalone heading - used in both .content-block and .treatment-block */
 .content-block__heading {
   display: flex;
   align-items: center;
   width: 100%;
-  padding: 6px 16px;
+  padding: var(--space-xs) var(--space-md);
   margin: 0;
-  background: #b5a27c;
+  background: var(--color-gold-light);
   font-family: "Zen Old Mincho", serif;
   font-weight: 700;
-  font-size: 26px;
+  font-size: var(--text-2xl);
   line-height: 1.35;
   letter-spacing: 0.05em;
   color: #fff;
 }
 
+/* Standalone body - used in both .content-block and .treatment-block */
 .content-block__body {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: var(--space-sm);
 }
 
+/* Standalone text - used in both .content-block and .treatment-block */
 .content-block__text {
   margin: 0;
-  font-size: 16px;
+  font-size: var(--text-base);
   line-height: 1.6;
   letter-spacing: 0.02em;
   color: var(--color-primary);
-}
 
-.content-block__text strong {
-  font-weight: 700;
-}
+  & strong {
+    font-weight: 700;
+  }
 
-.content-block__text .marker {
-  background: linear-gradient(transparent 60%, #ebe8d9 60%);
+  & .marker {
+    background: linear-gradient(transparent 60%, #ebe8d9 60%);
+  }
 }
 
 /* --------------------------------------------------------------------------
    Treatment Section
    -------------------------------------------------------------------------- */
 .treatment-section {
-  padding: 56px 80px 0;
+  padding-block: var(--space-xl);
+  padding-inline: var(--section-padding-inline);
   display: flex;
   flex-direction: column;
-  gap: 56px;
+  gap: var(--space-xl);
   width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
+  max-width: var(--container-xl);
+  margin-inline: auto;
+  container-type: inline-size;
 }
 
 .treatment-section--top-lg {
-  padding-top: 104px;
-  padding-bottom: 104px;
+  padding-block: var(--space-2xl);
+}
+
+.treatment-section--gray {
+  background: var(--color-bg-gray);
+  padding-block: var(--space-2xl);
+  max-width: none;
+}
+
+.treatment-section--gray .section-title {
+  max-width: var(--container-lg);
+  margin-inline: auto;
+}
+
+.treatment-section--gray .treatment-block {
+  width: 100%;
+  max-width: var(--container-lg);
+  margin-inline: auto;
 }
 
 .treatment-block {
   display: flex;
   flex-direction: column;
-  gap: 32px;
+  gap: var(--space-lg);
 }
 
 .treatment-block__subheading {
   display: flex;
   align-items: center;
-  gap: 8px;
-}
+  gap: var(--space-xs);
 
-.treatment-block__subheading::before {
-  content: "";
-  display: block;
-  width: 2px;
-  align-self: stretch;
-  background: #9a7d4a;
+  &::before {
+    content: "";
+    display: block;
+    width: 2px;
+    align-self: stretch;
+    background: var(--color-gold);
+  }
 }
 
 .treatment-block__subheading-text {
   margin: 0;
   font-family: "Zen Old Mincho", serif;
   font-weight: 700;
-  font-size: 22px;
+  font-size: var(--text-xl);
   line-height: 1.35;
   letter-spacing: 0.05em;
-  color: #9a7d4a;
+  color: var(--color-gold);
 }
 
+/* Treatment Content - Image + Text Layout */
 .treatment-content {
-  display: flex;
-  gap: 32px;
-  align-items: flex-start;
+  display: grid;
+  grid-template-columns: minmax(200px, 1fr) 1.2fr;
+  gap: var(--space-lg);
+  align-items: start;
+  container-type: inline-size;
+
+  @container (max-width: 600px) {
+    grid-template-columns: 1fr;
+  }
 }
 
 .treatment-content__image {
-  flex-shrink: 0;
-  width: min(500px, 38.5vw);
-  aspect-ratio: 500 / 333;
-}
-
-.treatment-content__image img {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  aspect-ratio: 500 / 333;
+
+  & img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 2px;
+  }
 }
 
 .treatment-content__body {
   display: flex;
   flex-direction: column;
-  gap: 24px;
-  flex: 1;
+  gap: var(--space-md);
 }
 
 .treatment-content__text {
   margin: 0;
-  font-size: 16px;
+  font-size: var(--text-base);
   line-height: 1.6;
   letter-spacing: 0.02em;
   color: var(--color-primary);
 }
 
-/* Detail Link Button */
+/* --------------------------------------------------------------------------
+   Detail Link Button
+   -------------------------------------------------------------------------- */
 .detail-link {
   display: inline-flex;
   align-items: center;
-  gap: 24px;
-  padding: 12px 24px;
+  gap: var(--space-md);
+  padding: var(--space-sm) var(--space-md);
   background: #fff;
   border-radius: 100px;
   font-family: "Zen Old Mincho", serif;
   font-weight: 900;
-  font-size: 18px;
+  font-size: var(--text-lg);
   line-height: 1.35;
   letter-spacing: 0.05em;
-  color: #7d6c4f;
-  transition: opacity 0.2s;
+  color: var(--color-gold-dark);
+  transition: opacity 0.2s, transform 0.2s;
   width: fit-content;
 }
 
 .detail-link:hover {
-  opacity: 0.7;
+  opacity: 0.8;
+  transform: translateX(4px);
+}
+
+.detail-link--gray {
+  background: var(--color-bg-gray);
 }
 
 .detail-link__arrow {
   width: 9px;
   height: 9px;
   flex-shrink: 0;
-}
+  transition: transform 0.2s;
 
-.detail-link--gray {
-  background: #f4f3ef;
-}
-
-/* --------------------------------------------------------------------------
-   Gray Background Section
-   -------------------------------------------------------------------------- */
-.treatment-section--gray {
-  background: #f4f3ef;
-  padding: 104px 120px;
-  max-width: none;
-}
-
-.treatment-section--gray .section-title {
-  max-width: 1040px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.treatment-section--gray .treatment-block {
-  width: 100%;
-  max-width: 1040px;
-  margin-left: auto;
-  margin-right: auto;
+  .detail-link:hover & {
+    transform: translateX(2px);
+  }
 }
 
 /* --------------------------------------------------------------------------
@@ -406,12 +471,12 @@ body {
    -------------------------------------------------------------------------- */
 .step-image {
   width: 100%;
-  max-width: 960px;
-}
+  max-width: var(--container-md);
 
-.step-image img {
-  width: 100%;
-  height: auto;
+  & img {
+    width: 100%;
+    height: auto;
+  }
 }
 
 /* --------------------------------------------------------------------------
@@ -420,139 +485,60 @@ body {
 .youtube-embed {
   display: flex;
   flex-direction: column;
-  gap: 32px;
+  gap: var(--space-lg);
   align-items: center;
   width: 100%;
 }
 
 .youtube-embed__item {
-  width: min(800px, 100%);
-  aspect-ratio: 16 / 9;
-  background: #dedfe3;
-}
-
-.youtube-embed__item iframe {
   width: 100%;
-  height: 100%;
-  border: none;
+  max-width: var(--container-sm);
+  aspect-ratio: 16 / 9;
+  background: var(--color-bg-dark);
+  border-radius: 4px;
+  overflow: hidden;
+
+  & iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
 }
 
 /* --------------------------------------------------------------------------
-   Responsive
+   Responsive Adjustments (Progressive Enhancement)
+   Using Container Queries above, these are fallbacks/global adjustments
    -------------------------------------------------------------------------- */
-@media (max-width: 768px) {
-  .lower-mv {
-    height: 200px;
-  }
 
-  .lower-mv__fade {
-    width: 80px;
+/* Small screens - tighten spacing */
+@media (max-width: 480px) {
+  :root {
+    --space-2xl: 2.5rem;
   }
+}
 
-  .lower-mv__title {
-    font-size: 28px;
+/* Medium screens - balanced layout */
+@media (min-width: 481px) and (max-width: 768px) {
+  .treatment-content {
+    grid-template-columns: 1fr;
   }
+}
 
-  .lower-mv__subtitle {
-    font-size: 18px;
+/* Large screens - ensure max readability */
+@media (min-width: 1400px) {
+  :root {
+    --section-padding-inline: 120px;
   }
+}
 
-  .breadcrumb {
-    padding: 0 16px;
-    margin-top: 16px;
-  }
-
-  .breadcrumb__list {
-    gap: 8px;
-    padding: 6px 10px;
-  }
-
-  .breadcrumb__item {
-    gap: 8px;
-  }
-
-  .breadcrumb__link,
-  .breadcrumb__current {
-    font-size: 12px;
-  }
-
-  .breadcrumb__separator {
-    width: 10px;
-    height: 8px;
-  }
-
-  .section-title__text {
-    font-size: 22px;
-  }
-
-  .ortho-intro {
-    padding: 40px 16px;
-    gap: 40px;
-  }
-
-  .ortho-hero {
-    height: 250px;
-  }
-
-  .ortho-hero__image {
-    clip-path: polygon(5% 0, 100% 0, 100% 100%, 0 100%);
-  }
-
-  .content-block {
-    gap: 24px;
-  }
-
-  .content-block__heading {
-    font-size: 18px;
-    padding: 8px 12px;
-  }
-
-  .content-block__text {
-    font-size: 14px;
-  }
-
-  .treatment-section {
-    padding: 40px 16px;
-    gap: 40px;
-  }
-
-  .treatment-block {
-    gap: 24px;
-  }
-
-  .treatment-block__subheading-text {
-    font-size: 18px;
+/* Print styles */
+@media print {
+  .lower-mv__fade,
+  .youtube-embed {
+    display: none;
   }
 
   .treatment-content {
-    flex-direction: column;
-    gap: 24px;
-  }
-
-  .treatment-content__image {
-    width: 100%;
-    aspect-ratio: 500 / 333;
-  }
-
-  .treatment-content__text {
-    font-size: 14px;
-  }
-
-  .detail-link {
-    font-size: 16px;
-    padding: 10px 20px;
-    gap: 16px;
-  }
-
-  .treatment-section--gray {
-    padding: 40px 16px;
-  }
-
-  .step-image {
-    max-width: 100%;
-  }
-
-  .youtube-embed__item {
-    width: 100%;
+    grid-template-columns: 1fr 2fr;
   }
 }
