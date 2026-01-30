@@ -595,6 +595,257 @@ body {
 }
 
 /* ==========================================================================
+   About Page - 初めての方へ Section
+   ========================================================================== */
+.about-intro {
+  padding: 104px 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 56px;
+  max-width: var(--container-xl);
+  margin: 0 auto;
+}
+
+.about-first {
+  display: flex;
+  gap: 32px;
+  align-items: flex-start;
+  width: 100%;
+  max-width: var(--container-lg);
+}
+
+.about-first__image {
+  flex-shrink: 0;
+  width: 48%;
+  max-width: 500px;
+  aspect-ratio: 500 / 333;
+  overflow: hidden;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 8% 100%);
+}
+
+.about-first__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.about-first__body {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  flex: 1;
+}
+
+.about-first__text {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.about-first__text p {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.6;
+  letter-spacing: 0.32px;
+  color: var(--color-text);
+}
+
+.about-first__text strong {
+  font-weight: 700;
+}
+
+.about-first__text .marker {
+  background: linear-gradient(transparent 60%, #ebe8d9 60%);
+}
+
+/* ==========================================================================
+   About Page - 当院の特徴 Section
+   ========================================================================== */
+.about-feature {
+  padding: 104px 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 56px;
+  width: 100%;
+  background: var(--color-bg-gray);
+}
+
+.about-feature__intro {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+  max-width: var(--container-lg);
+}
+
+.about-feature__intro p {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.32px;
+  color: var(--color-text);
+}
+
+/* Feature Table (PC) */
+.feature-table--pc {
+  display: block;
+}
+
+.feature-cards--sp {
+  display: none;
+}
+
+.feature-table {
+  position: relative;
+  width: 100%;
+  max-width: var(--container-lg);
+  border: 1px solid #cdc6ba;
+  background: #fff;
+}
+
+/* Left column border overlay (250px) */
+.feature-table::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 250px;
+  height: 100%;
+  border: 1px solid #cdc6ba;
+  pointer-events: none;
+  box-sizing: border-box;
+}
+
+/* Vertical line at 418px (between stars and description) */
+.feature-table::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 418px;
+  width: 1px;
+  height: 100%;
+  background: #cdc6ba;
+  pointer-events: none;
+}
+
+.feature-table__row {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  padding: 12px 16px;
+}
+
+.feature-table__row:not(:last-child) {
+  margin-bottom: 12px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #cdc6ba;
+}
+
+.feature-table__label {
+  flex-shrink: 0;
+  width: 218px;
+  font-family: "Noto Sans JP", sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.35;
+  letter-spacing: 0.32px;
+  text-align: center;
+  color: var(--color-gold);
+}
+
+.feature-table__stars {
+  flex-shrink: 0;
+  width: 136px;
+  height: 23px;
+}
+
+.feature-table__stars img {
+  width: 100%;
+  height: 100%;
+}
+
+.feature-table__desc {
+  flex: 1;
+  font-size: 16px;
+  line-height: 1.35;
+  letter-spacing: 0.32px;
+  color: var(--color-text);
+}
+
+.feature-table__link {
+  font-weight: 700;
+  color: var(--color-text);
+  text-decoration: underline;
+}
+
+/* Feature Cards (SP) */
+.feature-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+}
+
+.feature-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 16px;
+  background: #fff;
+  border: 1px solid #cdc6ba;
+}
+
+.feature-card__label {
+  width: 100%;
+  margin: 0;
+  font-family: "Noto Sans JP", sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.35;
+  letter-spacing: 0.32px;
+  text-align: center;
+  color: var(--color-gold);
+}
+
+.feature-card__line {
+  display: block;
+  width: calc(100% + 32px);
+  height: 1px;
+  background: #cdc6ba;
+  margin: 0 -16px;
+}
+
+.feature-card__stars {
+  width: 136px;
+  height: 23px;
+}
+
+.feature-card__stars img {
+  width: 100%;
+  height: 100%;
+}
+
+.feature-card__desc {
+  width: 100%;
+  margin: 0;
+  font-family: "Noto Sans JP", sans-serif;
+  font-size: 16px;
+  line-height: 1.35;
+  letter-spacing: 0.32px;
+  color: var(--color-text);
+}
+
+.feature-card__link {
+  font-weight: 700;
+  color: var(--color-text);
+  text-decoration: underline;
+}
+
+/* ==========================================================================
    SP版 (768px以下) - Figmaデザイン準拠
    ========================================================================== */
 @media (max-width: 768px) {
@@ -844,6 +1095,56 @@ body {
   .igo-case__meta {
     font-size: 12px;
     line-height: 1.6;
+  }
+
+  /* --------------------------------------------------------------------------
+     About Page (SP)
+     -------------------------------------------------------------------------- */
+  .about-intro {
+    padding: 80px 24px;
+    gap: 40px;
+  }
+
+  .about-first {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .about-first__image {
+    width: 100%;
+    max-width: none;
+    height: auto;
+    aspect-ratio: 352 / 234;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 5% 100%);
+  }
+
+  .about-first__body {
+    gap: 24px;
+  }
+
+  .about-first__text {
+    gap: 12px;
+  }
+
+  /* --------------------------------------------------------------------------
+     About Feature Section (SP)
+     -------------------------------------------------------------------------- */
+  .about-feature {
+    padding: 80px 24px;
+    gap: 40px;
+  }
+
+  .about-feature__intro {
+    gap: 12px;
+  }
+
+  /* Feature Table/Cards - PC/SP switching */
+  .feature-table--pc {
+    display: none;
+  }
+
+  .feature-cards--sp {
+    display: flex;
   }
 }
 
