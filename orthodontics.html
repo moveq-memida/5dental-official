@@ -581,12 +581,18 @@
     <main>
       <section class="lower-mv" aria-label="メインビジュアル">
         <div class="lower-mv__bg">
-          <img
-            src="assets/images/backgrounds/lower-mv-orthodontics.png"
-            alt=""
-            loading="eager"
-            fetchpriority="high"
-          />
+          <picture>
+            <source
+              media="(max-width: 768px)"
+              srcset="assets/images/service/about-h1-bg-sp.jpg"
+            />
+            <img
+              src="assets/images/service/about-h1-bg.jpg"
+              alt=""
+              loading="eager"
+              fetchpriority="high"
+            />
+          </picture>
         </div>
         <div class="lower-mv__fade lower-mv__fade--left" aria-hidden="true"></div>
         <div class="lower-mv__fade lower-mv__fade--right" aria-hidden="true"></div>
