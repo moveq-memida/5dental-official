@@ -1440,6 +1440,179 @@ body {
 }
 
 /* ==========================================================================
+   Access Page - アクセス・診療時間
+   ========================================================================== */
+.access-intro {
+  padding: 104px 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 56px;
+  max-width: var(--container-xl);
+  margin: 0 auto;
+}
+
+/* Access Block */
+.access-block {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  width: 100%;
+  max-width: var(--container-lg);
+}
+
+.access-block__heading {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 6px 16px;
+  margin: 0;
+  background: var(--color-gold-light);
+  font-family: "Zen Old Mincho", serif;
+  font-weight: 700;
+  font-size: 26px;
+  line-height: 1.35;
+  letter-spacing: 1.3px;
+  color: #fff;
+}
+
+.access-block__body {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.access-block__body p {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.6;
+  letter-spacing: 0.32px;
+  color: var(--color-text);
+}
+
+.access-block__list {
+  margin: 0;
+  padding-left: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.access-block__list li {
+  font-size: 16px;
+  line-height: 1.6;
+  letter-spacing: 0.32px;
+  color: var(--color-text);
+}
+
+/* Access Map */
+.access-block__map {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.access-block__map iframe {
+  width: 800px;
+  height: 450px;
+  border: none;
+}
+
+/* Access Method */
+.access-method {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.access-method__subheading {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.access-method__bar {
+  display: block;
+  width: 2px;
+  align-self: stretch;
+  background: var(--color-gold);
+}
+
+.access-method__title {
+  margin: 0;
+  font-family: "Zen Old Mincho", serif;
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 1.35;
+  letter-spacing: 1.1px;
+  color: var(--color-gold);
+}
+
+.access-method__list {
+  margin: 0;
+  padding-left: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.access-method__list li {
+  font-size: 16px;
+  line-height: 1.6;
+  letter-spacing: 0.32px;
+  color: var(--color-text);
+}
+
+.access-method__note {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.6;
+  letter-spacing: 0.32px;
+  color: var(--color-text);
+}
+
+/* Access Step */
+.access-step {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.access-step__content {
+  display: flex;
+  gap: 32px;
+  align-items: flex-start;
+}
+
+.access-step__image {
+  flex-shrink: 0;
+  width: 500px;
+  height: 333px;
+  overflow: hidden;
+}
+
+.access-step__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.access-step__body {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex: 1;
+}
+
+.access-step__body p {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.6;
+  letter-spacing: 0.32px;
+  color: var(--color-text);
+}
+
+/* ==========================================================================
    Tour Page - 院内ツアー
    ========================================================================== */
 .tour-intro {
@@ -2038,6 +2211,42 @@ body {
 
   .epios-gallery__item--sp2 {
     flex: 1;
+  }
+
+  /* --------------------------------------------------------------------------
+     Access Page (SP)
+     -------------------------------------------------------------------------- */
+  .access-intro {
+    padding: 80px 24px;
+    gap: 40px;
+  }
+
+  .access-block {
+    gap: 24px;
+  }
+
+  .access-block__map iframe {
+    width: 100%;
+    height: 198px;
+  }
+
+  .access-step {
+    gap: 24px;
+  }
+
+  .access-step__content {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .access-step__image {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 352 / 234;
+  }
+
+  .access-step__body {
+    gap: 12px;
   }
 
   /* --------------------------------------------------------------------------
