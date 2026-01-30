@@ -59,76 +59,89 @@ body {
 .lower-mv {
   position: relative;
   width: 100%;
-  height: clamp(200px, 25vw, 330px);
+  height: 330px;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
   container-type: inline-size;
+}
 
-  & .lower-mv__bg {
-    position: absolute;
-    inset: 0;
-    z-index: 0;
+.lower-mv__bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
 
-    & img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center;
-    }
+.lower-mv__bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.lower-mv__fade {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 250px;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.lower-mv__fade--left {
+  left: 0;
+  background: linear-gradient(to right, #fff, transparent);
+}
+
+.lower-mv__fade--right {
+  right: 0;
+  background: linear-gradient(to left, #fff, transparent);
+}
+
+.lower-mv__content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  text-align: center;
+  padding-inline: var(--space-md);
+}
+
+.lower-mv__title {
+  margin: 0;
+  font-family: "Zen Old Mincho", serif;
+  font-weight: 900;
+  font-size: 48px;
+  line-height: 1.35;
+  letter-spacing: 0.1em;
+  color: var(--color-primary);
+  text-shadow: 0 0 5px #fff;
+}
+
+.lower-mv__subtitle {
+  margin: 0;
+  font-family: "Zen Old Mincho", serif;
+  font-weight: 900;
+  font-size: 28px;
+  line-height: 1.35;
+  letter-spacing: 0.1em;
+  color: var(--color-gold);
+  text-shadow: 0 0 5px #fff;
+}
+
+/* SP版 */
+@media (max-width: 768px) {
+  .lower-mv__title {
+    font-size: 32px;
+    letter-spacing: 3.2px;
   }
 
-  & .lower-mv__fade {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    width: clamp(80px, 15vw, 250px);
-    z-index: 1;
-    pointer-events: none;
-
-    &--left {
-      left: 0;
-      background: linear-gradient(to right, #fff, transparent);
-    }
-
-    &--right {
-      right: 0;
-      background: linear-gradient(to left, #fff, transparent);
-    }
-  }
-
-  & .lower-mv__content {
-    position: relative;
-    z-index: 2;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: var(--space-xs);
-    text-align: center;
-    padding-inline: var(--space-md);
-  }
-
-  & .lower-mv__title {
-    margin: 0;
-    font-family: "Zen Old Mincho", serif;
-    font-weight: 900;
-    font-size: var(--text-4xl);
-    line-height: 1.35;
-    letter-spacing: 0.1em;
-    color: var(--color-primary);
-    text-shadow: 0 0 5px #fff;
-  }
-
-  & .lower-mv__subtitle {
-    margin: 0;
-    font-family: "Zen Old Mincho", serif;
-    font-weight: 900;
-    font-size: var(--text-xl);
-    line-height: 1.35;
-    letter-spacing: 0.1em;
-    color: var(--color-gold);
-    text-shadow: 0 0 5px #fff;
+  .lower-mv__subtitle {
+    font-size: 20px;
+    letter-spacing: 2px;
   }
 }
 
@@ -137,50 +150,57 @@ body {
    -------------------------------------------------------------------------- */
 .breadcrumb {
   padding-inline: var(--section-padding-inline);
-  margin-block-start: var(--space-md);
+  margin-block-start: 24px;
+}
 
-  & .breadcrumb__list {
-    display: inline-flex;
-    align-items: center;
-    gap: var(--space-xs);
-    margin: 0;
-    padding: 6px var(--space-sm);
-    list-style: none;
-    background: var(--color-bg-gray);
-    border-radius: 3px;
-  }
+.breadcrumb__list {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  margin: 0;
+  padding: 6px 12px;
+  list-style: none;
+  background: var(--color-bg-gray);
+  border-radius: 3px;
+}
 
-  & .breadcrumb__item {
-    display: flex;
-    align-items: center;
-    gap: var(--space-xs);
-  }
+.breadcrumb__item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
 
-  & .breadcrumb__link,
-  & .breadcrumb__current {
-    font-family: "Zen Old Mincho", serif;
-    font-weight: 900;
-    font-size: var(--text-xs);
-    line-height: 1.35;
-    letter-spacing: 0.05em;
-    color: var(--color-primary);
-    transition: opacity 0.2s;
+.breadcrumb__link,
+.breadcrumb__current {
+  font-family: "Zen Old Mincho", serif;
+  font-weight: 900;
+  font-size: 14px;
+  line-height: 1.35;
+  letter-spacing: 0.7px;
+  color: var(--color-primary);
+  transition: opacity 0.2s;
+}
 
-    &:hover {
-      opacity: 0.7;
-    }
-  }
+.breadcrumb__link:hover {
+  opacity: 0.7;
+}
 
-  & .breadcrumb__separator {
-    display: block;
-    width: clamp(10px, 1.2vw, 14px);
-    height: clamp(8px, 1vw, 11px);
-    flex-shrink: 0;
+.breadcrumb__separator {
+  display: block;
+  width: 14px;
+  height: 11px;
+  flex-shrink: 0;
+}
 
-    & img {
-      width: 100%;
-      height: 100%;
-    }
+.breadcrumb__separator img {
+  width: 100%;
+  height: 100%;
+}
+
+/* SP版 */
+@media (max-width: 768px) {
+  .breadcrumb {
+    margin-block-start: 16px;
   }
 }
 
