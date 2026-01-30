@@ -364,7 +364,8 @@ body {
 
 .treatment-content__image {
   flex-shrink: 0;
-  width: 500px;
+  width: 48%;
+  max-width: 500px;
   aspect-ratio: 500 / 333;
 }
 
@@ -469,12 +470,145 @@ body {
 }
 
 /* ==========================================================================
+   InvisalignGO - Hero Section
+   ========================================================================== */
+.igo-mv {
+  width: 100%;
+  max-width: var(--container-md);
+  height: 400px;
+  overflow: hidden;
+}
+
+.igo-mv img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ==========================================================================
+   InvisalignGO - About Section (2-column)
+   ========================================================================== */
+.igo-about {
+  display: flex;
+  gap: 32px;
+  align-items: flex-start;
+}
+
+.igo-about__image {
+  flex-shrink: 0;
+  width: 48%;
+  max-width: 500px;
+  aspect-ratio: 500 / 333;
+}
+
+.igo-about__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.igo-about__body {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex: 1;
+}
+
+.igo-about__text {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.6;
+  letter-spacing: 0.32px;
+  color: var(--color-text);
+}
+
+.igo-about__text strong {
+  font-weight: 700;
+}
+
+.igo-about__text .marker {
+  background: linear-gradient(transparent 60%, #ebe8d9 60%);
+}
+
+/* ==========================================================================
+   InvisalignGO - 100 Banner
+   ========================================================================== */
+.igo-banner {
+  width: 100%;
+  max-width: var(--container-md);
+}
+
+.igo-banner img {
+  width: 100%;
+  height: auto;
+}
+
+/* ==========================================================================
+   InvisalignGO - Case Section (症例)
+   ========================================================================== */
+.igo-case {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: center;
+  width: 100%;
+  max-width: var(--container-lg);
+  margin: 0 auto;
+}
+
+.igo-case__image {
+  width: 100%;
+  max-width: var(--container-md);
+  margin: 0 auto;
+}
+
+.igo-case__image img {
+  width: 100%;
+  height: auto;
+}
+
+.igo-case__body {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 0 16px;
+}
+
+.igo-case__text {
+  margin: 0;
+  font-family: "Noto Sans JP", sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.6;
+  letter-spacing: 0.7px;
+  color: var(--color-text);
+}
+
+.igo-case__meta {
+  margin: 0;
+  font-family: "Noto Sans JP", sans-serif;
+  font-weight: 350;
+  font-size: 12px;
+  line-height: 1.6;
+  letter-spacing: 0.24px;
+  color: #6f788e;
+}
+
+/* ==========================================================================
    SP版 (768px以下) - Figmaデザイン準拠
    ========================================================================== */
 @media (max-width: 768px) {
   /* --------------------------------------------------------------------------
      Lower Main Visual (SP)
      -------------------------------------------------------------------------- */
+  .lower-mv {
+    height: 200px;
+  }
+
+  .lower-mv__fade {
+    display: none;
+  }
+
   .lower-mv__title {
     font-size: 32px;
     letter-spacing: 3.2px;
@@ -491,6 +625,10 @@ body {
   .breadcrumb {
     padding: 0 24px;
     margin-top: 16px;
+  }
+
+  .breadcrumb__list {
+    flex-wrap: wrap;
   }
 
   /* --------------------------------------------------------------------------
@@ -537,6 +675,7 @@ body {
      -------------------------------------------------------------------------- */
   .content-block {
     gap: 24px;
+    max-width: none;
   }
 
   .content-block__heading {
@@ -594,6 +733,7 @@ body {
 
   .treatment-content__image {
     width: 100%;
+    max-width: none;
     aspect-ratio: 352 / 234;
   }
 
@@ -642,6 +782,68 @@ body {
     width: 100%;
     max-width: none;
     aspect-ratio: 352 / 198;
+  }
+
+  /* --------------------------------------------------------------------------
+     InvisalignGO (SP)
+     -------------------------------------------------------------------------- */
+  .igo-mv {
+    height: auto;
+    aspect-ratio: 352 / 352;
+  }
+
+  .igo-about {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .igo-about__image {
+    width: 100%;
+    max-width: none;
+    aspect-ratio: 352 / 234;
+  }
+
+  .igo-about__body {
+    gap: 12px;
+  }
+
+  .igo-banner {
+    max-width: 100%;
+    aspect-ratio: 352 / 92;
+  }
+
+  .igo-banner img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  .igo-case {
+    gap: 16px;
+  }
+
+  .igo-case__image {
+    max-width: 100%;
+  }
+
+  .igo-case__image img {
+    width: 100%;
+    height: auto;
+  }
+
+  .igo-case__body {
+    padding: 0 16px;
+  }
+
+  .igo-case__text {
+    font-size: 14px;
+    line-height: 1.6;
+    letter-spacing: 0.7px;
+  }
+
+  .igo-case__meta {
+    font-size: 12px;
+    line-height: 1.6;
   }
 }
 

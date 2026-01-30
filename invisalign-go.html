@@ -1,0 +1,1453 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <title>インビザラインGO | 5DENTAL TOKYO GINZA</title>
+    <link rel="icon" href="assets/icons/favicon.png" type="image/png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500&family=Pinyon+Script&family=Zen+Old+Mincho:wght@900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/css/base.css" />
+    <link rel="stylesheet" href="assets/css/header.css" />
+    <link rel="stylesheet" href="assets/css/overlays.css" />
+    <link rel="stylesheet" href="assets/css/lower.css" />
+    <link rel="stylesheet" href="assets/css/footer.css" />
+    <link rel="stylesheet" href="assets/css/responsive.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="site-header__top">
+        <div class="site-header__brand">
+          <a class="brand-logo" href="index.html">
+            <img src="assets/images/logo.webp" alt="5DENTAL TOKYO GINZA" />
+          </a>
+          <div class="brand-access">
+            <div class="access-row">
+              <img src="assets/icons/map.svg" alt="" class="access-icon" />
+              <span>〒104-0061 東京都中央区銀座5-1 GINZA5 2F</span>
+            </div>
+            <div class="access-row">
+              <img src="assets/icons/train.svg" alt="" class="access-icon" />
+              <span>東京メトロ銀座駅 C-1出口直結、有楽町駅 銀座口より徒歩3分</span>
+            </div>
+          </div>
+        </div>
+        <div class="site-header__cta">
+          <div class="cta-tel">
+            <span class="cta-tel__label">お電話でのご予約</span>
+            <a class="cta-tel__number" href="tel:0352202511">
+              <img src="assets/icons/tel.svg" alt="" />
+              03-5220-2511
+            </a>
+          </div>
+          <a class="cta-web" href="#">
+            <span class="cta-web__label">
+              <img src="assets/icons/calendar.svg" alt="" />
+              Web予約
+            </span>
+            <img class="cta-web__icon" src="assets/icons/arw-circle-line.svg" alt="" />
+          </a>
+        </div>
+        <div class="site-header__hamburger">
+          <button
+            class="hamburger-button"
+            type="button"
+            aria-label="メニューを開く"
+            aria-expanded="false"
+            aria-controls="mobile-menu"
+            data-mobile-trigger
+          >
+            <span class="hamburger-button__icon" aria-hidden="true"></span>
+            <span class="hamburger-button__label">menu</span>
+          </button>
+        </div>
+      </div>
+      <div class="site-header__bottom">
+        <nav class="site-nav" aria-label="グローバルナビゲーション">
+          <a class="site-nav__item is-muted" href="index.html">HOME</a>
+          <button
+            class="site-nav__item site-nav__item--mega is-active"
+            type="button"
+            aria-expanded="false"
+            aria-controls="mega-menu"
+            data-mega-trigger
+          >
+            診療メニュー
+            <span class="menu-arrow" aria-hidden="true"></span>
+          </button>
+          <button
+            class="site-nav__item site-nav__item--about is-active"
+            type="button"
+            aria-expanded="false"
+            aria-controls="about-menu"
+            data-about-trigger
+          >
+            当院について
+            <span class="menu-arrow" aria-hidden="true"></span>
+          </button>
+          <a class="site-nav__item is-muted" href="#">スタッフ紹介</a>
+          <a class="site-nav__item is-muted" href="#">料金表</a>
+          <a class="site-nav__item is-muted" href="#">アクセス</a>
+          <a class="site-nav__item is-muted" href="#">お知らせ</a>
+          <a class="site-nav__item is-muted" href="#">コラム</a>
+        </nav>
+      </div>
+    </header>
+    <div class="mega-menu" id="mega-menu" aria-hidden="true">
+      <div class="mega-menu__scroll">
+        <div class="mega-menu__inner">
+          <div class="mega-menu__pickup">
+            <p class="mega-menu__label">当院の人気施術</p>
+            <div class="mega-menu__banners">
+              <a class="mega-banner" href="#">
+                <span class="mega-banner__image">
+                  <img
+                    src="assets/images/megamenu/banner-megamenu1.jpg"
+                    alt="削らないラミネートべニア"
+                  />
+                </span>
+              </a>
+              <a class="mega-banner" href="#">
+                <span class="mega-banner__image">
+                  <img
+                    src="assets/images/megamenu/banner-megamenu2.jpg"
+                    alt="オールセラミック治療とジルコニア"
+                  />
+                </span>
+              </a>
+              <a class="mega-banner" href="#">
+                <span class="mega-banner__image">
+                  <img
+                    src="assets/images/megamenu/banner-megamenu3.jpg"
+                    alt="矯正歯科"
+                  />
+                </span>
+              </a>
+              <a class="mega-banner" href="#">
+                <span class="mega-banner__image">
+                  <img
+                    src="assets/images/megamenu/banner-megamenu4.jpg"
+                    alt="ガミースマイル改善"
+                  />
+                </span>
+              </a>
+            </div>
+          </div>
+          <div class="mega-menu__lists">
+            <p class="mega-menu__title">診療メニュー一覧</p>
+            <div class="mega-menu__menus footer-menus">
+              <div class="footer-menu">
+                <div class="footer-menu__title">
+                  <p>削らないラミネートべニア</p>
+                  <img src="assets/icons/footer/footer-parent-arrow.svg" alt="" />
+                </div>
+                <span class="footer-menu__line" aria-hidden="true">
+                  <img src="assets/icons/footer/footer-parent-line.svg" alt="" />
+                </span>
+                <ul class="footer-menu__list">
+                  <li>
+                    <span class="footer-menu__dot"></span>
+                    <a href="#">削らないラミネートべニア</a>
+                  </li>
+                  <li>
+                    <span class="footer-menu__dot"></span>
+                    <a href="#">施術症例紹介</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="footer-menu">
+                <div class="footer-menu__title">
+                  <p>審美歯科</p>
+                  <img src="assets/icons/footer/footer-parent-arrow.svg" alt="" />
+                </div>
+                <span class="footer-menu__line" aria-hidden="true">
+                  <img src="assets/icons/footer/footer-parent-line.svg" alt="" />
+                </span>
+                <ul class="footer-menu__list">
+                  <li>
+                    <span class="footer-menu__dot"></span>
+                    <a href="#">3Dデジタルマウスピース矯正(審美矯正)</a>
+                  </li>
+                  <li>
+                    <span class="footer-menu__dot"></span>
+                    <a href="#">オールセラミック治療とジルコニア</a>
+                  </li>
+                  <li>
+                    <span class="footer-menu__dot"></span>
+                    <a href="#">ホワイトニング</a>
+                  </li>
+                  <li>
+                    <span class="footer-menu__dot"></span>
+                    <a href="#">歯肉整形/ガミースマイル改善</a>
+                  </li>
+                  <li>
+                    <span class="footer-menu__dot"></span>
+                    <a href="#">歯のマニキュア</a>
+                  </li>
+                  <li>
+                    <span class="footer-menu__dot"></span>
+                    <a href="#">ダイレクトボンディング</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="footer-menu">
+                <div class="footer-menu__title">
+                  <p>その他の診療メニュー</p>
+                  <img src="assets/icons/footer/footer-parent-arrow.svg" alt="" />
+                </div>
+                <span class="footer-menu__line" aria-hidden="true">
+                  <img src="assets/icons/footer/footer-parent-line.svg" alt="" />
+                </span>
+                <ul class="footer-menu__list">
+                  <li>
+                    <span class="footer-menu__dot"></span>
+                    <a href="#">インプラント</a>
+                  </li>
+                  <li>
+                    <span class="footer-menu__dot"></span>
+                    <a href="#">入れ歯/ブリッジ</a>
+                  </li>
+                  <li>
+                    <span class="footer-menu__dot"></span>
+                    <a href="#">リップアートメイク@DENTAL</a>
+                  </li>
+                  <li>
+                    <span class="footer-menu__dot"></span>
+                    <a href="#">ローマピンク</a>
+                  </li>
+                  <li>
+                    <span class="footer-menu__dot"></span>
+                    <a href="#">虫歯治療</a>
+                  </li>
+                  <li>
+                    <span class="footer-menu__dot"></span>
+                    <a href="#">歯周病治療</a>
+                  </li>
+                  <li>
+                    <span class="footer-menu__dot"></span>
+                    <a href="#">予防歯科/クリーニング</a>
+                  </li>
+                  <li>
+                    <span class="footer-menu__dot"></span>
+                    <a href="#">噛み合わせ・顎関節症</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="footer-menu mega-menu__menu">
+                <div class="footer-menu__title">
+                  <p>お悩みから治療症例を探す</p>
+                  <img src="assets/icons/footer/footer-parent-arrow.svg" alt="" />
+                </div>
+                <span class="footer-menu__line" aria-hidden="true">
+                  <img src="assets/icons/footer/footer-parent-line.svg" alt="" />
+                </span>
+                <ul class="footer-menu__list">
+                  <li>
+                    <span class="footer-menu__dot"></span>
+                    <a href="#">テトラサイクリン歯</a>
+                  </li>
+                  <li>
+                    <span class="footer-menu__dot"></span>
+                    <a href="#">すきっ歯/矮小歯</a>
+                  </li>
+                  <li>
+                    <span class="footer-menu__dot"></span>
+                    <a href="#">失活歯/変色歯</a>
+                  </li>
+                  <li>
+                    <span class="footer-menu__dot"></span>
+                    <a href="#">歯を真っ白にする</a>
+                  </li>
+                  <li>
+                    <span class="footer-menu__dot"></span>
+                    <a href="#">詰め物の変色</a>
+                  </li>
+                  <li>
+                    <span class="footer-menu__dot"></span>
+                    <a href="#">差し歯の色</a>
+                  </li>
+                  <li>
+                    <span class="footer-menu__dot"></span>
+                    <a href="#">歯並びが気になる</a>
+                  </li>
+                  <li>
+                    <span class="footer-menu__dot"></span>
+                    <a href="#">出っ歯/八重歯</a>
+                  </li>
+                  <li>
+                    <span class="footer-menu__dot"></span>
+                    <a href="#">歯を大きくしたい</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="about-menu" id="about-menu" aria-hidden="true">
+      <div class="about-menu__panel">
+        <div class="about-menu__heading">
+          <p>当院について</p>
+        </div>
+        <div class="about-menu__grid">
+          <div class="about-menu__item">
+            <div class="footer-menu__title">
+              <a class="about-menu__link" href="#">当院の特徴・コンセプト</a>
+              <img src="assets/icons/footer/footer-parent-arrow.svg" alt="" />
+            </div>
+            <span class="footer-menu__line" aria-hidden="true">
+              <img src="assets/icons/footer/footer-parent-line.svg" alt="" />
+            </span>
+          </div>
+          <div class="about-menu__item">
+            <div class="footer-menu__title">
+              <a class="about-menu__link" href="#">院長紹介</a>
+              <img src="assets/icons/footer/footer-parent-arrow.svg" alt="" />
+            </div>
+            <span class="footer-menu__line" aria-hidden="true">
+              <img src="assets/icons/footer/footer-parent-line.svg" alt="" />
+            </span>
+          </div>
+          <div class="about-menu__item">
+            <div class="footer-menu__title">
+              <a class="about-menu__link" href="#">初診の流れ</a>
+              <img src="assets/icons/footer/footer-parent-arrow.svg" alt="" />
+            </div>
+            <span class="footer-menu__line" aria-hidden="true">
+              <img src="assets/icons/footer/footer-parent-line.svg" alt="" />
+            </span>
+          </div>
+          <div class="about-menu__item">
+            <div class="footer-menu__title">
+              <a class="about-menu__link" href="#">院内ツアー</a>
+              <img src="assets/icons/footer/footer-parent-arrow.svg" alt="" />
+            </div>
+            <span class="footer-menu__line" aria-hidden="true">
+              <img src="assets/icons/footer/footer-parent-line.svg" alt="" />
+            </span>
+          </div>
+          <div class="about-menu__item">
+            <div class="footer-menu__title">
+              <a class="about-menu__link" href="#">痛みに配慮した治療</a>
+              <img src="assets/icons/footer/footer-parent-arrow.svg" alt="" />
+            </div>
+            <span class="footer-menu__line" aria-hidden="true">
+              <img src="assets/icons/footer/footer-parent-line.svg" alt="" />
+            </span>
+          </div>
+          <div class="about-menu__item">
+            <div class="footer-menu__title">
+              <a class="about-menu__link" href="#">
+                EPIOS殺菌水システムのご紹介
+              </a>
+              <img src="assets/icons/footer/footer-parent-arrow.svg" alt="" />
+            </div>
+            <span class="footer-menu__line" aria-hidden="true">
+              <img src="assets/icons/footer/footer-parent-line.svg" alt="" />
+            </span>
+          </div>
+          <div class="about-menu__item">
+            <div class="footer-menu__title">
+              <a class="about-menu__link" href="#">メディア掲載</a>
+              <img src="assets/icons/footer/footer-parent-arrow.svg" alt="" />
+            </div>
+            <span class="footer-menu__line" aria-hidden="true">
+              <img src="assets/icons/footer/footer-parent-line.svg" alt="" />
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+      <div class="mobile-menu__scroll">
+        <div class="mobile-menu__inner">
+          <div class="mobile-menu__pickup">
+            <p class="mobile-menu__label">当院の人気施術</p>
+            <div class="mobile-menu__banners">
+              <a class="mobile-menu__banner" href="#">
+                <span class="mobile-menu__banner-image">
+                  <img
+                    src="assets/images/megamenu/banner-megamenu1.jpg"
+                    alt="削らないラミネートべニア"
+                  />
+                </span>
+              </a>
+              <a class="mobile-menu__banner" href="#">
+                <span class="mobile-menu__banner-image">
+                  <img
+                    src="assets/images/megamenu/banner-megamenu2.jpg"
+                    alt="オールセラミック治療とジルコニア"
+                  />
+                </span>
+              </a>
+              <a class="mobile-menu__banner" href="#">
+                <span class="mobile-menu__banner-image">
+                  <img
+                    src="assets/images/megamenu/banner-megamenu3.jpg"
+                    alt="矯正歯科"
+                  />
+                </span>
+              </a>
+              <a class="mobile-menu__banner" href="#">
+                <span class="mobile-menu__banner-image">
+                  <img
+                    src="assets/images/megamenu/banner-megamenu4.jpg"
+                    alt="ガミースマイル改善"
+                  />
+                </span>
+              </a>
+            </div>
+          </div>
+          <div class="mobile-menu__section">
+            <p class="mobile-menu__section-title">診療メニュー一覧</p>
+            <div class="mobile-menu__menus footer-menus">
+              <details class="footer-menu footer-menu--accordion">
+                <summary class="footer-menu__title">
+                  <p>削らないラミネートべニア</p>
+                  <img src="assets/icons/footer/footer-parent-arrow.svg" alt="" />
+                </summary>
+                <span class="footer-menu__line" aria-hidden="true">
+                  <img src="assets/icons/footer/footer-parent-line.svg" alt="" />
+                </span>
+                <ul class="footer-menu__list">
+                  <li>
+                    <span class="footer-menu__dot"></span>
+                    <a href="#">削らないラミネートべニア</a>
+                  </li>
+                  <li>
+                    <span class="footer-menu__dot"></span>
+                    <a href="#">施術症例紹介</a>
+                  </li>
+                </ul>
+              </details>
+              <details class="footer-menu footer-menu--accordion">
+                <summary class="footer-menu__title">
+                  <p>審美歯科</p>
+                  <img src="assets/icons/footer/footer-parent-arrow.svg" alt="" />
+                </summary>
+                <span class="footer-menu__line" aria-hidden="true">
+                  <img src="assets/icons/footer/footer-parent-line.svg" alt="" />
+                </span>
+                <ul class="footer-menu__list">
+                  <li>
+                    <span class="footer-menu__dot"></span>
+                    <a href="#">3Dデジタルマウスピース矯正(審美矯正)</a>
+                  </li>
+                  <li>
+                    <span class="footer-menu__dot"></span>
+                    <a href="#">オールセラミック治療とジルコニア</a>
+                  </li>
+                  <li>
+                    <span class="footer-menu__dot"></span>
+                    <a href="#">ホワイトニング</a>
+                  </li>
+                  <li>
+                    <span class="footer-menu__dot"></span>
+                    <a href="#">歯肉整形/ガミースマイル改善</a>
+                  </li>
+                  <li>
+                    <span class="footer-menu__dot"></span>
+                    <a href="#">歯のマニキュア</a>
+                  </li>
+                  <li>
+                    <span class="footer-menu__dot"></span>
+                    <a href="#">ダイレクトボンディング</a>
+                  </li>
+                </ul>
+              </details>
+              <details class="footer-menu footer-menu--accordion">
+                <summary class="footer-menu__title">
+                  <p>その他の診療メニュー</p>
+                  <img src="assets/icons/footer/footer-parent-arrow.svg" alt="" />
+                </summary>
+                <span class="footer-menu__line" aria-hidden="true">
+                  <img src="assets/icons/footer/footer-parent-line.svg" alt="" />
+                </span>
+                <ul class="footer-menu__list">
+                  <li>
+                    <span class="footer-menu__dot"></span>
+                    <a href="#">インプラント</a>
+                  </li>
+                  <li>
+                    <span class="footer-menu__dot"></span>
+                    <a href="#">入れ歯/ブリッジ</a>
+                  </li>
+                  <li>
+                    <span class="footer-menu__dot"></span>
+                    <a href="#">リップアートメイク@DENTAL</a>
+                  </li>
+                  <li>
+                    <span class="footer-menu__dot"></span>
+                    <a href="#">ローマピンク</a>
+                  </li>
+                  <li>
+                    <span class="footer-menu__dot"></span>
+                    <a href="#">虫歯治療</a>
+                  </li>
+                  <li>
+                    <span class="footer-menu__dot"></span>
+                    <a href="#">歯周病治療</a>
+                  </li>
+                  <li>
+                    <span class="footer-menu__dot"></span>
+                    <a href="#">予防歯科/クリーニング</a>
+                  </li>
+                  <li>
+                    <span class="footer-menu__dot"></span>
+                    <a href="#">噛み合わせ・顎関節症</a>
+                  </li>
+                </ul>
+              </details>
+              <details class="footer-menu footer-menu--accordion">
+                <summary class="footer-menu__title">
+                  <p>お悩みから治療症例を探す</p>
+                  <img src="assets/icons/footer/footer-parent-arrow.svg" alt="" />
+                </summary>
+                <span class="footer-menu__line" aria-hidden="true">
+                  <img src="assets/icons/footer/footer-parent-line.svg" alt="" />
+                </span>
+                <ul class="footer-menu__list">
+                  <li>
+                    <span class="footer-menu__dot"></span>
+                    <a href="#">テトラサイクリン歯</a>
+                  </li>
+                  <li>
+                    <span class="footer-menu__dot"></span>
+                    <a href="#">すきっ歯/矮小歯</a>
+                  </li>
+                  <li>
+                    <span class="footer-menu__dot"></span>
+                    <a href="#">失活歯/変色歯</a>
+                  </li>
+                  <li>
+                    <span class="footer-menu__dot"></span>
+                    <a href="#">歯を真っ白にする</a>
+                  </li>
+                  <li>
+                    <span class="footer-menu__dot"></span>
+                    <a href="#">詰め物の変色</a>
+                  </li>
+                  <li>
+                    <span class="footer-menu__dot"></span>
+                    <a href="#">差し歯の色</a>
+                  </li>
+                  <li>
+                    <span class="footer-menu__dot"></span>
+                    <a href="#">歯並びが気になる</a>
+                  </li>
+                  <li>
+                    <span class="footer-menu__dot"></span>
+                    <a href="#">出っ歯/八重歯</a>
+                  </li>
+                  <li>
+                    <span class="footer-menu__dot"></span>
+                    <a href="#">歯を大きくしたい</a>
+                  </li>
+                </ul>
+              </details>
+            </div>
+          </div>
+          <div class="mobile-menu__links">
+            <div class="mobile-menu__links-grid">
+              <a class="mobile-menu__link" href="#">当院の特徴・コンセプト</a>
+              <a class="mobile-menu__link" href="#">アクセス・診療時間</a>
+              <a class="mobile-menu__link" href="#">初診の流れ</a>
+              <a class="mobile-menu__link" href="#">院内ツアー</a>
+              <a class="mobile-menu__link" href="#">スタッフ紹介</a>
+              <a class="mobile-menu__link" href="#">院長紹介</a>
+              <a class="mobile-menu__link" href="#">痛みに配慮した治療</a>
+              <a class="mobile-menu__link" href="#">EPIOS殺菌水システムのご紹介</a>
+              <a class="mobile-menu__link" href="#">メディア掲載</a>
+              <a class="mobile-menu__link" href="#">料金表</a>
+              <a class="mobile-menu__link" href="#">お知らせ</a>
+              <a class="mobile-menu__link" href="#">コラム</a>
+            </div>
+            <div class="mobile-menu__links-mini">
+              <a href="#">プライバシーポリシー</a>
+              <a href="#">施設基準等に基づく掲示事項</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <main>
+      <section class="lower-mv" aria-label="メインビジュアル">
+        <div class="lower-mv__bg">
+          <picture>
+            <source
+              media="(max-width: 768px)"
+              srcset="assets/images/service/about-h1-bg-sp.jpg"
+            />
+            <img
+              src="assets/images/service/about-h1-bg.jpg"
+              alt=""
+              loading="eager"
+              fetchpriority="high"
+            />
+          </picture>
+        </div>
+        <div class="lower-mv__fade lower-mv__fade--left" aria-hidden="true"></div>
+        <div class="lower-mv__fade lower-mv__fade--right" aria-hidden="true"></div>
+        <div class="lower-mv__content">
+          <h1 class="lower-mv__title">インビザラインGO</h1>
+          <p class="lower-mv__subtitle">Invisalign go</p>
+        </div>
+      </section>
+      <nav class="breadcrumb" aria-label="パンくずリスト">
+        <ol class="breadcrumb__list">
+          <li class="breadcrumb__item">
+            <a class="breadcrumb__link" href="index.html">HOME</a>
+            <span class="breadcrumb__separator" aria-hidden="true">
+              <img src="assets/icons/breadcrumb-separator.svg" alt="" />
+            </span>
+          </li>
+          <li class="breadcrumb__item">
+            <a class="breadcrumb__link" href="#">診療メニュー</a>
+            <span class="breadcrumb__separator" aria-hidden="true">
+              <img src="assets/icons/breadcrumb-separator.svg" alt="" />
+            </span>
+          </li>
+          <li class="breadcrumb__item">
+            <a class="breadcrumb__link" href="orthodontics.html">矯正歯科</a>
+            <span class="breadcrumb__separator" aria-hidden="true">
+              <img src="assets/icons/breadcrumb-separator.svg" alt="" />
+            </span>
+          </li>
+          <li class="breadcrumb__item">
+            <span class="breadcrumb__current" aria-current="page">インビザラインGO</span>
+          </li>
+        </ol>
+      </nav>
+
+      <section class="ortho-intro" aria-labelledby="igo-intro-title">
+        <div class="section-title">
+          <h2 class="section-title__text" id="igo-intro-title">インビザラインGO</h2>
+          <span class="section-title__line" aria-hidden="true"></span>
+        </div>
+        <div class="igo-mv">
+          <picture>
+            <source
+              media="(max-width: 768px)"
+              srcset="assets/images/service/igo-mv-sp.jpg"
+            />
+            <img
+              src="assets/images/service/igo-mv.jpg"
+              alt="インビザラインGO"
+              loading="lazy"
+            />
+          </picture>
+        </div>
+        <div class="content-block">
+          <h3 class="content-block__heading">インビザラインGOとは？</h3>
+          <div class="igo-about">
+            <div class="igo-about__image">
+              <picture>
+                <source
+                  media="(max-width: 768px)"
+                  srcset="assets/images/service/igo-about-sp.jpg"
+                />
+                <img
+                  src="assets/images/service/igo-about.jpg"
+                  alt="インビザラインGOマウスピース"
+                  loading="lazy"
+                />
+              </picture>
+            </div>
+            <div class="igo-about__body">
+              <p class="igo-about__text">
+                インビザラインGOシステムは、インビザラインにコンピューターAIの機能を加えて、<strong><span class="marker">前歯の矯正・部分矯正がより効率的で、よりスピーディーに行うことができる</span></strong>インビザラインの新しいシステムです。
+              </p>
+              <p class="igo-about__text">
+                インビザラインGOは前歯を中心にした審美領域に特化した、インビザラインのAIによるマウスピース矯正プログラムによって、他の矯正方法よりも効率的でスピーディーな矯正治療を行うことができるインビザラインの新しいシステムです。
+              </p>
+              <p class="igo-about__text">
+                インビザラインGOは前歯部中心の審美領域の矯正計画になるため、<strong><span class="marker">矯正期間は非常に短くおおよそ3～7ヶ月程度で歯並びを審美的に改善できます。</span></strong>ただしインビザラインのように1歯ごとに細かな矯正を計画したり、奥歯全体の咬合改善などを行うことはできません。そういったケースではインビザラインの方がより細やかな特殊な矯正計画を行うことができます。
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="igo-banner">
+          <img
+            src="assets/images/service/igo-100.png"
+            alt="インビザラインGO 100万人突破"
+            loading="lazy"
+          />
+        </div>
+      </section>
+
+      <section class="treatment-section treatment-section--gray" aria-labelledby="igo-case-title">
+        <div class="section-title">
+          <h2 class="section-title__text" id="igo-case-title">インビザラインGoの症例</h2>
+          <span class="section-title__line" aria-hidden="true"></span>
+        </div>
+
+        <div class="igo-case">
+          <div class="igo-case__image">
+            <picture>
+              <source
+                media="(max-width: 768px)"
+                srcset="assets/images/service/igo-ba-sp.jpg"
+              />
+              <img
+                src="assets/images/service/igo-ba.jpg"
+                alt="インビザラインGO Before/After症例"
+                loading="lazy"
+              />
+            </picture>
+          </div>
+          <div class="igo-case__body">
+            <p class="igo-case__text">
+              インビザラインGoで上下前歯のすきっ歯とガミースマイルを改善した症例です。状態にもよりますが、すきっ歯はインビザラインGoの得意とするケースの一つです。臼歯（奥歯）の歯並び咬み合わせが比較的キレイで骨格的な問題が無ければ、前歯の歯並びはインビザラインGoで効率的に改善することができます。効率的な治療計画で最小限の期間と負担で矯正を行いました。
+            </p>
+            <p class="igo-case__meta">
+              【治療期間】6.5ヶ月　【費用】583,000円（税込） 【リスク・副作用】削らないラミネートベニアは、接着によって元の歯より少し厚みが出ます。この症例のように歯を大きくすることは可能ですが、歯を小さくする・出っ歯を改善することはできません。
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="treatment-section treatment-section--top-lg" aria-labelledby="igo-merit-title">
+        <div class="section-title">
+          <h2 class="section-title__text" id="igo-merit-title">メリットと適したケース</h2>
+          <span class="section-title__line" aria-hidden="true"></span>
+        </div>
+
+        <div class="treatment-block">
+          <h3 class="content-block__heading">インビザラインGOのメリット</h3>
+
+          <div class="treatment-block__subheading">
+            <p class="treatment-block__subheading-text">インビザラインの実績と信頼の品質</p>
+          </div>
+          <div class="content-block__body">
+            <p class="content-block__text">
+              インビザラインからの新商品なので、<strong><span class="marker">インビザラインの技術や品質がそのまま受け継がれています。</span></strong>インビザラインGOはよりシンプルでスピーディーな特長があります。
+            </p>
+          </div>
+
+          <div class="treatment-block__subheading">
+            <p class="treatment-block__subheading-text">費用が抑えられる</p>
+          </div>
+          <div class="content-block__body">
+            <p class="content-block__text">
+              インビザラインよりもシンプルでオートマチックな治療計画になるので、<strong><span class="marker">治療期間が早く費用も安く行うことが出来ます。</span></strong>
+            </p>
+          </div>
+
+          <div class="treatment-block__subheading">
+            <p class="treatment-block__subheading-text">矯正治療が短期間</p>
+          </div>
+          <div class="content-block__body">
+            <p class="content-block__text">
+              インビザラインのAIが約6ヶ月のシンプルな治療計画を設計します。<strong><span class="marker">6ヶ月程度で行えるマウスピース矯正</span></strong>です。（6ヶ月のインビザラインGOを2回行うこともできます。）
+            </p>
+          </div>
+        </div>
+
+        <div class="treatment-block">
+          <h3 class="content-block__heading">インビザラインGOに適しているケース</h3>
+
+          <div class="igo-case__image">
+            <picture>
+              <source
+                media="(max-width: 768px)"
+                srcset="assets/images/service/igo-case-sp.jpg"
+              />
+              <img
+                src="assets/images/service/igo-case.jpg"
+                alt="インビザラインGOに適しているケース"
+                loading="lazy"
+              />
+            </picture>
+          </div>
+
+          <div class="treatment-block__subheading">
+            <p class="treatment-block__subheading-text">歯並びの審美的改善</p>
+          </div>
+          <div class="content-block__body">
+            <p class="content-block__text">
+              前歯の見た目や咬み合わせが気になっているが、奥歯の歯並びや咬み合わせには問題がないような<strong><span class="marker">一般的な歯列不正</span></strong>を改善したいケース全般。
+            </p>
+          </div>
+
+          <div class="treatment-block__subheading">
+            <p class="treatment-block__subheading-text">前歯のすきっ歯</p>
+          </div>
+          <div class="content-block__body">
+            <p class="content-block__text">
+              前歯のすきっ歯を改善したいケースでは、状態にもよりますが奥歯の咬み合わせに問題がなければ、<strong><span class="marker">他の矯正方法よりも効率的で短期間に行える可能性があります。</span></strong>
+            </p>
+          </div>
+
+          <div class="treatment-block__subheading">
+            <p class="treatment-block__subheading-text">費用を抑えて矯正治療をしたい</p>
+          </div>
+          <div class="content-block__body">
+            <p class="content-block__text">
+              インビザラインGOはAIによってオートマチックな治療計画を行うことができます。<strong><span class="marker">治療期間や治療の規模を最小限に設計</span></strong>することで、インビザラインや他の矯正方法よりも費用を抑えることができます。
+            </p>
+          </div>
+
+          <div class="treatment-block__subheading">
+            <p class="treatment-block__subheading-text">以前に矯正治療の後戻りの改善</p>
+          </div>
+          <div class="content-block__body">
+            <p class="content-block__text">
+              以前に矯正治療を行い後戻りによる歯列不正が気になっているようなケースでは、矯正治療後の今のその状態を生かして気になっているところ、<strong><span class="marker">改善したいところにだけフォーカス</span></strong>して効率的な治療計画を行うことができます。
+            </p>
+          </div>
+
+          <div class="treatment-block__subheading">
+            <p class="treatment-block__subheading-text">インプラントやブリッジをするための術前矯正</p>
+          </div>
+          <div class="content-block__body">
+            <p class="content-block__text">
+              <strong><span class="marker">歯を失うと周りの歯がズレて歯並びや咬み合わせが崩れてしまいます。</span></strong>インプラントやブリッジをする場合に歯のスペースを適切に整えたり周りの歯並び咬み合わせを整えたりする術前矯正を行うことができます。
+            </p>
+          </div>
+
+          <div class="treatment-block__subheading">
+            <p class="treatment-block__subheading-text">ラミネートベニアの審美歯科における術前矯正</p>
+          </div>
+          <div class="content-block__body">
+            <p class="content-block__text">
+              ラミネートベニアは上前歯の審美歯科が歯を削らずに行うことができる方法です。削って被せるセラミッククラウンと比較して低侵襲で行えるのですが、歯並びを大きく変えることができません。<strong><span class="marker">ラミネートベニアの審美歯科をより有利にキレイに行う</span></strong>ために、インビザラインGoではより効率的に費用を抑えて術前矯正を行うことができます。
+            </p>
+            <p class="content-block__text">
+              また逆に、他院での矯正治療後の審美障害（歯の変色や歯並び不正やブラックトライアングルやすきっ歯など）に対して前歯の審美を改善するために、削らないラミネートベニアを選択し、矯正治療と審美歯科の両方に精通する当院にご来院なさる方も非常に多いです。
+            </p>
+          </div>
+
+          <div class="treatment-block__subheading">
+            <p class="treatment-block__subheading-text">セラミック治療や審美歯科における術前矯正</p>
+          </div>
+          <div class="content-block__body">
+            <p class="content-block__text">
+              セラミッククラウンによる虫歯治療や審美歯科は歯並びや咬み合わせを改善することができますが、過度に歯並びが悪ければセラミック治療にも無理がかかります。<strong><span class="marker">セラミック治療をより有利にキレイに行う</span></strong>ために、インビザラインGoではより効率的に費用を抑えて術前矯正を行うことができます。
+            </p>
+            <p class="content-block__text">
+              また逆に、他院での矯正治療後の審美障害（歯の変色、歯並び不正、ブラックトライアングル、すきっ歯など）や機能障害（虫歯、歯のグラつき動揺、咬合の不正など）に対してオールセラミック治療を行うために、矯正治療とオールセラミック補綴治療の両方に精通する当院にご来院なさる方も非常に多いです。
+            </p>
+          </div>
+
+          <div class="treatment-block__subheading">
+            <p class="treatment-block__subheading-text">ワイヤー矯正治療が長期間になり滞っているケース</p>
+          </div>
+          <div class="content-block__body">
+            <p class="content-block__text">
+              全体的な矯正治療を表側ワイヤー矯正や裏側ワイヤー矯正で行っているケースで、全体的には矯正が進んでいるが前歯審美領域の微調整などの仕上げ部分に時間がかかりワイヤー矯正治療が滞ってしまっているケースなどでは、<strong><span class="marker">デジタルのインビザラインGOでは細やかな矯正治療が仕上げやすい</span></strong>です。
+            </p>
+            <p class="content-block__text">
+              また当院ではラミネートベニアやオールセラミックの審美歯科の対応も可能です。
+            </p>
+          </div>
+        </div>
+      </section>
+
+    </main>
+    <footer class="site-footer">
+      <section class="footer-cta" aria-labelledby="footer-cta-title">
+        <div class="footer-cta__inner">
+          <p class="footer-cta__en" aria-hidden="true">5DENTAL TOKYO GINZA</p>
+          <div class="footer-cta__content">
+            <div class="footer-cta__text-block">
+              <h2 class="footer-cta__title" id="footer-cta-title">
+                歯をできるだけ削らない方法・健康的な審美歯科
+              </h2>
+              <div class="footer-cta__text">
+                <p>歯並びや形・バランス、唇の色など、審美的なお悩みを解決に導きます。</p>
+                <p>お気軽に5DENTAL東京銀座までご相談ください。</p>
+              </div>
+            </div>
+            <div class="footer-cta__buttons">
+              <a class="footer-cta__button footer-cta__button--web" href="#">
+                <span class="footer-cta__button-main">
+                  <img
+                    src="assets/icons/footer/footer-calendar.svg"
+                    alt=""
+                    aria-hidden="true"
+                  />
+                  Web予約
+                </span>
+                <img
+                  class="footer-cta__button-arrow"
+                  src="assets/icons/footer/footer-cta-arrow-gold.svg"
+                  alt=""
+                  aria-hidden="true"
+                />
+              </a>
+              <a
+                class="footer-cta__button footer-cta__button--tel"
+                href="tel:0352202511"
+              >
+                <span class="footer-cta__button-sub">お電話ででのご予約</span>
+                <span class="footer-cta__button-number">
+                  <img
+                    src="assets/icons/footer/footer-tel.svg"
+                    alt=""
+                    aria-hidden="true"
+                  />
+                  03-5220-2511
+                </span>
+                <img
+                  class="footer-cta__button-arrow"
+                  src="assets/icons/footer/footer-cta-arrow-dark.svg"
+                  alt=""
+                  aria-hidden="true"
+                />
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <div class="footer-main">
+        <div class="footer-main__inner">
+          <div class="footer-info">
+            <img
+              class="footer-info__logo"
+              src="assets/images/footer/footer-logo-fill.svg"
+              alt="5DENTAL TOKYO GINZA"
+            />
+            <div class="footer-info__details">
+              <div class="footer-info__name">
+                <span class="footer-info__org">医療法人社団ever</span>
+                <span class="footer-info__clinic">5DENTAL東京銀座</span>
+              </div>
+              <div class="footer-info__address">
+                <img
+                  src="assets/icons/footer/footer-map.svg"
+                  alt=""
+                  aria-hidden="true"
+                />
+                <span>〒104-0061 東京都中央区銀座5丁目1番 GINZA5 2F</span>
+              </div>
+            </div>
+            <div class="footer-social">
+              <a class="footer-social__link" href="#">
+                Instagram
+                <img
+                  src="assets/icons/footer/footer-tab-filled.svg"
+                  alt=""
+                  aria-hidden="true"
+                />
+              </a>
+              <a class="footer-social__link" href="#">
+                YouTube
+                <img
+                  src="assets/icons/footer/footer-tab-filled.svg"
+                  alt=""
+                  aria-hidden="true"
+                />
+              </a>
+            </div>
+          </div>
+          <div class="footer-menus">
+            <details class="footer-menu footer-menu--accordion" open>
+              <summary class="footer-menu__title">
+                <p>削らないラミネートべニア</p>
+                <img
+                  src="assets/icons/footer/footer-parent-arrow.svg"
+                  alt=""
+                  aria-hidden="true"
+                />
+              </summary>
+              <span class="footer-menu__line" aria-hidden="true">
+                <img src="assets/icons/footer/footer-parent-line.svg" alt="" />
+              </span>
+              <ul class="footer-menu__list">
+                <li>
+                  <span class="footer-menu__dot"></span>
+                  <a href="#">削らないラミネートべニア</a>
+                </li>
+                <li>
+                  <span class="footer-menu__dot"></span>
+                  <a href="#">施術症例紹介</a>
+                </li>
+              </ul>
+            </details>
+            <details class="footer-menu footer-menu--accordion" open>
+              <summary class="footer-menu__title">
+                <p>審美歯科</p>
+                <img
+                  src="assets/icons/footer/footer-parent-arrow.svg"
+                  alt=""
+                  aria-hidden="true"
+                />
+              </summary>
+              <span class="footer-menu__line" aria-hidden="true">
+                <img src="assets/icons/footer/footer-parent-line.svg" alt="" />
+              </span>
+              <ul class="footer-menu__list">
+                <li>
+                  <span class="footer-menu__dot"></span>
+                  <a href="#">
+                    3Dデジタルマウスピース矯正<br />
+                    (審美矯正)
+                  </a>
+                </li>
+                <li>
+                  <span class="footer-menu__dot"></span>
+                  <a href="#">オールセラミック治療/ジルコニア治療</a>
+                </li>
+                <li>
+                  <span class="footer-menu__dot"></span>
+                  <a href="#">ホワイトニング</a>
+                </li>
+                <li>
+                  <span class="footer-menu__dot"></span>
+                  <a href="#">歯肉整形/ガミースマイル改善</a>
+                </li>
+                <li>
+                  <span class="footer-menu__dot"></span>
+                  <a href="#">歯のマニキュア</a>
+                </li>
+                <li>
+                  <span class="footer-menu__dot"></span>
+                  <a href="#">ダイレクトボンディング</a>
+                </li>
+              </ul>
+            </details>
+            <details class="footer-menu footer-menu--accordion" open>
+              <summary class="footer-menu__title">
+                <p>その他の診療メニュー</p>
+                <img
+                  src="assets/icons/footer/footer-parent-arrow.svg"
+                  alt=""
+                  aria-hidden="true"
+                />
+              </summary>
+              <span class="footer-menu__line" aria-hidden="true">
+                <img src="assets/icons/footer/footer-parent-line.svg" alt="" />
+              </span>
+              <ul class="footer-menu__list">
+                <li>
+                  <span class="footer-menu__dot"></span>
+                  <a href="#">インプラント</a>
+                </li>
+                <li>
+                  <span class="footer-menu__dot"></span>
+                  <a href="#">入れ歯/ブリッジ</a>
+                </li>
+                <li>
+                  <span class="footer-menu__dot"></span>
+                  <a href="#">リップアートメイク@DENTAL</a>
+                </li>
+                <li>
+                  <span class="footer-menu__dot"></span>
+                  <a href="#">ローマピンク</a>
+                </li>
+                <li>
+                  <span class="footer-menu__dot"></span>
+                  <a href="#">虫歯治療</a>
+                </li>
+                <li>
+                  <span class="footer-menu__dot"></span>
+                  <a href="#">歯周病治療</a>
+                </li>
+                <li>
+                  <span class="footer-menu__dot"></span>
+                  <a href="#">予防歯科/クリーニング</a>
+                </li>
+                <li>
+                  <span class="footer-menu__dot"></span>
+                  <a href="#">噛み合わせ・顎関節症</a>
+                </li>
+              </ul>
+            </details>
+            <details class="footer-menu footer-menu--accordion" open>
+              <summary class="footer-menu__title">
+                <p>お悩みから治療症例を探す</p>
+                <img
+                  src="assets/icons/footer/footer-parent-arrow.svg"
+                  alt=""
+                  aria-hidden="true"
+                />
+              </summary>
+              <span class="footer-menu__line" aria-hidden="true">
+                <img src="assets/icons/footer/footer-parent-line.svg" alt="" />
+              </span>
+              <ul class="footer-menu__list">
+                <li>
+                  <span class="footer-menu__dot"></span>
+                  <a href="#">テトラサイクリン歯</a>
+                </li>
+                <li>
+                  <span class="footer-menu__dot"></span>
+                  <a href="#">すきっ歯/矮小歯</a>
+                </li>
+                <li>
+                  <span class="footer-menu__dot"></span>
+                  <a href="#">失活歯/変色歯</a>
+                </li>
+                <li>
+                  <span class="footer-menu__dot"></span>
+                  <a href="#">歯を真っ白にする</a>
+                </li>
+                <li>
+                  <span class="footer-menu__dot"></span>
+                  <a href="#">詰め物の変色</a>
+                </li>
+                <li>
+                  <span class="footer-menu__dot"></span>
+                  <a href="#">差し歯の色</a>
+                </li>
+                <li>
+                  <span class="footer-menu__dot"></span>
+                  <a href="#">歯並びが気になる</a>
+                </li>
+                <li>
+                  <span class="footer-menu__dot"></span>
+                  <a href="#">出っ歯/八重歯</a>
+                </li>
+                <li>
+                  <span class="footer-menu__dot"></span>
+                  <a href="#">歯を大きくしたい</a>
+                </li>
+              </ul>
+            </details>
+          </div>
+        </div>
+      </div>
+      <div class="footer-links">
+        <div class="footer-links__inner">
+          <div class="footer-links__row">
+            <a class="footer-links__item" href="#">当院の特徴・コンセプト</a>
+            <a class="footer-links__item" href="#">アクセス・診療時間</a>
+            <a class="footer-links__item" href="#">初診の流れ</a>
+            <a class="footer-links__item" href="#">院内ツアー</a>
+            <a class="footer-links__item" href="#">スタッフ紹介</a>
+            <a class="footer-links__item" href="#">院長紹介</a>
+          </div>
+          <div class="footer-links__row">
+            <a class="footer-links__item" href="#">痛みに配慮した治療</a>
+            <a class="footer-links__item" href="#">EPIOS殺菌水システムのご紹介</a>
+            <a class="footer-links__item" href="#">メディア掲載</a>
+            <a class="footer-links__item" href="#">料金表</a>
+            <a class="footer-links__item" href="#">お知らせ</a>
+            <a class="footer-links__item" href="#">コラム</a>
+          </div>
+          <div class="footer-links__row footer-links__row--small">
+            <a class="footer-links__item footer-links__item--small" href="#">
+              プライバシーポリシー
+            </a>
+            <a class="footer-links__item footer-links__item--small" href="#">
+              施設基準等に基づく掲示事項
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">© 5DENTAL TOKYO GINZA</div>
+    </footer>
+    <script>
+      const megaTrigger = document.querySelector("[data-mega-trigger]");
+      const aboutTrigger = document.querySelector("[data-about-trigger]");
+      const mobileTrigger = document.querySelector("[data-mobile-trigger]");
+      const mobileLabel = mobileTrigger
+        ? mobileTrigger.querySelector(".hamburger-button__label")
+        : null;
+      const megaMenu = document.querySelector("#mega-menu");
+      const aboutMenu = document.querySelector("#about-menu");
+      const mobileMenu = document.querySelector("#mobile-menu");
+      const siteHeader = document.querySelector(".site-header");
+
+      const setHeaderHeight = () => {
+        if (!siteHeader) {
+          return;
+        }
+        const height = Math.round(siteHeader.getBoundingClientRect().height);
+        document.documentElement.style.setProperty(
+          "--header-height",
+          `${height}px`
+        );
+      };
+
+      const setScrollbarWidth = () => {
+        const width = window.innerWidth - document.documentElement.clientWidth;
+        document.documentElement.style.setProperty(
+          "--scrollbar-width",
+          `${width}px`
+        );
+      };
+
+      const updateOverlayState = () => {
+        const isOpen =
+          (megaMenu && megaMenu.classList.contains("is-open")) ||
+          (aboutMenu && aboutMenu.classList.contains("is-open")) ||
+          (mobileMenu && mobileMenu.classList.contains("is-open"));
+        if (isOpen) {
+          setScrollbarWidth();
+          document.body.classList.add("is-overlay-open");
+          return;
+        }
+        document.body.classList.remove("is-overlay-open");
+        document.documentElement.style.setProperty("--scrollbar-width", "0px");
+      };
+
+      const openMegaMenu = () => {
+        if (!megaMenu || !megaTrigger) {
+          return;
+        }
+        if (aboutMenu) {
+          closeAboutMenu();
+        }
+        megaMenu.classList.add("is-open");
+        megaMenu.setAttribute("aria-hidden", "false");
+        megaTrigger.setAttribute("aria-expanded", "true");
+        updateOverlayState();
+      };
+
+      const closeMegaMenu = () => {
+        if (!megaMenu || !megaTrigger) {
+          return;
+        }
+        megaMenu.classList.remove("is-open");
+        megaMenu.setAttribute("aria-hidden", "true");
+        megaTrigger.setAttribute("aria-expanded", "false");
+        updateOverlayState();
+      };
+
+      const openMobileMenu = () => {
+        if (!mobileMenu || !mobileTrigger) {
+          return;
+        }
+        if (megaMenu) {
+          closeMegaMenu();
+        }
+        if (aboutMenu) {
+          closeAboutMenu();
+        }
+        mobileMenu.classList.add("is-open");
+        mobileMenu.setAttribute("aria-hidden", "false");
+        mobileTrigger.setAttribute("aria-expanded", "true");
+        mobileTrigger.setAttribute("aria-label", "メニューを閉じる");
+        mobileTrigger.classList.add("is-open");
+        if (mobileLabel) {
+          mobileLabel.textContent = "close";
+        }
+        updateOverlayState();
+      };
+
+      const closeMobileMenu = () => {
+        if (!mobileMenu || !mobileTrigger) {
+          return;
+        }
+        mobileMenu.classList.remove("is-open");
+        mobileMenu.setAttribute("aria-hidden", "true");
+        mobileTrigger.setAttribute("aria-expanded", "false");
+        mobileTrigger.setAttribute("aria-label", "メニューを開く");
+        mobileTrigger.classList.remove("is-open");
+        if (mobileLabel) {
+          mobileLabel.textContent = "menu";
+        }
+        updateOverlayState();
+      };
+
+      const openAboutMenu = () => {
+        if (!aboutMenu || !aboutTrigger) {
+          return;
+        }
+        if (megaMenu) {
+          closeMegaMenu();
+        }
+        if (mobileMenu) {
+          closeMobileMenu();
+        }
+        aboutMenu.classList.add("is-open");
+        aboutMenu.setAttribute("aria-hidden", "false");
+        aboutTrigger.setAttribute("aria-expanded", "true");
+        updateOverlayState();
+      };
+
+      const closeAboutMenu = () => {
+        if (!aboutMenu || !aboutTrigger) {
+          return;
+        }
+        aboutMenu.classList.remove("is-open");
+        aboutMenu.setAttribute("aria-hidden", "true");
+        aboutTrigger.setAttribute("aria-expanded", "false");
+        updateOverlayState();
+      };
+
+      if (
+        (megaMenu && megaTrigger) ||
+        (aboutMenu && aboutTrigger) ||
+        (mobileMenu && mobileTrigger)
+      ) {
+        setHeaderHeight();
+        window.addEventListener("resize", () => {
+          setHeaderHeight();
+          updateOverlayState();
+          if (window.innerWidth > 1199) {
+            closeMobileMenu();
+          }
+        });
+
+        if (megaTrigger) {
+          megaTrigger.addEventListener("click", (event) => {
+            event.preventDefault();
+            setHeaderHeight();
+            const isOpen = megaMenu && megaMenu.classList.contains("is-open");
+            if (isOpen) {
+              closeMegaMenu();
+            } else {
+              openMegaMenu();
+            }
+          });
+        }
+
+        if (mobileTrigger) {
+          mobileTrigger.addEventListener("click", (event) => {
+            event.preventDefault();
+            setHeaderHeight();
+            const isOpen = mobileMenu && mobileMenu.classList.contains("is-open");
+            if (isOpen) {
+              closeMobileMenu();
+            } else {
+              openMobileMenu();
+            }
+          });
+        }
+
+        if (aboutTrigger) {
+          aboutTrigger.addEventListener("click", (event) => {
+            event.preventDefault();
+            setHeaderHeight();
+            const isOpen = aboutMenu && aboutMenu.classList.contains("is-open");
+            if (isOpen) {
+              closeAboutMenu();
+            } else {
+              openAboutMenu();
+            }
+          });
+        }
+
+        if (megaMenu) {
+          megaMenu.addEventListener("click", (event) => {
+            const link = event.target.closest("a");
+            if (link) {
+              closeMegaMenu();
+            }
+          });
+        }
+
+        if (aboutMenu) {
+          aboutMenu.addEventListener("click", (event) => {
+            const link = event.target.closest("a");
+            if (link) {
+              closeAboutMenu();
+            }
+          });
+        }
+
+        if (mobileMenu) {
+          mobileMenu.addEventListener("click", (event) => {
+            const link = event.target.closest("a");
+            if (link) {
+              closeMobileMenu();
+            }
+          });
+        }
+
+        document.addEventListener("click", (event) => {
+          const target = event.target;
+          const megaOpen = megaMenu && megaMenu.classList.contains("is-open");
+          const aboutOpen = aboutMenu && aboutMenu.classList.contains("is-open");
+          const mobileOpen =
+            mobileMenu && mobileMenu.classList.contains("is-open");
+          if (!megaOpen && !aboutOpen && !mobileOpen) {
+            return;
+          }
+          if (
+            (megaMenu && megaMenu.contains(target)) ||
+            (aboutMenu && aboutMenu.contains(target)) ||
+            (mobileMenu && mobileMenu.contains(target)) ||
+            (megaTrigger && megaTrigger.contains(target)) ||
+            (aboutTrigger && aboutTrigger.contains(target)) ||
+            (mobileTrigger && mobileTrigger.contains(target))
+          ) {
+            return;
+          }
+          if (megaOpen) {
+            closeMegaMenu();
+          }
+          if (aboutOpen) {
+            closeAboutMenu();
+          }
+          if (mobileOpen) {
+            closeMobileMenu();
+          }
+        });
+
+        document.addEventListener("keydown", (event) => {
+          if (event.key === "Escape") {
+            closeMegaMenu();
+            closeAboutMenu();
+            closeMobileMenu();
+          }
+        });
+
+        window.addEventListener("load", setHeaderHeight);
+      }
+
+      const footerArrowClosed = "assets/icons/footer/footer-parent-arrow.svg";
+      const footerArrowOpen = "assets/icons/footer/footer-parent-arrow2.svg";
+      const allAccordions = Array.from(
+        document.querySelectorAll(".footer-menu--accordion")
+      );
+      const footerAccordions = Array.from(
+        document.querySelectorAll("footer .footer-menu--accordion")
+      );
+      const updateAccordionIcon = (accordion) => {
+        const icon = accordion.querySelector(".footer-menu__title img");
+        if (!icon) {
+          return;
+        }
+        const nextSrc = accordion.hasAttribute("open")
+          ? footerArrowOpen
+          : footerArrowClosed;
+        if (icon.getAttribute("src") !== nextSrc) {
+          icon.setAttribute("src", nextSrc);
+        }
+      };
+      const syncAccordionIcons = () => {
+        allAccordions.forEach(updateAccordionIcon);
+      };
+      const syncFooterAccordions = () => {
+        const isMobile = window.innerWidth <= 768;
+        footerAccordions.forEach((accordion) => {
+          if (isMobile) {
+            accordion.removeAttribute("open");
+          } else {
+            accordion.setAttribute("open", "");
+          }
+        });
+      };
+
+      if (footerAccordions.length) {
+        syncFooterAccordions();
+        syncAccordionIcons();
+        window.addEventListener("resize", () => {
+          syncFooterAccordions();
+          syncAccordionIcons();
+        });
+      } else {
+        syncAccordionIcons();
+      }
+
+      if (allAccordions.length) {
+        allAccordions.forEach((accordion) => {
+          accordion.addEventListener("toggle", () =>
+            updateAccordionIcon(accordion)
+          );
+        });
+      }
+    </script>
+  </body>
+</html>
