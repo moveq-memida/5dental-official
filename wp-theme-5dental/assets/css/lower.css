@@ -1,0 +1,3676 @@
+/* ==========================================================================
+   Lower Page Styles
+
+   PC: 1200px+ / SP: 768px以下
+   Figmaデザインに基づくピクセルパーフェクト実装
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   Design Tokens
+   -------------------------------------------------------------------------- */
+:root {
+  /* Colors */
+  --color-gold: #9a7d4a;
+  --color-gold-light: #b5a27c;
+  --color-gold-dark: #7d6c4f;
+  --color-bg-gray: #f4f3ef;
+  --color-bg-dark: #dedfe3;
+  --color-text: #595a5d;
+
+  /* Container Widths */
+  --container-sm: 800px;
+  --container-md: 960px;
+  --container-lg: 1040px;
+  --container-xl: 1200px;
+}
+
+body {
+  background: #fff;
+}
+
+/* ==========================================================================
+   Lower Main Visual
+   ========================================================================== */
+.lower-mv {
+  position: relative;
+  width: 100%;
+  height: 330px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.lower-mv__bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.lower-mv__bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.lower-mv__fade {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 250px;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.lower-mv__fade--left {
+  left: 0;
+  background: linear-gradient(to right, #fff, transparent);
+}
+
+.lower-mv__fade--right {
+  right: 0;
+  background: linear-gradient(to left, #fff, transparent);
+}
+
+.lower-mv__content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  text-align: center;
+  padding: 0 24px;
+}
+
+.lower-mv__title {
+  margin: 0;
+  font-family: "Zen Old Mincho", serif;
+  font-weight: 900;
+  font-size: 48px;
+  line-height: 1.35;
+  letter-spacing: 0.1em;
+  color: var(--color-primary);
+  text-shadow: 0 0 5px #fff;
+}
+
+.lower-mv__subtitle {
+  margin: 0;
+  font-family: "Zen Old Mincho", serif;
+  font-weight: 900;
+  font-size: 28px;
+  line-height: 1.35;
+  letter-spacing: 0.1em;
+  color: var(--color-gold);
+  text-shadow: 0 0 5px #fff;
+}
+
+/* ==========================================================================
+   Breadcrumb
+   ========================================================================== */
+.breadcrumb {
+  padding: 0 80px;
+  margin-top: 24px;
+}
+
+.breadcrumb__list {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  margin: 0;
+  padding: 6px 12px;
+  list-style: none;
+  background: var(--color-bg-gray);
+  border-radius: 3px;
+}
+
+.breadcrumb__item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.breadcrumb__link,
+.breadcrumb__current {
+  font-family: "Zen Old Mincho", serif;
+  font-weight: 900;
+  font-size: 14px;
+  line-height: 1.35;
+  letter-spacing: 0.7px;
+  color: var(--color-primary);
+  transition: opacity 0.2s;
+}
+
+.breadcrumb__link:hover {
+  opacity: 0.7;
+}
+
+.breadcrumb__separator {
+  display: block;
+  width: 14px;
+  height: 11px;
+  flex-shrink: 0;
+}
+
+.breadcrumb__separator img {
+  width: 100%;
+  height: 100%;
+}
+
+/* ==========================================================================
+   Section Title
+   ========================================================================== */
+.section-title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+}
+
+.section-title__text {
+  margin: 0;
+  font-family: "Zen Old Mincho", serif;
+  font-weight: 900;
+  font-size: 32px;
+  line-height: 1.35;
+  letter-spacing: 0.05em;
+  text-align: center;
+  color: var(--color-gold);
+}
+
+.section-title__line {
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent 0%,
+    var(--color-gold-light) 15%,
+    var(--color-gold-light) 85%,
+    transparent 100%
+  );
+}
+
+/* ==========================================================================
+   Orthodontics Intro
+   ========================================================================== */
+.ortho-intro {
+  padding: 104px 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 56px;
+}
+
+.ortho-hero {
+  position: relative;
+  display: grid;
+  width: 100%;
+  max-width: var(--container-md);
+  height: 400px;
+}
+
+.ortho-hero__bg {
+  position: absolute;
+  inset: 0;
+  display: flex;
+}
+
+.ortho-hero__bg-left {
+  flex: 1;
+  background: linear-gradient(to bottom, #ebefee, #e8eced);
+}
+
+.ortho-hero__bg-right {
+  flex: 1;
+  background: linear-gradient(to bottom, #e4e8e8, #dddfde);
+}
+
+.ortho-hero__image {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  clip-path: polygon(8% 0, 100% 0, 100% 100%, 0 100%);
+}
+
+.ortho-hero__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ==========================================================================
+   Content Block
+   ========================================================================== */
+.content-block {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  width: 100%;
+  max-width: var(--container-lg);
+}
+
+.content-block__heading {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 6px 16px;
+  margin: 0;
+  background: var(--color-gold-light);
+  font-family: "Zen Old Mincho", serif;
+  font-weight: 700;
+  font-size: 26px;
+  line-height: 1.35;
+  letter-spacing: 1.3px;
+  color: #fff;
+}
+
+.content-block__body {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.content-block__text {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.6;
+  letter-spacing: 0.32px;
+  color: var(--color-text);
+}
+
+.content-block__text strong {
+  font-weight: 700;
+}
+
+.content-block__text .marker {
+  background: linear-gradient(transparent 60%, #ebe8d9 60%);
+}
+
+/* ==========================================================================
+   Treatment Section
+   ========================================================================== */
+.treatment-section {
+  padding: 56px 80px;
+  display: flex;
+  flex-direction: column;
+  gap: 56px;
+  width: 100%;
+  max-width: var(--container-xl);
+  margin: 0 auto;
+}
+
+.treatment-section--top-lg {
+  padding-top: 104px;
+  padding-bottom: 104px;
+}
+
+.treatment-section--gray {
+  background: var(--color-bg-gray);
+  padding: 104px 120px;
+  max-width: none;
+}
+
+.treatment-section--gray .section-title {
+  max-width: var(--container-lg);
+  margin: 0 auto;
+}
+
+.treatment-section--gray .treatment-block {
+  width: 100%;
+  max-width: var(--container-lg);
+  margin: 0 auto;
+}
+
+.treatment-block {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.treatment-block__subheading {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.treatment-block__subheading::before {
+  content: "";
+  display: block;
+  width: 2px;
+  align-self: stretch;
+  background: var(--color-gold);
+}
+
+.treatment-block__subheading-text {
+  margin: 0;
+  font-family: "Zen Old Mincho", serif;
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 1.35;
+  letter-spacing: 1.1px;
+  color: var(--color-gold);
+}
+
+/* Treatment Content - Image + Text Layout */
+.treatment-content {
+  display: flex;
+  gap: 32px;
+  align-items: flex-start;
+}
+
+.treatment-content__image {
+  flex-shrink: 0;
+  width: 48%;
+  max-width: 500px;
+  aspect-ratio: 500 / 333;
+}
+
+.treatment-content__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.treatment-content__body {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  flex: 1;
+}
+
+.treatment-content__text {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.6;
+  letter-spacing: 0.32px;
+  color: var(--color-text);
+}
+
+/* ==========================================================================
+   Detail Link Button
+   ========================================================================== */
+.detail-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 24px;
+  padding: 12px 24px;
+  background: #fff;
+  border-radius: 100px;
+  font-family: "Zen Old Mincho", serif;
+  font-weight: 900;
+  font-size: 18px;
+  line-height: 1.35;
+  letter-spacing: 0.9px;
+  color: var(--color-gold-dark);
+  transition: opacity 0.2s, transform 0.2s;
+  width: fit-content;
+}
+
+.detail-link:hover {
+  opacity: 0.8;
+  transform: translateX(4px);
+}
+
+.detail-link--gray {
+  background: var(--color-bg-gray);
+}
+
+.detail-link__arrow {
+  width: 9px;
+  height: 9px;
+  flex-shrink: 0;
+  transition: transform 0.2s;
+}
+
+.detail-link:hover .detail-link__arrow {
+  transform: translateX(2px);
+}
+
+/* ==========================================================================
+   Step Image
+   ========================================================================== */
+.step-image {
+  width: 100%;
+  max-width: var(--container-md);
+}
+
+.step-image img {
+  width: 100%;
+  height: auto;
+}
+
+/* ==========================================================================
+   YouTube Embed
+   ========================================================================== */
+.youtube-embed {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  align-items: center;
+  width: 100%;
+}
+
+.youtube-embed__item {
+  width: 100%;
+  max-width: var(--container-sm);
+  aspect-ratio: 16 / 9;
+  background: var(--color-bg-dark);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.youtube-embed__item iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* ==========================================================================
+   InvisalignGO - Hero Section
+   ========================================================================== */
+.igo-mv {
+  width: 100%;
+  max-width: var(--container-md);
+  height: 400px;
+  overflow: hidden;
+}
+
+.igo-mv img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ==========================================================================
+   InvisalignGO - About Section (2-column)
+   ========================================================================== */
+.igo-about {
+  display: flex;
+  gap: 32px;
+  align-items: flex-start;
+}
+
+.igo-about__image {
+  flex-shrink: 0;
+  width: 48%;
+  max-width: 500px;
+  aspect-ratio: 500 / 333;
+}
+
+.igo-about__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.igo-about__body {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex: 1;
+}
+
+.igo-about__text {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.6;
+  letter-spacing: 0.32px;
+  color: var(--color-text);
+}
+
+.igo-about__text strong {
+  font-weight: 700;
+}
+
+.igo-about__text .marker {
+  background: linear-gradient(transparent 60%, #ebe8d9 60%);
+}
+
+/* ==========================================================================
+   InvisalignGO - 100 Banner
+   ========================================================================== */
+.igo-banner {
+  width: 100%;
+  max-width: var(--container-md);
+}
+
+.igo-banner img {
+  width: 100%;
+  height: auto;
+}
+
+/* ==========================================================================
+   InvisalignGO - Case Section (症例)
+   ========================================================================== */
+.igo-case {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: center;
+  width: 100%;
+  max-width: var(--container-lg);
+  margin: 0 auto;
+}
+
+.igo-case__image {
+  width: 100%;
+  max-width: var(--container-md);
+  margin: 0 auto;
+}
+
+.igo-case__image img {
+  width: 100%;
+  height: auto;
+}
+
+.igo-case__body {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 0 16px;
+}
+
+.igo-case__text {
+  margin: 0;
+  font-family: "Noto Sans JP", sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.6;
+  letter-spacing: 0.7px;
+  color: var(--color-text);
+}
+
+.igo-case__meta {
+  margin: 0;
+  font-family: "Noto Sans JP", sans-serif;
+  font-weight: 350;
+  font-size: 12px;
+  line-height: 1.6;
+  letter-spacing: 0.24px;
+  color: #6f788e;
+}
+
+/* ==========================================================================
+   About Page - 初めての方へ Section
+   ========================================================================== */
+.about-intro {
+  padding: 104px 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 56px;
+  max-width: var(--container-xl);
+  margin: 0 auto;
+}
+
+.about-first {
+  display: flex;
+  gap: 32px;
+  align-items: flex-start;
+  width: 100%;
+  max-width: var(--container-lg);
+}
+
+.about-first__image {
+  flex-shrink: 0;
+  width: 48%;
+  max-width: 500px;
+  aspect-ratio: 500 / 333;
+  overflow: hidden;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 8% 100%);
+}
+
+.about-first__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.about-first__body {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  flex: 1;
+}
+
+.about-first__text {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.about-first__text p {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.6;
+  letter-spacing: 0.32px;
+  color: var(--color-text);
+}
+
+.about-first__text strong {
+  font-weight: 700;
+}
+
+.about-first__text .marker {
+  background: linear-gradient(transparent 60%, #ebe8d9 60%);
+}
+
+/* ==========================================================================
+   About Page - 当院の特徴 Section
+   ========================================================================== */
+.about-feature {
+  padding: 104px 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 56px;
+  width: 100%;
+  background: var(--color-bg-gray);
+}
+
+.about-feature__intro {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+  max-width: var(--container-lg);
+}
+
+.about-feature__intro p {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.32px;
+  color: var(--color-text);
+}
+
+/* Feature Table (PC) */
+.feature-table--pc {
+  display: block;
+}
+
+.feature-table {
+  position: relative;
+  width: 100%;
+  max-width: var(--container-lg);
+  border: 1px solid #cdc6ba;
+  background: #fff;
+}
+
+/* Left column border overlay (250px) */
+.feature-table::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 250px;
+  height: 100%;
+  border: 1px solid #cdc6ba;
+  pointer-events: none;
+  box-sizing: border-box;
+}
+
+/* Vertical line at 418px (between stars and description) */
+.feature-table::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 418px;
+  width: 1px;
+  height: 100%;
+  background: #cdc6ba;
+  pointer-events: none;
+}
+
+.feature-table__row {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  padding: 12px 16px;
+}
+
+.feature-table__row:not(:last-child) {
+  margin-bottom: 12px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #cdc6ba;
+}
+
+.feature-table__label {
+  flex-shrink: 0;
+  width: 218px;
+  font-family: "Noto Sans JP", sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.35;
+  letter-spacing: 0.32px;
+  text-align: center;
+  color: var(--color-gold);
+}
+
+.feature-table__stars {
+  flex-shrink: 0;
+  width: 136px;
+  height: 23px;
+}
+
+.feature-table__stars img {
+  width: 100%;
+  height: 100%;
+}
+
+.feature-table__desc {
+  flex: 1;
+  font-size: 16px;
+  line-height: 1.35;
+  letter-spacing: 0.32px;
+  color: var(--color-text);
+}
+
+.feature-table__link {
+  font-weight: 700;
+  color: var(--color-text);
+  text-decoration: underline;
+}
+
+/* Feature Cards (SP) - hidden by default, shown on SP */
+.feature-cards {
+  display: none;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+}
+
+.feature-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 16px;
+  background: #fff;
+  border: 1px solid #cdc6ba;
+}
+
+.feature-card__label {
+  width: 100%;
+  margin: 0;
+  font-family: "Noto Sans JP", sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.35;
+  letter-spacing: 0.32px;
+  text-align: center;
+  color: var(--color-gold);
+}
+
+.feature-card__line {
+  display: block;
+  width: calc(100% + 32px);
+  height: 1px;
+  background: #cdc6ba;
+  margin: 0 -16px;
+}
+
+.feature-card__stars {
+  width: 136px;
+  height: 23px;
+}
+
+.feature-card__stars img {
+  width: 100%;
+  height: 100%;
+}
+
+.feature-card__desc {
+  width: 100%;
+  margin: 0;
+  font-family: "Noto Sans JP", sans-serif;
+  font-size: 16px;
+  line-height: 1.35;
+  letter-spacing: 0.32px;
+  color: var(--color-text);
+}
+
+.feature-card__link {
+  font-weight: 700;
+  color: var(--color-text);
+  text-decoration: underline;
+}
+
+/* ==========================================================================
+   About Page - コンセプト Section
+   ========================================================================== */
+.about-concept {
+  padding: 104px 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 56px;
+  max-width: var(--container-xl);
+  margin: 0 auto;
+}
+
+/* Concept Intro Text */
+.concept-intro {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+  max-width: var(--container-lg);
+}
+
+.concept-intro p {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.6;
+  letter-spacing: 0.32px;
+  color: var(--color-text);
+}
+
+.concept-intro strong {
+  font-weight: 700;
+}
+
+.concept-intro .marker {
+  background: linear-gradient(transparent 60%, #ebe8d9 60%);
+}
+
+/* Concept Block */
+.concept-block {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  width: 100%;
+  max-width: var(--container-lg);
+}
+
+.concept-block__heading {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 6px 16px;
+  margin: 0;
+  background: var(--color-gold-light);
+  font-family: "Zen Old Mincho", serif;
+  font-weight: 700;
+  font-size: 26px;
+  line-height: 1.35;
+  letter-spacing: 1.3px;
+  color: #fff;
+}
+
+.concept-block__content {
+  display: flex;
+  gap: 32px;
+  align-items: flex-start;
+}
+
+.concept-block__image {
+  flex-shrink: 0;
+  width: 504px;
+  height: 336px;
+  overflow: hidden;
+}
+
+.concept-block__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.concept-block__body {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  flex: 1;
+  max-width: 508px;
+}
+
+.concept-block__text {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.concept-block__text p {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.6;
+  letter-spacing: 0.32px;
+  color: var(--color-text);
+}
+
+.concept-block__text strong {
+  font-weight: 700;
+}
+
+.concept-block__text .marker {
+  background: linear-gradient(transparent 60%, #ebe8d9 60%);
+}
+
+.concept-block__buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+/* Concept Button */
+.concept-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 24px;
+  padding: 12px 24px;
+  background: var(--color-bg-gray);
+  border-radius: 100px;
+  font-family: "Zen Old Mincho", serif;
+  font-weight: 900;
+  font-size: 18px;
+  line-height: 1.35;
+  letter-spacing: 0.9px;
+  color: var(--color-gold-dark);
+  transition: opacity 0.2s, transform 0.2s;
+}
+
+.concept-btn:hover {
+  opacity: 0.8;
+  transform: translateX(4px);
+}
+
+.concept-btn__arrow {
+  width: 9px;
+  height: 9px;
+  flex-shrink: 0;
+  transition: transform 0.2s;
+}
+
+.concept-btn:hover .concept-btn__arrow {
+  transform: translateX(2px);
+}
+
+/* Concept Video (YouTube Embed) */
+.concept-video {
+  width: 800px;
+  height: 450px;
+  background: var(--color-bg-dark);
+}
+
+.concept-video iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* ==========================================================================
+   About Page - クリニック紹介 Section
+   ========================================================================== */
+.about-clinic {
+  padding: 104px 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 56px;
+  width: 100%;
+  background: var(--color-bg-gray);
+}
+
+/* Clinic Block */
+.clinic-block {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  width: 100%;
+  max-width: var(--container-lg);
+}
+
+.clinic-block__heading {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 6px 16px;
+  margin: 0;
+  background: var(--color-gold-light);
+  font-family: "Zen Old Mincho", serif;
+  font-weight: 700;
+  font-size: 26px;
+  line-height: 1.35;
+  letter-spacing: 1.3px;
+  color: #fff;
+}
+
+/* Clinic Map */
+.clinic-block__map {
+  width: 100%;
+  height: 350px;
+  overflow: hidden;
+}
+
+.clinic-block__map iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* Clinic Info */
+.clinic-block__info {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.clinic-block__info p {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.6;
+  letter-spacing: 0.32px;
+  color: var(--color-text);
+}
+
+/* Clinic Buttons */
+.clinic-block__buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+/* ==========================================================================
+   Painless Page - 痛みに配慮した治療
+   ========================================================================== */
+.painless-intro {
+  padding: 104px 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 56px;
+  max-width: var(--container-xl);
+  margin: 0 auto;
+}
+
+.painless-intro__text {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+  max-width: var(--container-lg);
+}
+
+.painless-intro__text p {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.6;
+  letter-spacing: 0.32px;
+  color: var(--color-text);
+}
+
+.painless-intro__text strong {
+  font-weight: 700;
+}
+
+.painless-intro__text .marker {
+  background: linear-gradient(transparent 60%, #ebe8d9 60%);
+}
+
+/* Painless Block */
+.painless-block {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  width: 100%;
+  max-width: var(--container-lg);
+}
+
+.painless-block__heading {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 6px 16px;
+  margin: 0;
+  background: var(--color-gold-light);
+  font-family: "Zen Old Mincho", serif;
+  font-weight: 700;
+  font-size: 26px;
+  line-height: 1.35;
+  letter-spacing: 1.3px;
+  color: #fff;
+}
+
+.painless-block__content {
+  display: flex;
+  gap: 32px;
+  align-items: flex-start;
+}
+
+.painless-block__image {
+  flex-shrink: 0;
+  width: 300px;
+  height: 200px;
+  overflow: hidden;
+}
+
+.painless-block__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.painless-block__body {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex: 1;
+}
+
+.painless-block__body--full {
+  max-width: var(--container-lg);
+}
+
+.painless-block__body p {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.6;
+  letter-spacing: 0.32px;
+  color: var(--color-text);
+}
+
+.painless-block__body strong {
+  font-weight: 700;
+}
+
+.painless-block__body .marker {
+  background: linear-gradient(transparent 60%, #ebe8d9 60%);
+}
+
+/* ==========================================================================
+   First Visit Page - 初診の流れ
+   ========================================================================== */
+.first-visit-intro {
+  padding: 104px 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 56px;
+  max-width: var(--container-xl);
+  margin: 0 auto;
+}
+
+/* First Visit Block */
+.first-visit-block {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  width: 100%;
+  max-width: var(--container-lg);
+}
+
+.first-visit-block__heading {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 6px 16px;
+  margin: 0;
+  background: var(--color-gold-light);
+  font-family: "Zen Old Mincho", serif;
+  font-weight: 700;
+  font-size: 26px;
+  line-height: 1.35;
+  letter-spacing: 1.3px;
+  color: #fff;
+}
+
+.first-visit-block__content {
+  display: flex;
+  gap: 32px;
+  align-items: flex-start;
+}
+
+.first-visit-block__image {
+  flex-shrink: 0;
+  width: 300px;
+  height: 200px;
+  overflow: hidden;
+}
+
+.first-visit-block__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.first-visit-block__body {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex: 1;
+}
+
+.first-visit-block__body p {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.6;
+  letter-spacing: 0.32px;
+  color: var(--color-text);
+}
+
+/* ==========================================================================
+   EPIOS Page - EPIOS殺菌水システム
+   ========================================================================== */
+.epios-intro {
+  padding: 104px 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 56px;
+  max-width: var(--container-xl);
+  margin: 0 auto;
+}
+
+/* EPIOS About (2-column intro) */
+.epios-about {
+  display: flex;
+  gap: 32px;
+  align-items: flex-start;
+  width: 100%;
+  max-width: var(--container-lg);
+}
+
+.epios-about__image {
+  flex-shrink: 0;
+  width: 300px;
+  height: 200px;
+  overflow: hidden;
+}
+
+.epios-about__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.epios-about__body {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex: 1;
+}
+
+.epios-about__body p {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.6;
+  letter-spacing: 0.32px;
+  color: var(--color-text);
+}
+
+.epios-about__body strong {
+  font-weight: 700;
+}
+
+.epios-about__body .marker {
+  background: linear-gradient(transparent 60%, #ebe8d9 60%);
+}
+
+/* EPIOS Block */
+.epios-block {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  width: 100%;
+  max-width: var(--container-lg);
+}
+
+.epios-block__heading {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 6px 16px;
+  margin: 0;
+  background: var(--color-gold-light);
+  font-family: "Zen Old Mincho", serif;
+  font-weight: 700;
+  font-size: 26px;
+  line-height: 1.35;
+  letter-spacing: 1.3px;
+  color: #fff;
+}
+
+.epios-block__content {
+  display: flex;
+  gap: 32px;
+  align-items: flex-start;
+}
+
+.epios-block__image {
+  flex-shrink: 0;
+  width: 300px;
+  height: 200px;
+  overflow: hidden;
+}
+
+.epios-block__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.epios-block__body {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex: 1;
+}
+
+.epios-block__body--full {
+  max-width: var(--container-lg);
+}
+
+.epios-block__body p {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.6;
+  letter-spacing: 0.32px;
+  color: var(--color-text);
+}
+
+.epios-block__body strong {
+  font-weight: 700;
+}
+
+.epios-block__body .marker {
+  background: linear-gradient(transparent 60%, #ebe8d9 60%);
+}
+
+/* EPIOS Gallery Section */
+.epios-gallery {
+  padding: 104px 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 56px;
+  width: 100%;
+  background: var(--color-bg-gray);
+}
+
+.epios-gallery__images {
+  display: flex;
+  gap: 8px;
+  align-items: stretch;
+  width: 100%;
+  max-width: var(--container-lg);
+  height: 400px;
+}
+
+/* PC版を表示、SP版を非表示 */
+.epios-gallery__images--pc {
+  display: flex;
+}
+
+.epios-gallery__images--sp {
+  display: none;
+}
+
+.epios-gallery__item {
+  overflow: hidden;
+  height: 100%;
+}
+
+.epios-gallery__item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* PC版 各画像の幅（Figmaデザイン準拠） */
+.epios-gallery__item--1 {
+  width: 257px;
+  flex-shrink: 0;
+}
+
+.epios-gallery__item--2 {
+  width: 264px;
+  flex-shrink: 0;
+}
+
+.epios-gallery__item--3 {
+  flex: 1;
+}
+
+/* ==========================================================================
+   Access Page - アクセス・診療時間
+   ========================================================================== */
+.access-intro {
+  padding: 104px 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 56px;
+  max-width: var(--container-xl);
+  margin: 0 auto;
+}
+
+/* Access Block */
+.access-block {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  width: 100%;
+  max-width: var(--container-lg);
+}
+
+.access-block__heading {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 6px 16px;
+  margin: 0;
+  background: var(--color-gold-light);
+  font-family: "Zen Old Mincho", serif;
+  font-weight: 700;
+  font-size: 26px;
+  line-height: 1.35;
+  letter-spacing: 1.3px;
+  color: #fff;
+}
+
+.access-block__body {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.access-block__body p {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.6;
+  letter-spacing: 0.32px;
+  color: var(--color-text);
+}
+
+.access-block__list {
+  margin: 0;
+  padding-left: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.access-block__list li {
+  font-size: 16px;
+  line-height: 1.6;
+  letter-spacing: 0.32px;
+  color: var(--color-text);
+}
+
+/* Access Map */
+.access-block__map {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.access-block__map iframe {
+  width: 800px;
+  height: 450px;
+  border: none;
+}
+
+/* Access Method */
+.access-method {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.access-method__subheading {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.access-method__bar {
+  display: block;
+  width: 2px;
+  align-self: stretch;
+  background: var(--color-gold);
+}
+
+.access-method__title {
+  margin: 0;
+  font-family: "Zen Old Mincho", serif;
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 1.35;
+  letter-spacing: 1.1px;
+  color: var(--color-gold);
+}
+
+.access-method__list {
+  margin: 0;
+  padding-left: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.access-method__list li {
+  font-size: 16px;
+  line-height: 1.6;
+  letter-spacing: 0.32px;
+  color: var(--color-text);
+}
+
+.access-method__note {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.6;
+  letter-spacing: 0.32px;
+  color: var(--color-text);
+}
+
+/* Access Step */
+.access-step {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.access-step__content {
+  display: flex;
+  gap: 32px;
+  align-items: flex-start;
+}
+
+.access-step__image {
+  flex-shrink: 0;
+  width: 500px;
+  height: 333px;
+  overflow: hidden;
+}
+
+.access-step__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.access-step__body {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex: 1;
+}
+
+.access-step__body p {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.6;
+  letter-spacing: 0.32px;
+  color: var(--color-text);
+}
+
+/* ==========================================================================
+   Doctor Page - 院長紹介
+   ========================================================================== */
+.doctor-intro {
+  padding: 104px 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 56px;
+  max-width: var(--container-xl);
+  margin: 0 auto;
+}
+
+.doctor-awards {
+  padding: 56px 80px 104px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 56px;
+  max-width: var(--container-xl);
+  margin: 0 auto;
+}
+
+/* Doctor Block */
+.doctor-block {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  width: 100%;
+  max-width: var(--container-lg);
+}
+
+.doctor-block__heading {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 6px 16px;
+  margin: 0;
+  background: var(--color-gold-light);
+  font-family: "Zen Old Mincho", serif;
+  font-weight: 700;
+  font-size: 26px;
+  line-height: 1.35;
+  letter-spacing: 1.3px;
+  color: #fff;
+}
+
+/* Doctor Profile (2-column) */
+.doctor-profile {
+  display: flex;
+  gap: 32px;
+  align-items: flex-start;
+}
+
+.doctor-profile__image {
+  flex-shrink: 0;
+  width: 48%;
+  max-width: 500px;
+  aspect-ratio: 500 / 333;
+  overflow: hidden;
+}
+
+.doctor-profile__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.doctor-profile__body {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex: 1;
+}
+
+.doctor-profile__body p {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.6;
+  letter-spacing: 0.32px;
+  color: var(--color-text);
+}
+
+/* Doctor Section */
+.doctor-section {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.doctor-section__subheading {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.doctor-section__bar {
+  display: block;
+  width: 2px;
+  align-self: stretch;
+  background: var(--color-gold);
+}
+
+.doctor-section__title {
+  margin: 0;
+  font-family: "Zen Old Mincho", serif;
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 1.35;
+  letter-spacing: 1.1px;
+  color: var(--color-gold);
+}
+
+/* Doctor History */
+.doctor-history {
+  width: 100%;
+  padding: 40px;
+  background: #fff;
+}
+
+.doctor-history--gray {
+  background: var(--color-bg-gray);
+}
+
+.doctor-history__list {
+  margin: 0;
+  padding-left: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.doctor-history__list li {
+  font-size: 16px;
+  line-height: 1.6;
+  letter-spacing: 0.32px;
+  color: var(--color-text);
+}
+
+.doctor-history__list--mixed li strong {
+  font-weight: 700;
+}
+
+.doctor-history__list .marker {
+  background: linear-gradient(transparent 60%, #ebe8d9 60%);
+}
+
+/* Doctor Overseas (2-column with smaller image) */
+.doctor-overseas {
+  display: flex;
+  gap: 32px;
+  align-items: flex-start;
+}
+
+.doctor-overseas__image {
+  flex-shrink: 0;
+  width: 300px;
+  height: 200px;
+  overflow: hidden;
+}
+
+.doctor-overseas__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.doctor-overseas__body {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex: 1;
+}
+
+.doctor-overseas__body p {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.6;
+  letter-spacing: 0.32px;
+  color: var(--color-text);
+}
+
+.doctor-overseas__body strong {
+  font-weight: 700;
+}
+
+.doctor-overseas__body .marker {
+  background: linear-gradient(transparent 60%, #ebe8d9 60%);
+}
+
+/* Doctor Table */
+.doctor-table {
+  width: 100%;
+  border: 1px solid #cdc6ba;
+  background: #fff;
+}
+
+.doctor-table__row {
+  display: flex;
+  align-items: stretch;
+  border-bottom: 1px solid #cdc6ba;
+}
+
+.doctor-table__row:last-child {
+  border-bottom: none;
+}
+
+.doctor-table__year {
+  flex-shrink: 0;
+  width: 200px;
+  padding: 12px 16px;
+  background: #f2ede4;
+  border-right: 1px solid #cdc6ba;
+  font-family: "Noto Sans JP", sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.35;
+  letter-spacing: 0.32px;
+  text-align: center;
+  color: var(--color-gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.doctor-table__content {
+  flex: 1;
+  padding: 12px 16px;
+}
+
+.doctor-table__content p {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.35;
+  letter-spacing: 0.32px;
+  color: var(--color-text);
+}
+
+.doctor-table__content strong {
+  font-weight: 700;
+}
+
+/* ==========================================================================
+   Staff Page - スタッフ紹介
+   ========================================================================== */
+.staff-intro {
+  padding: 104px 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 56px;
+  max-width: var(--container-xl);
+  margin: 0 auto;
+}
+
+.staff-hygienist {
+  padding: 104px 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 56px;
+  width: 100%;
+  background: var(--color-bg-gray);
+}
+
+/* Staff Block */
+.staff-block {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  width: 100%;
+  max-width: var(--container-lg);
+}
+
+.staff-block__heading {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 6px 16px;
+  margin: 0;
+  background: var(--color-gold-light);
+  font-family: "Zen Old Mincho", serif;
+  font-weight: 700;
+  font-size: 26px;
+  line-height: 1.35;
+  letter-spacing: 1.3px;
+  color: #fff;
+}
+
+/* Staff Member */
+.staff-member {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.staff-member__subheading {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.staff-member__bar {
+  display: block;
+  width: 2px;
+  align-self: stretch;
+  background: var(--color-gold);
+}
+
+.staff-member__title {
+  margin: 0;
+  font-family: "Zen Old Mincho", serif;
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 1.35;
+  letter-spacing: 1.1px;
+  color: var(--color-gold);
+}
+
+.staff-member__content {
+  display: flex;
+  gap: 32px;
+  align-items: flex-start;
+}
+
+.staff-member__image {
+  flex-shrink: 0;
+  width: 48%;
+  max-width: 500px;
+  aspect-ratio: 500 / 333;
+  overflow: hidden;
+}
+
+.staff-member__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.staff-member__body {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  flex: 1;
+}
+
+.staff-member__text {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.staff-member__text p {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.6;
+  letter-spacing: 0.32px;
+  color: var(--color-text);
+}
+
+/* Staff History (略歴) */
+.staff-history {
+  width: 100%;
+  padding: 40px;
+  background: #fff;
+}
+
+.staff-history--gray {
+  background: var(--color-bg-gray);
+}
+
+.staff-history__list {
+  margin: 0;
+  padding-left: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.staff-history__list li {
+  font-size: 16px;
+  line-height: 1.6;
+  letter-spacing: 0.32px;
+  color: var(--color-text);
+}
+
+/* ==========================================================================
+   Hours Section - 診療時間
+   ========================================================================== */
+.hours-intro {
+  padding: 104px 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 56px;
+  width: 100%;
+  background: var(--color-bg-gray);
+}
+
+.hours-block {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  width: 100%;
+  max-width: var(--container-lg);
+}
+
+.hours-block__heading {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 6px 16px;
+  margin: 0;
+  background: var(--color-gold-light);
+  font-family: "Zen Old Mincho", serif;
+  font-weight: 700;
+  font-size: 26px;
+  line-height: 1.35;
+  letter-spacing: 1.3px;
+  color: #fff;
+}
+
+.hours-block__body {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.hours-block__body p {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.6;
+  letter-spacing: 0.32px;
+  color: var(--color-text);
+}
+
+.hours-block__body strong {
+  font-weight: 700;
+}
+
+.hours-block__body .marker {
+  background: linear-gradient(transparent 60%, #ebe8d9 60%);
+}
+
+.hours-block__list {
+  margin: 0;
+  padding-left: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.hours-block__list li {
+  font-size: 16px;
+  line-height: 1.6;
+  letter-spacing: 0.32px;
+  color: var(--color-text);
+}
+
+/* ==========================================================================
+   Tour Page - 院内ツアー
+   ========================================================================== */
+.tour-intro {
+  padding: 104px 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 56px;
+  max-width: var(--container-xl);
+  margin: 0 auto;
+}
+
+/* Tour Block */
+.tour-block {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  width: 100%;
+  max-width: var(--container-lg);
+}
+
+.tour-block__heading {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 6px 16px;
+  margin: 0;
+  background: var(--color-gold-light);
+  font-family: "Zen Old Mincho", serif;
+  font-weight: 700;
+  font-size: 26px;
+  line-height: 1.35;
+  letter-spacing: 1.3px;
+  color: #fff;
+}
+
+.tour-block__content {
+  display: flex;
+  gap: 32px;
+  align-items: flex-start;
+}
+
+.tour-block__image {
+  flex-shrink: 0;
+  width: 500px;
+  height: 333px;
+  overflow: hidden;
+}
+
+.tour-block__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.tour-block__body {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex: 1;
+}
+
+.tour-block__body p {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.6;
+  letter-spacing: 0.32px;
+  color: var(--color-text);
+}
+
+/* ==========================================================================
+   Pricing Page - 料金表
+   ========================================================================== */
+.pricing-intro {
+  padding: 104px 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 56px;
+  max-width: var(--container-xl);
+  margin: 0 auto;
+}
+
+/* Pricing Payment */
+.pricing-payment {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 100%;
+  max-width: var(--container-lg);
+}
+
+.pricing-payment__text {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.6;
+  letter-spacing: 0.32px;
+  color: var(--color-text);
+}
+
+.pricing-payment__text strong {
+  font-weight: 700;
+}
+
+.pricing-payment__text .marker {
+  background: linear-gradient(transparent 60%, #ebe8d9 60%);
+}
+
+/* ==========================================================================
+   Pricing List Section - 料金一覧
+   ========================================================================== */
+.pricing-list {
+  padding: 0 80px 104px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 56px;
+  max-width: var(--container-xl);
+  margin: 0 auto;
+}
+
+/* Pricing Index (目次) */
+.pricing-index {
+  width: 100%;
+  max-width: var(--container-lg);
+  padding: 40px;
+  background: #fff;
+}
+
+.pricing-index__title {
+  margin: 0 0 16px;
+  font-family: "Noto Sans JP", sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.6;
+  letter-spacing: 0.4px;
+  color: var(--color-gold);
+}
+
+.pricing-index__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 32px;
+}
+
+.pricing-index__link {
+  font-family: "Zen Old Mincho", serif;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.35;
+  letter-spacing: 0.8px;
+  color: var(--color-gold-dark);
+  text-decoration: underline;
+  transition: opacity 0.2s;
+}
+
+.pricing-index__link:hover {
+  opacity: 0.7;
+}
+
+/* Pricing Category */
+.pricing-category {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  width: 100%;
+  max-width: var(--container-lg);
+}
+
+.pricing-category__heading {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 6px 16px;
+  margin: 0;
+  background: var(--color-gold-light);
+  font-family: "Zen Old Mincho", serif;
+  font-weight: 700;
+  font-size: 26px;
+  line-height: 1.35;
+  letter-spacing: 1.3px;
+  color: #fff;
+}
+
+.pricing-category__intro {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.6;
+  letter-spacing: 0.32px;
+  color: var(--color-text);
+}
+
+.pricing-category__intro strong {
+  font-weight: 700;
+}
+
+.pricing-category__intro .marker {
+  background: linear-gradient(transparent 60%, #ebe8d9 60%);
+}
+
+/* Pricing Sub-section */
+.pricing-subsection {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.pricing-subsection__heading {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.pricing-subsection__heading::before {
+  content: "";
+  display: block;
+  width: 2px;
+  align-self: stretch;
+  background: var(--color-gold);
+}
+
+.pricing-subsection__title {
+  margin: 0;
+  font-family: "Zen Old Mincho", serif;
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 1.35;
+  letter-spacing: 1.1px;
+  color: var(--color-gold);
+}
+
+/* Pricing Table */
+.pricing-table {
+  position: relative;
+  width: 100%;
+  border: 1px solid #cdc6ba;
+  background: #fff;
+}
+
+.pricing-table::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 400px;
+  height: 100%;
+  background: #f2ede4;
+  border-right: 1px solid #cdc6ba;
+  pointer-events: none;
+  box-sizing: border-box;
+}
+
+.pricing-table__row {
+  position: relative;
+  display: flex;
+  align-items: stretch;
+  padding: 12px 16px;
+}
+
+.pricing-table__row:not(:last-child) {
+  border-bottom: 1px solid #cdc6ba;
+}
+
+.pricing-table__item {
+  flex-shrink: 0;
+  width: 368px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.pricing-table__name {
+  margin: 0;
+  font-family: "Noto Sans JP", sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.35;
+  letter-spacing: 0.32px;
+  color: var(--color-gold);
+}
+
+.pricing-table__desc {
+  margin: 0;
+  font-family: "Noto Sans JP", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.35;
+  letter-spacing: 0.32px;
+  color: var(--color-gold);
+}
+
+.pricing-table__price {
+  flex: 1;
+  margin: 0;
+  padding-left: 32px;
+  font-family: "Noto Sans JP", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.35;
+  letter-spacing: 0.32px;
+  color: var(--color-text);
+  text-align: right;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+/* Pricing Notes */
+.pricing-notes {
+  margin: 0;
+  padding-left: 20px;
+  list-style: disc;
+}
+
+.pricing-notes li {
+  font-family: "Noto Sans JP", sans-serif;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 1.6;
+  letter-spacing: 0.26px;
+  color: var(--color-text);
+}
+
+.pricing-notes li strong {
+  font-weight: 700;
+}
+
+.pricing-notes .marker {
+  background: linear-gradient(transparent 60%, #ebe8d9 60%);
+}
+
+/* Pricing Treatment Info */
+.pricing-treatment-info {
+  font-family: "Noto Sans JP", sans-serif;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 1.6;
+  letter-spacing: 0.26px;
+  color: var(--color-text);
+}
+
+.pricing-treatment-info p {
+  margin: 0;
+}
+
+.pricing-treatment-info strong {
+  font-weight: 700;
+}
+
+/* ==========================================================================
+   Media Page - メディア掲載
+   ========================================================================== */
+.media-intro {
+  padding: 104px 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 56px;
+  width: 100%;
+  background: #fff;
+}
+
+/* Media Block */
+.media-block {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  width: 100%;
+  max-width: var(--container-lg);
+}
+
+.media-block__heading {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 6px 16px;
+  margin: 0;
+  background: var(--color-gold-light);
+  font-family: "Zen Old Mincho", serif;
+  font-weight: 700;
+  font-size: 26px;
+  line-height: 1.35;
+  letter-spacing: 1.3px;
+  color: #fff;
+}
+
+/* Media Content (2-column) */
+.media-content {
+  display: flex;
+  gap: 32px;
+  align-items: flex-start;
+}
+
+.media-content__image {
+  flex-shrink: 0;
+  width: 48%;
+  max-width: 500px;
+  display: block;
+  overflow: hidden;
+  transition: opacity 0.2s;
+}
+
+.media-content__image:hover {
+  opacity: 0.85;
+}
+
+.media-content__image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.media-content__body {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  flex: 1;
+}
+
+.media-content__text {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.6;
+  letter-spacing: 0.32px;
+  color: var(--color-text);
+}
+
+.media-content__text strong {
+  font-weight: 700;
+}
+
+.media-content__text .marker {
+  background: linear-gradient(transparent 60%, #ebe8d9 60%);
+}
+
+.media-content__text a {
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+/* Media Item */
+.media-item {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.media-item__subheading {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.media-item__bar {
+  display: block;
+  width: 2px;
+  align-self: stretch;
+  background: var(--color-gold);
+}
+
+.media-item__title {
+  margin: 0;
+  font-family: "Zen Old Mincho", serif;
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 1.35;
+  letter-spacing: 1.1px;
+  color: var(--color-gold);
+}
+
+/* Media Image Variants */
+.media-content__image--tv {
+  width: 300px;
+  height: 90px;
+  border-radius: 6px;
+  flex-shrink: 0;
+  max-width: 300px;
+}
+
+.media-content__image--tv img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.media-content__image--web {
+  width: 300px;
+  flex-shrink: 0;
+  max-width: 300px;
+  border: 1px solid #bbb;
+  border-radius: 6px;
+}
+
+.media-content__image--web img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 5px;
+}
+
+.media-content__image--magazine {
+  width: 300px;
+  flex-shrink: 0;
+  max-width: 300px;
+  border: 1.5px solid #dadada;
+  border-radius: 6px;
+}
+
+.media-content__image--magazine img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 5px;
+}
+
+.media-content__image--stacked {
+  width: 300px;
+  flex-shrink: 0;
+  max-width: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.media-content__image--stacked a {
+  display: block;
+  transition: opacity 0.2s;
+}
+
+.media-content__image--stacked a:hover {
+  opacity: 0.85;
+}
+
+.media-content__image--stacked img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Media Button (動画はこちら) */
+.media-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 24px;
+  padding: 12px 24px;
+  background: var(--color-bg-gray);
+  border: none;
+  border-radius: 100px;
+  font-family: "Zen Old Mincho", serif;
+  font-weight: 900;
+  font-size: 18px;
+  line-height: 1.35;
+  letter-spacing: 0.9px;
+  color: var(--color-gold-dark);
+  cursor: pointer;
+  transition: opacity 0.2s, transform 0.2s;
+  width: fit-content;
+}
+
+.media-btn:hover {
+  opacity: 0.8;
+  transform: translateX(4px);
+}
+
+.media-btn__arrow {
+  width: 9px;
+  height: 9px;
+  flex-shrink: 0;
+  transition: transform 0.2s;
+}
+
+.media-btn:hover .media-btn__arrow {
+  transform: translateX(2px);
+}
+
+/* ==========================================================================
+   Video Modal
+   ========================================================================== */
+.video-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.video-modal.is-active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.video-modal__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(4px);
+  transition: opacity 0.3s ease;
+}
+
+.video-modal__container {
+  position: relative;
+  width: 100%;
+  max-width: 900px;
+  background: #1a1a1a;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  transform: scale(0.9) translateY(20px);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.video-modal.is-active .video-modal__container {
+  transform: scale(1) translateY(0);
+}
+
+.video-modal__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  background: linear-gradient(180deg, rgba(154, 125, 74, 0.15) 0%, transparent 100%);
+  border-bottom: 1px solid rgba(154, 125, 74, 0.3);
+}
+
+.video-modal__title {
+  margin: 0;
+  font-family: "Zen Old Mincho", serif;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 1.35;
+  letter-spacing: 0.9px;
+  color: var(--color-gold-light);
+}
+
+.video-modal__close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  border-radius: 50%;
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.video-modal__close:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: scale(1.1);
+}
+
+.video-modal__close:active {
+  transform: scale(0.95);
+}
+
+.video-modal__content {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: #000;
+}
+
+.video-modal__video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background: #000;
+}
+
+/* Video controls styling */
+.video-modal__video::-webkit-media-controls-panel {
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
+}
+
+/* ==========================================================================
+   SP版 (768px以下) - Figmaデザイン準拠
+   ========================================================================== */
+@media (max-width: 768px) {
+  /* --------------------------------------------------------------------------
+     Lower Main Visual (SP)
+     -------------------------------------------------------------------------- */
+  .lower-mv {
+    height: 200px;
+  }
+
+  .lower-mv__fade {
+    display: none;
+  }
+
+  .lower-mv__title {
+    font-size: 32px;
+    letter-spacing: 3.2px;
+  }
+
+  .lower-mv__subtitle {
+    font-size: 20px;
+    letter-spacing: 2px;
+  }
+
+  /* --------------------------------------------------------------------------
+     Breadcrumb (SP)
+     -------------------------------------------------------------------------- */
+  .breadcrumb {
+    padding: 0 24px;
+    margin-top: 16px;
+  }
+
+  .breadcrumb__list {
+    flex-wrap: wrap;
+  }
+
+  /* --------------------------------------------------------------------------
+     Section Title (SP)
+     -------------------------------------------------------------------------- */
+  .section-title {
+    gap: 16px;
+  }
+
+  .section-title__text {
+    font-size: 28px;
+    letter-spacing: 1.4px;
+  }
+
+  /* Section Title Line - SP版は端から端まで */
+  .section-title__line {
+    background: linear-gradient(
+      to right,
+      transparent 0%,
+      var(--color-gold-light) 0%,
+      var(--color-gold-light) 100%,
+      transparent 100%
+    );
+  }
+
+  /* --------------------------------------------------------------------------
+     Orthodontics Intro (SP)
+     -------------------------------------------------------------------------- */
+  .ortho-intro {
+    padding: 80px 24px;
+    gap: 40px;
+  }
+
+  .ortho-hero {
+    height: 234px;
+  }
+
+  .ortho-hero__image {
+    clip-path: polygon(5% 0, 100% 0, 100% 100%, 0 100%);
+  }
+
+  /* --------------------------------------------------------------------------
+     Content Block (SP)
+     -------------------------------------------------------------------------- */
+  .content-block {
+    gap: 24px;
+    max-width: none;
+  }
+
+  .content-block__heading {
+    font-size: 24px;
+    letter-spacing: 1.2px;
+    padding: 6px 16px;
+  }
+
+  .content-block__body {
+    gap: 12px;
+  }
+
+  .content-block__text {
+    font-size: 16px;
+    letter-spacing: 0.32px;
+  }
+
+  /* --------------------------------------------------------------------------
+     Treatment Section (SP)
+     -------------------------------------------------------------------------- */
+  .treatment-section {
+    padding: 80px 24px;
+    gap: 40px;
+  }
+
+  .treatment-section--top-lg {
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+
+  .treatment-section--gray {
+    padding: 80px 24px;
+  }
+
+  .treatment-block {
+    gap: 24px;
+  }
+
+  .treatment-block__subheading {
+    gap: 8px;
+  }
+
+  .treatment-block__subheading-text {
+    font-size: 22px;
+    letter-spacing: 1.1px;
+  }
+
+  /* --------------------------------------------------------------------------
+     Treatment Content (SP) - 縦並び
+     -------------------------------------------------------------------------- */
+  .treatment-content {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .treatment-content__image {
+    width: 100%;
+    max-width: none;
+    aspect-ratio: 352 / 234;
+  }
+
+  .treatment-content__body {
+    gap: 24px;
+  }
+
+  .treatment-content__text {
+    font-size: 16px;
+    letter-spacing: 0.32px;
+  }
+
+  /* --------------------------------------------------------------------------
+     Detail Link Button (SP)
+     -------------------------------------------------------------------------- */
+  .detail-link {
+    font-size: 18px;
+    padding: 12px 24px;
+    gap: 24px;
+    letter-spacing: 0.9px;
+  }
+
+  /* --------------------------------------------------------------------------
+     Step Image (SP)
+     -------------------------------------------------------------------------- */
+  .step-image {
+    max-width: 100%;
+    aspect-ratio: 352 / 234;
+    overflow: hidden;
+  }
+
+  .step-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  /* --------------------------------------------------------------------------
+     YouTube Embed (SP)
+     -------------------------------------------------------------------------- */
+  .youtube-embed {
+    gap: 24px;
+  }
+
+  .youtube-embed__item {
+    width: 100%;
+    max-width: none;
+    aspect-ratio: 352 / 198;
+  }
+
+  /* --------------------------------------------------------------------------
+     InvisalignGO (SP)
+     -------------------------------------------------------------------------- */
+  .igo-mv {
+    height: auto;
+    aspect-ratio: 352 / 352;
+  }
+
+  .igo-about {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .igo-about__image {
+    width: 100%;
+    max-width: none;
+    aspect-ratio: 352 / 234;
+  }
+
+  .igo-about__body {
+    gap: 12px;
+  }
+
+  .igo-banner {
+    max-width: 100%;
+    aspect-ratio: 352 / 92;
+  }
+
+  .igo-banner img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  .igo-case {
+    gap: 16px;
+  }
+
+  .igo-case__image {
+    max-width: 100%;
+  }
+
+  .igo-case__image img {
+    width: 100%;
+    height: auto;
+  }
+
+  .igo-case__body {
+    padding: 0 16px;
+  }
+
+  .igo-case__text {
+    font-size: 14px;
+    line-height: 1.6;
+    letter-spacing: 0.7px;
+  }
+
+  .igo-case__meta {
+    font-size: 12px;
+    line-height: 1.6;
+  }
+
+  /* --------------------------------------------------------------------------
+     About Page (SP)
+     -------------------------------------------------------------------------- */
+  .about-intro {
+    padding: 80px 24px;
+    gap: 40px;
+  }
+
+  .about-first {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .about-first__image {
+    width: 100%;
+    max-width: none;
+    height: auto;
+    aspect-ratio: 352 / 234;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 5% 100%);
+  }
+
+  .about-first__body {
+    gap: 24px;
+  }
+
+  .about-first__text {
+    gap: 12px;
+  }
+
+  /* --------------------------------------------------------------------------
+     About Feature Section (SP)
+     -------------------------------------------------------------------------- */
+  .about-feature {
+    padding: 80px 24px;
+    gap: 40px;
+  }
+
+  .about-feature__intro {
+    gap: 12px;
+  }
+
+  /* Feature Table/Cards - PC/SP switching */
+  .feature-table--pc {
+    display: none;
+  }
+
+  .feature-cards {
+    display: flex;
+  }
+
+  /* --------------------------------------------------------------------------
+     About Concept Section (SP)
+     -------------------------------------------------------------------------- */
+  .about-concept {
+    padding: 80px 24px;
+    gap: 40px;
+  }
+
+  .concept-intro {
+    gap: 12px;
+  }
+
+  .concept-block {
+    gap: 24px;
+  }
+
+  .concept-block__heading {
+    font-size: 24px;
+    letter-spacing: 1.2px;
+    padding: 6px 16px;
+  }
+
+  .concept-block__content {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .concept-block__image {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 352 / 234;
+  }
+
+  .concept-block__body {
+    max-width: none;
+    gap: 24px;
+  }
+
+  .concept-block__text {
+    gap: 12px;
+  }
+
+  .concept-block__buttons {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .concept-btn {
+    font-size: 18px;
+    padding: 12px 24px;
+    gap: 24px;
+    letter-spacing: 0.9px;
+  }
+
+  .concept-video {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 352 / 198;
+  }
+
+  /* --------------------------------------------------------------------------
+     About Clinic Section (SP)
+     -------------------------------------------------------------------------- */
+  .about-clinic {
+    padding: 80px 24px;
+    gap: 40px;
+  }
+
+  .clinic-block {
+    gap: 24px;
+  }
+
+  .clinic-block__heading {
+    font-size: 24px;
+    letter-spacing: 1.2px;
+  }
+
+  .clinic-block__info {
+    gap: 12px;
+  }
+
+  .clinic-block__buttons {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  /* --------------------------------------------------------------------------
+     Painless Page (SP)
+     -------------------------------------------------------------------------- */
+  .painless-intro {
+    padding: 80px 24px;
+    gap: 40px;
+  }
+
+  .painless-intro__text {
+    gap: 12px;
+  }
+
+  .painless-block {
+    gap: 24px;
+  }
+
+  .painless-block__heading {
+    font-size: 26px;
+    letter-spacing: 1.3px;
+  }
+
+  .painless-block__content {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .painless-block__image {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 352 / 234;
+  }
+
+  .painless-block__body {
+    gap: 12px;
+  }
+
+  /* --------------------------------------------------------------------------
+     First Visit Page (SP)
+     -------------------------------------------------------------------------- */
+  .first-visit-intro {
+    padding: 80px 24px;
+    gap: 40px;
+  }
+
+  .first-visit-block {
+    gap: 24px;
+  }
+
+  .first-visit-block__heading {
+    font-size: 26px;
+    letter-spacing: 1.3px;
+  }
+
+  .first-visit-block__content {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .first-visit-block__image {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 352 / 234;
+  }
+
+  .first-visit-block__body {
+    gap: 12px;
+  }
+
+  /* --------------------------------------------------------------------------
+     EPIOS Page (SP)
+     -------------------------------------------------------------------------- */
+  .epios-intro {
+    padding: 80px 24px;
+    gap: 40px;
+  }
+
+  .epios-about {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .epios-about__image {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 352 / 234;
+  }
+
+  .epios-about__body {
+    gap: 12px;
+  }
+
+  .epios-block {
+    gap: 24px;
+  }
+
+  .epios-block__heading {
+    font-size: 26px;
+    letter-spacing: 1.3px;
+  }
+
+  .epios-block__content {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .epios-block__image {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 352 / 234;
+  }
+
+  .epios-block__body {
+    gap: 12px;
+  }
+
+  .epios-gallery {
+    padding: 80px 24px;
+    gap: 40px;
+  }
+
+  /* SP版を表示、PC版を非表示 */
+  .epios-gallery__images--pc {
+    display: none;
+  }
+
+  .epios-gallery__images--sp {
+    display: flex;
+    gap: 8px;
+    align-items: stretch;
+    height: 234px;
+  }
+
+  /* SP版 各画像の幅（Figmaデザイン準拠） */
+  .epios-gallery__item--sp1 {
+    width: 130px;
+    flex-shrink: 0;
+  }
+
+  .epios-gallery__item--sp2 {
+    flex: 1;
+  }
+
+  /* --------------------------------------------------------------------------
+     Access Page (SP)
+     -------------------------------------------------------------------------- */
+  .access-intro {
+    padding: 80px 24px;
+    gap: 40px;
+  }
+
+  .access-block {
+    gap: 24px;
+  }
+
+  .access-block__map iframe {
+    width: 100%;
+    height: 198px;
+  }
+
+  .access-step {
+    gap: 24px;
+  }
+
+  .access-step__content {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .access-step__image {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 352 / 234;
+  }
+
+  .access-step__body {
+    gap: 12px;
+  }
+
+  /* --------------------------------------------------------------------------
+     Hours Section (SP)
+     -------------------------------------------------------------------------- */
+  .hours-intro {
+    padding: 80px 24px;
+    gap: 40px;
+  }
+
+  .hours-block {
+    gap: 24px;
+  }
+
+  /* --------------------------------------------------------------------------
+     Tour Page (SP)
+     -------------------------------------------------------------------------- */
+  .tour-intro {
+    padding: 80px 24px;
+    gap: 40px;
+  }
+
+  .tour-block {
+    gap: 24px;
+  }
+
+  .tour-block__content {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .tour-block__image {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 352 / 234;
+  }
+
+  .tour-block__body {
+    gap: 12px;
+  }
+
+  /* --------------------------------------------------------------------------
+     Doctor Page (SP)
+     -------------------------------------------------------------------------- */
+  .doctor-intro {
+    padding: 80px 24px;
+    gap: 40px;
+  }
+
+  .doctor-awards {
+    padding: 40px 24px 80px;
+    gap: 40px;
+  }
+
+  .doctor-block {
+    gap: 24px;
+  }
+
+  .doctor-block__heading {
+    font-size: 24px;
+    letter-spacing: 1.2px;
+  }
+
+  .doctor-profile {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .doctor-profile__image {
+    width: 100%;
+    max-width: none;
+    aspect-ratio: 352 / 234;
+  }
+
+  .doctor-profile__body {
+    gap: 12px;
+  }
+
+  .doctor-section {
+    gap: 24px;
+  }
+
+  .doctor-history {
+    padding: 24px;
+  }
+
+  .doctor-overseas {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .doctor-overseas__image {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 352 / 234;
+  }
+
+  .doctor-overseas__body {
+    gap: 12px;
+  }
+
+  .doctor-table__row {
+    flex-direction: column;
+  }
+
+  .doctor-table__year {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid #cdc6ba;
+  }
+
+  .doctor-table__content {
+    padding: 12px 16px;
+  }
+
+  /* --------------------------------------------------------------------------
+     Staff Page (SP)
+     -------------------------------------------------------------------------- */
+  .staff-intro {
+    padding: 80px 24px;
+    gap: 40px;
+  }
+
+  .staff-hygienist {
+    padding: 80px 24px;
+    gap: 40px;
+  }
+
+  .staff-block {
+    gap: 24px;
+  }
+
+  .staff-block__heading {
+    font-size: 24px;
+    letter-spacing: 1.2px;
+  }
+
+  .staff-member {
+    gap: 24px;
+  }
+
+  .staff-member__content {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .staff-member__image {
+    width: 100%;
+    max-width: none;
+    height: auto;
+    aspect-ratio: 352 / 234;
+  }
+
+  .staff-member__body {
+    gap: 24px;
+  }
+
+  .staff-member__text {
+    gap: 12px;
+  }
+
+  .staff-history {
+    padding: 24px;
+  }
+
+  /* --------------------------------------------------------------------------
+     Pricing Page (SP)
+     -------------------------------------------------------------------------- */
+  .pricing-intro {
+    padding: 80px 24px;
+    gap: 40px;
+  }
+
+  .pricing-payment {
+    gap: 24px;
+  }
+
+  .pricing-list {
+    padding: 0 24px 80px;
+    gap: 40px;
+  }
+
+  .pricing-index {
+    padding: 24px 24px 32px;
+  }
+
+  .pricing-index__title {
+    font-size: 20px;
+    margin-bottom: 16px;
+  }
+
+  .pricing-index__links {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .pricing-index__link {
+    font-size: 16px;
+    letter-spacing: 0.8px;
+  }
+
+  .pricing-category {
+    gap: 24px;
+  }
+
+  .pricing-category__heading {
+    font-size: 24px;
+    letter-spacing: 1.2px;
+  }
+
+  .pricing-subsection {
+    gap: 16px;
+  }
+
+  .pricing-subsection__title {
+    font-size: 20px;
+    letter-spacing: 1px;
+  }
+
+  .pricing-table {
+    border: none;
+  }
+
+  .pricing-table::before {
+    display: none;
+  }
+
+  .pricing-table__row {
+    flex-direction: column;
+    gap: 0;
+    padding: 0;
+    border: 1px solid #cdc6ba;
+  }
+
+  .pricing-table__row:not(:last-child) {
+    border-bottom: none;
+  }
+
+  .pricing-table__item {
+    width: 100%;
+    padding: 12px 16px;
+    background: #f2ede4;
+    border-bottom: 1px solid #cdc6ba;
+    text-align: center;
+    align-items: center;
+  }
+
+  .pricing-table__price {
+    width: 100%;
+    padding: 12px 16px;
+    text-align: center;
+    justify-content: center;
+    background: #fff;
+  }
+
+  .pricing-notes li {
+    font-size: 12px;
+  }
+
+  .pricing-treatment-info {
+    font-size: 12px;
+  }
+
+  /* --------------------------------------------------------------------------
+     Media Section (SP)
+     -------------------------------------------------------------------------- */
+  .media-intro {
+    padding: 80px 24px;
+    gap: 40px;
+  }
+
+  .media-block {
+    gap: 24px;
+  }
+
+  /* media-block__heading は26pxのまま維持（SPでも同じ） */
+
+  .media-content {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .media-content__image {
+    width: 100%;
+    max-width: none;
+  }
+
+  .media-content__body {
+    gap: 24px;
+  }
+
+  .media-item {
+    gap: 24px;
+  }
+
+  /* media-item__title は22pxのまま維持（SPでも同じ） */
+
+  .media-content__image--tv,
+  .media-content__image--web,
+  .media-content__image--magazine,
+  .media-content__image--stacked {
+    width: 100%;
+    max-width: none;
+  }
+
+  .media-content__image--tv {
+    height: auto;
+    aspect-ratio: 352 / 105;
+  }
+
+  /* media-btn はPCと同じサイズを維持 */
+
+  /* --------------------------------------------------------------------------
+     Video Modal (SP)
+     -------------------------------------------------------------------------- */
+  .video-modal {
+    padding: 16px;
+  }
+
+  .video-modal__container {
+    max-width: 100%;
+    border-radius: 8px;
+  }
+
+  .video-modal__header {
+    padding: 12px 16px;
+  }
+
+  .video-modal__title {
+    font-size: 16px;
+    letter-spacing: 0.8px;
+  }
+
+  .video-modal__close {
+    width: 36px;
+    height: 36px;
+  }
+
+  .video-modal__close svg {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+/* ==========================================================================
+   Print Styles
+   ========================================================================== */
+@media print {
+  .lower-mv__fade,
+  .youtube-embed {
+    display: none;
+  }
+}
