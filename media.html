@@ -635,10 +635,10 @@
               </div>
               <div class="media-content__body">
                 <p class="media-content__text">医療問題について取材を受けました。</p>
-                <a class="media-btn" href="#">
+                <button class="media-btn" type="button" data-video="assets/video/20200304_morning.mp4" data-title="羽鳥慎一モーニングショー">
                   動画はこちら
                   <img class="media-btn__arrow" src="assets/icons/arrow-right-gold.svg" alt="" />
-                </a>
+                </button>
               </div>
             </div>
           </div>
@@ -655,10 +655,10 @@
               </div>
               <div class="media-content__body">
                 <p class="media-content__text">医療問題について取材を受けました。</p>
-                <a class="media-btn" href="#">
+                <button class="media-btn" type="button" data-video="assets/video/20200306_goodday.mp4" data-title="直撃LIVE グッディ！">
                   動画はこちら
                   <img class="media-btn__arrow" src="assets/icons/arrow-right-gold.svg" alt="" />
-                </a>
+                </button>
               </div>
             </div>
           </div>
@@ -675,10 +675,10 @@
               </div>
               <div class="media-content__body">
                 <p class="media-content__text">医療問題について取材を受けました。</p>
-                <a class="media-btn" href="#">
+                <button class="media-btn" type="button" data-video="assets/video/20200310_asachan.mp4" data-title="あさチャン！">
                   動画はこちら
                   <img class="media-btn__arrow" src="assets/icons/arrow-right-gold.svg" alt="" />
-                </a>
+                </button>
               </div>
             </div>
           </div>
@@ -716,10 +716,10 @@
               </a>
               <div class="media-content__body">
                 <p class="media-content__text">当院が掲載されています。詳しくは画像をクリック</p>
-                <a class="media-btn" href="#">
+                <button class="media-btn" type="button" data-video="assets/video/media_05.mp4" data-title="千代田区ドクターズ">
                   動画はこちら
                   <img class="media-btn__arrow" src="assets/icons/arrow-right-gold.svg" alt="" />
-                </a>
+                </button>
               </div>
             </div>
           </div>
@@ -1541,6 +1541,80 @@
       });
       syncFooterAccordions();
       window.addEventListener("resize", syncFooterAccordions);
+    </script>
+
+    <!-- Video Modal -->
+    <div class="video-modal" id="videoModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="videoModalTitle">
+      <div class="video-modal__overlay"></div>
+      <div class="video-modal__container">
+        <div class="video-modal__header">
+          <h3 class="video-modal__title" id="videoModalTitle"></h3>
+          <button class="video-modal__close" type="button" aria-label="閉じる">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+        </div>
+        <div class="video-modal__content">
+          <video class="video-modal__video" id="modalVideo" controls playsinline>
+            <source src="" type="video/mp4">
+            お使いのブラウザは動画再生に対応していません。
+          </video>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // Video Modal
+      (function() {
+        const modal = document.getElementById('videoModal');
+        const video = document.getElementById('modalVideo');
+        const titleEl = document.getElementById('videoModalTitle');
+        const overlay = modal.querySelector('.video-modal__overlay');
+        const closeBtn = modal.querySelector('.video-modal__close');
+        const videoButtons = document.querySelectorAll('.media-btn[data-video]');
+
+        function openModal(videoSrc, title) {
+          video.querySelector('source').src = videoSrc;
+          video.load();
+          titleEl.textContent = title;
+          modal.classList.add('is-active');
+          modal.setAttribute('aria-hidden', 'false');
+          document.body.style.overflow = 'hidden';
+
+          // Focus trap
+          closeBtn.focus();
+        }
+
+        function closeModal() {
+          modal.classList.remove('is-active');
+          modal.setAttribute('aria-hidden', 'true');
+          document.body.style.overflow = '';
+          video.pause();
+          video.currentTime = 0;
+        }
+
+        // Button click handlers
+        videoButtons.forEach(function(btn) {
+          btn.addEventListener('click', function(e) {
+            e.preventDefault();
+            const videoSrc = this.getAttribute('data-video');
+            const title = this.getAttribute('data-title');
+            openModal(videoSrc, title);
+          });
+        });
+
+        // Close handlers
+        closeBtn.addEventListener('click', closeModal);
+        overlay.addEventListener('click', closeModal);
+
+        // ESC key handler
+        document.addEventListener('keydown', function(e) {
+          if (e.key === 'Escape' && modal.classList.contains('is-active')) {
+            closeModal();
+          }
+        });
+      })();
     </script>
   </body>
 </html>
