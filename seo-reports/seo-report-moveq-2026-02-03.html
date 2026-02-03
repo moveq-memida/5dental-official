@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SEO分析レポート - moveq.co.jp</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { 
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+      min-height: 100vh;
+      color: #e0e0e0;
+      padding: 2rem;
+    }
+    .container { max-width: 1000px; margin: 0 auto; }
+    header {
+      text-align: center;
+      margin-bottom: 2rem;
+      padding: 2rem;
+      background: rgba(255,255,255,0.05);
+      border-radius: 16px;
+      backdrop-filter: blur(10px);
+    }
+    h1 { 
+      font-size: 2rem; 
+      color: #fff;
+      margin-bottom: 0.5rem;
+    }
+    .url { color: #64b5f6; font-size: 1rem; }
+    .date { color: #888; font-size: 0.9rem; margin-top: 0.5rem; }
+    
+    .score-card {
+      background: linear-gradient(135deg, #ff6b6b 0%, #ee5a5a 100%);
+      border-radius: 16px;
+      padding: 2rem;
+      text-align: center;
+      margin-bottom: 2rem;
+      box-shadow: 0 10px 40px rgba(255,107,107,0.3);
+    }
+    .score-card.warning { background: linear-gradient(135deg, #ffa726 0%, #ff9800 100%); box-shadow: 0 10px 40px rgba(255,152,0,0.3); }
+    .score-card.good { background: linear-gradient(135deg, #66bb6a 0%, #4caf50 100%); box-shadow: 0 10px 40px rgba(76,175,80,0.3); }
+    .score-number { font-size: 5rem; font-weight: 800; color: #fff; }
+    .score-label { font-size: 1.2rem; color: rgba(255,255,255,0.9); }
+    .score-stars { font-size: 2rem; margin-top: 0.5rem; }
+    
+    .summary {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+    .summary-item {
+      background: rgba(255,255,255,0.05);
+      border-radius: 12px;
+      padding: 1.5rem;
+      text-align: center;
+    }
+    .summary-item.critical { border-left: 4px solid #ff6b6b; }
+    .summary-item.warning { border-left: 4px solid #ffa726; }
+    .summary-item.info { border-left: 4px solid #64b5f6; }
+    .summary-number { font-size: 2.5rem; font-weight: 700; }
+    .summary-label { font-size: 0.9rem; color: #888; }
+    
+    .section {
+      background: rgba(255,255,255,0.05);
+      border-radius: 16px;
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+    .section h2 {
+      font-size: 1.3rem;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .issue-list { list-style: none; }
+    .issue-list li {
+      padding: 0.75rem 1rem;
+      margin-bottom: 0.5rem;
+      border-radius: 8px;
+      font-size: 0.95rem;
+    }
+    .issue-list li.critical { background: rgba(255,107,107,0.2); border-left: 3px solid #ff6b6b; }
+    .issue-list li.warning { background: rgba(255,167,38,0.2); border-left: 3px solid #ffa726; }
+    .issue-list li.suggestion { background: rgba(100,181,246,0.2); border-left: 3px solid #64b5f6; }
+    
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+    }
+    .stat-box {
+      background: rgba(0,0,0,0.2);
+      border-radius: 8px;
+      padding: 1rem;
+    }
+    .stat-label { font-size: 0.85rem; color: #888; }
+    .stat-value { font-size: 1.5rem; font-weight: 600; color: #fff; }
+    
+    .priority-actions {
+      background: linear-gradient(135deg, rgba(255,107,107,0.1) 0%, rgba(255,167,38,0.1) 100%);
+      border: 1px solid rgba(255,107,107,0.3);
+    }
+    .priority-actions h2 { color: #ff6b6b; }
+    .priority-actions ol {
+      padding-left: 1.5rem;
+    }
+    .priority-actions li {
+      padding: 0.5rem 0;
+      color: #fff;
+    }
+    
+    footer {
+      text-align: center;
+      padding: 2rem;
+      color: #666;
+      font-size: 0.85rem;
+    }
+    
+    @media (max-width: 768px) {
+      .summary { grid-template-columns: 1fr; }
+      .stats-grid { grid-template-columns: 1fr; }
+      .score-number { font-size: 4rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>🔍 SEO技術監査レポート</h1>
+      <div class="url">https://moveq.co.jp/</div>
+      <div class="date">分析日: 2026年2月3日</div>
+    </header>
+    
+    <div class="score-card">
+      <div class="score-number">44</div>
+      <div class="score-label">/ 100 点</div>
+      <div class="score-stars">★★☆☆☆</div>
+    </div>
+    
+    <div class="summary">
+      <div class="summary-item critical">
+        <div class="summary-number" style="color: #ff6b6b;">2</div>
+        <div class="summary-label">❌ 重大な問題</div>
+      </div>
+      <div class="summary-item warning">
+        <div class="summary-number" style="color: #ffa726;">4</div>
+        <div class="summary-label">⚠️ 警告</div>
+      </div>
+      <div class="summary-item info">
+        <div class="summary-number" style="color: #64b5f6;">3</div>
+        <div class="summary-label">💡 改善提案</div>
+      </div>
+    </div>
+    
+    <div class="section priority-actions">
+      <h2>🚨 優先対応事項</h2>
+      <ol>
+        <li><strong>titleタグを追加</strong> — 現在titleタグが存在しない（重大）</li>
+        <li><strong>viewportメタタグを追加</strong> — モバイル対応に必須（重大）</li>
+        <li><strong>meta descriptionのPHPエラーを修正</strong> — $description変数が未定義</li>
+        <li><strong>canonicalタグを追加</strong> — 重複コンテンツ対策</li>
+        <li><strong>JSON-LD構造化データを追加</strong> — 検索結果のリッチ表示</li>
+      </ol>
+    </div>
+    
+    <div class="section">
+      <h2>📌 タイトル・メタ情報</h2>
+      <ul class="issue-list">
+        <li class="critical">❌ titleタグが存在しない（検索結果に表示されない）</li>
+        <li class="warning">⚠️ meta descriptionにPHPエラーが出力されている</li>
+        <li class="warning">⚠️ canonicalタグが未設定</li>
+      </ul>
+      <div class="stats-grid" style="margin-top: 1rem;">
+        <div class="stat-box">
+          <div class="stat-label">タイトル文字数</div>
+          <div class="stat-value" style="color: #ff6b6b;">0文字</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-label">description文字数</div>
+          <div class="stat-value" style="color: #ffa726;">174文字（エラー含む）</div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="section">
+      <h2>📱 モバイル対応</h2>
+      <ul class="issue-list">
+        <li class="critical">❌ viewportメタタグが存在しない — スマホで正しく表示されない</li>
+      </ul>
+    </div>
+    
+    <div class="section">
+      <h2>📑 見出し構造</h2>
+      <div class="stats-grid">
+        <div class="stat-box">
+          <div class="stat-label">H1タグ</div>
+          <div class="stat-value" style="color: #66bb6a;">1個 ✓</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-label">H2タグ</div>
+          <div class="stat-value">4個</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-label">H3タグ</div>
+          <div class="stat-value">0個</div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="section">
+      <h2>🔗 構造化データ</h2>
+      <ul class="issue-list">
+        <li class="warning">⚠️ JSON-LD構造化データが存在しない</li>
+      </ul>
+      <p style="margin-top: 1rem; color: #888;">
+        Organization, LocalBusiness, WebSite などの構造化データを追加することで、
+        検索結果にリッチスニペットが表示される可能性が高まります。
+      </p>
+    </div>
+    
+    <div class="section">
+      <h2>🖼️ 画像最適化</h2>
+      <div class="stats-grid">
+        <div class="stat-box">
+          <div class="stat-label">総画像数</div>
+          <div class="stat-value">56枚</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-label">alt属性あり</div>
+          <div class="stat-value" style="color: #66bb6a;">35枚</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-label">alt属性なし</div>
+          <div class="stat-value" style="color: #ffa726;">21枚</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-label">遅延読み込み</div>
+          <div class="stat-value">10枚</div>
+        </div>
+      </div>
+      <ul class="issue-list" style="margin-top: 1rem;">
+        <li class="warning">⚠️ 21枚の画像にalt属性がない — アクセシビリティとSEOに影響</li>
+        <li class="suggestion">💡 より多くの画像に遅延読み込みを適用することを検討</li>
+      </ul>
+    </div>
+    
+    <div class="section">
+      <h2>🔗 リンク構造</h2>
+      <div class="stats-grid">
+        <div class="stat-box">
+          <div class="stat-label">内部リンク</div>
+          <div class="stat-value" style="color: #66bb6a;">63本</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-label">外部リンク</div>
+          <div class="stat-value">8本</div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="section">
+      <h2>⚡ パフォーマンス</h2>
+      <div class="stats-grid">
+        <div class="stat-box">
+          <div class="stat-label">CSSファイル数</div>
+          <div class="stat-value" style="color: #ffa726;">12個</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-label">JSファイル数</div>
+          <div class="stat-value" style="color: #ffa726;">19個</div>
+        </div>
+      </div>
+      <ul class="issue-list" style="margin-top: 1rem;">
+        <li class="suggestion">💡 scriptタグにasync/deferを追加してレンダリングブロックを回避</li>
+        <li class="suggestion">💡 CSSファイルが多い（12個）— 結合を検討</li>
+      </ul>
+    </div>
+    
+    <div class="section">
+      <h2>🛠️ 発見されたPHPエラー</h2>
+      <div style="background: #1a1a1a; padding: 1rem; border-radius: 8px; font-family: monospace; font-size: 0.85rem; overflow-x: auto;">
+        <code style="color: #ff6b6b;">
+          Warning: Undefined variable $description in<br>
+          /home/c0311908/public_html/moveq.co.jp/wp/wp-content/themes/moveq_theme/inc/head.php on line 8
+        </code>
+      </div>
+      <p style="margin-top: 1rem; color: #888;">
+        本番環境でPHPエラーが表示されています。wp-config.phpでWP_DEBUGをfalseにするか、
+        $description変数を定義してください。
+      </p>
+    </div>
+    
+    <footer>
+      <p>Generated by SEO Crusher v0.3 | Powered by 潔世一</p>
+    </footer>
+  </div>
+</body>
+</html>
